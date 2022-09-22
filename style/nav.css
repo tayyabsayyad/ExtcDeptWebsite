@@ -52,6 +52,7 @@
 
 .offcanvas-nav li a:hover {
     background: #E11E21;
+    color: #F8F9FA;
 }
 
 @media (max-width: 1200px){

@@ -198,7 +198,7 @@ nav.innerHTML = `<div class="container-fluid">
                   </li>
                       </ul>
                   </li>
-                  <li><a class="dropdown-item" href="recognition.html">Recognition</a></li>
+                  <li><a class="dropdown-item" href="/faculty/faculty_recognition.html">Recognition</a></li>
                   <li class="dropend drop-down">
                     <a
                       class="dropdown-item dropdown-toggle"
@@ -275,21 +275,41 @@ nav.innerHTML = `<div class="container-fluid">
                 </ul>
               </li>
               <li class="nav-item dropdown text-center">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  CO-CURRICULAR ACTIVITIES
-                </a>
-                <ul class="dropdown-menu">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                CO-CURRICULAR ACTIVITIES
+              </a>
+              <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/cocurricular/newsletter.html">Newsletter</a></li>
-                <li><a class="dropdown-item" href="/cocurricular/events.html">Events</a></li>
-                <li><a class="dropdown-item" href="/cocurricular/clubs.html">Clubs</a></li>
-                </ul>
-              </li>
+                <li><a class="dropdown-item" href="">Industrial Visit</a></li>
+                <li class="dropend drop-down">
+                  <a
+                    class="dropdown-item dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Student Chapters
+                  </a>
+                  <ul class="dropdown-menu sub-menu">
+                    <li>
+                      <a class="dropdown-item" href="">IEEE</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="">IETE</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Project Exhibition</a></li>
+               
+              </ul>
+            </li>
               <li class="nav-item dropdown text-center">
                 <a
                   class="nav-link dropdown-toggle"
