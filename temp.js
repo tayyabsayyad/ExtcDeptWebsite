@@ -194,7 +194,7 @@ nav.innerHTML = `<div class="container-fluid">
                     <a class="dropdown-item" href="/faculty/faculty_profile.html">Teaching</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="">Non Teaching</a>
+                    <a class="dropdown-item" href="/faculty/nonteaching.html">Non Teaching</a>
                   </li>
                       </ul>
                   </li>
@@ -211,8 +211,11 @@ nav.innerHTML = `<div class="container-fluid">
                     </a>
                     <ul class="dropdown-menu sub-menu">
                       <li>
-                        <a class="dropdown-item" href="">Game Of Codes</a>
+                        <a class="dropdown-item" href="">Minor Grants</a>
                       </li>
+                      <li>
+                      <a class="dropdown-item" href="">Major Grants</a>
+                    </li>
                     </ul>
                   </li>
                 </ul>
