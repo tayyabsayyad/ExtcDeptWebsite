@@ -235,7 +235,7 @@ nav.innerHTML = `<div class="container-fluid">
                   <li>
                     <a class="dropdown-item" href="/assets/pdf/V3_EXTC_ClassTimeTable_AY2022-23_Odd_Semester.pdf">Time Table</a>
                   </li>
-                  <li><a class="dropdown-item" href="students/recognition.html">Recognition</a></li>
+                  <li><a class="dropdown-item" href="/students/recognition.html">Recognition</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown text-center">
@@ -286,7 +286,7 @@ nav.innerHTML = `<div class="container-fluid">
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/cocurricular/newsletter.html">Newsletter</a></li>
-                <li><a class="dropdown-item" href="">Industrial Visit</a></li>
+                <li><a class="dropdown-item" href="/cocurricular/industrial_training.html">Industrial Visit</a></li>
                 <li class="dropend drop-down">
                   <a
                     class="dropdown-item dropdown-toggle"
@@ -299,14 +299,14 @@ nav.innerHTML = `<div class="container-fluid">
                   </a>
                   <ul class="dropdown-menu sub-menu">
                     <li>
-                      <a class="dropdown-item" href="">IEEE</a>
+                      <a class="dropdown-item" href="https://ieee.dbit.in/" target="blank">IEEE</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="">IETE</a>
+                      <a class="dropdown-item" href="https://iete.dbit.in/" target="blank">IETE</a>
                     </li>
                   </ul>
                 </li>
-                <li><a class="dropdown-item" href="#">Project Exhibition</a></li>
+                <li><a class="dropdown-item" href="/cocurricular/project.html">Project Exhibition</a></li>
                
               </ul>
             </li>
@@ -332,7 +332,7 @@ nav.innerHTML = `<div class="container-fluid">
                   <li>
                     <a
                       class="dropdown-item"
-                      href="/placement&internship/placement.html"
+                      href="/placement&internship/placement2.html"
                       >Placement Record</a
                     >
                   </li>
