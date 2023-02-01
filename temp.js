@@ -211,7 +211,6 @@ nav.innerHTML = `<div class="container-fluid">
                     </a>
                     <ul class="dropdown-menu sub-menu">
                       <li>
-                        <a class="dropdown-item" href="faculty/research/majorgrants.html">Minor Grants</a>
                       </li>
                       <li>
                       <a class="dropdown-item" href="faculty/research/minorgrants.html">Major Grants</a>
@@ -332,7 +331,7 @@ nav.innerHTML = `<div class="container-fluid">
                   <li>
                     <a
                       class="dropdown-item"
-                      href="/placement&internship/placement2.html"
+                      href="https://placement.dbit.in/"
                       >Placement Record</a
                     >
                   </li>
