@@ -208,7 +208,6 @@ nav.innerHTML = `<div class="container-fluid">
                       aria-expanded="false"
                     >
                       Research
-                     Research
                     </a>
                     <ul class="dropdown-menu sub-menu">
                       <li>
@@ -333,7 +332,7 @@ nav.innerHTML = `<div class="container-fluid">
                   <li>
                     <a
                       class="dropdown-item"
-                      href="https://placement.dbit.in/"
+                      href="/placement&internship/placement2.html"
                       >Placement Record</a
                     >
                   </li>
