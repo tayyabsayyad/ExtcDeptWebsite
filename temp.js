@@ -106,7 +106,7 @@ nav.innerHTML = `<div class="container-fluid">
                       <li class="dropend drop-down">
                         <a
                           class="dropdown-item dropdown-toggle"
-                          href="#"
+                          href="/academics/syllabus.html"
                           role="button"
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
@@ -115,10 +115,10 @@ nav.innerHTML = `<div class="container-fluid">
                         </a>
                         <ul class="dropdown-menu sub-menu">
                           <li>
-                            <a class="dropdown-item" href="/assets/pdf/SEEXTC_Rev2019_C-Scheme.pdf">SEIT-C Scheme</a>
+                            <a class="dropdown-item" href="/academics/syllabus.html">SEIT-C Scheme</a>
                           </li>
                           <li>
-                            <a class="dropdown-item" href="/assets/pdf/SEEXTC_Rev2019_C-Scheme.pdf">SEIT-CBCGS</a>
+                            <a class="dropdown-item" href="/academics/syllabus.html">SEIT-CBCGS</a>
                           </li>
                         </ul>
                       </li>
@@ -211,7 +211,6 @@ nav.innerHTML = `<div class="container-fluid">
                     </a>
                     <ul class="dropdown-menu sub-menu">
                       <li>
-                        <a class="dropdown-item href="faculty/research/majorgrants.html">Minor Grants</a>
                       </li>
                       <li>
                       <a class="dropdown-item" href="faculty/research/minorgrants.html">Major Grants</a>
@@ -251,7 +250,7 @@ nav.innerHTML = `<div class="container-fluid">
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="students/undergraduateproject.html">Undergraduate Projects</a>
+                    <a class="dropdown-item" href="/students/undergraduateproject.html">Undergraduate Projects</a>
                   </li>
                   <li class="dropend drop-down">
                     <a
