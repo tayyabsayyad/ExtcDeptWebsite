@@ -2,9 +2,10 @@
 let nav = document.getElementById('navbar');
 
 
-nav.innerHTML = `<div class="container-fluid">
-      <div class="row">
-        <nav class="navbar bgcol_pri navbar-expand-sm nav-hide">
+nav.innerHTML = `
+<div class="container-fluid ">
+      <div class="row d-none d-lg-block d-md-block">
+        <nav class="navbar bgcol_pri navbar-expand-sm nav-hide ">
           <div class="container-fluid justify-content-center">
             <ul class="navbar-nav">
               <li class="nav-item">
