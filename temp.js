@@ -101,13 +101,17 @@ nav.innerHTML = `
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      Syllabus
+                    Syllabus <span class="badge bg-info">New</span></h1></a
+                    >
+
                     </a>
+                    
                     <ul class="dropdown-menu sub-menu">
                       <li class="dropend drop-down">
                         <a
                           class="dropdown-item dropdown-toggle"
                           href="/academics/syllabus.html"
+                          
                           role="button"
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
