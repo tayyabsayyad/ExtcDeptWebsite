@@ -135,7 +135,7 @@ nav.innerHTML = `
                         </a>
                         <ul class="dropdown-menu sub-menu">
                           <li>
-                            <a class="dropdown-item" href="/assets/pdf/TE_EXTC_R2019_C-Scheme_Syllabus.pdf">TEIT-CBCS</a>
+                            <a class="dropdown-item" href="/students/recognition.html">TEIT-CBCS</a>
                           </li>
                           <li>
                             <a class="dropdown-item" href="/assets/pdf/TE_EXTC_R2019_C-Scheme_Syllabus.pdf">TEIT-C Scheme</a>
@@ -334,7 +334,7 @@ nav.innerHTML = `
                     <a
                       class="dropdown-item"
                       href="/placement&internship/placement2.html"
-                      >Placement Record</a
+                      >Placement Record <span class="badge bg-info">New</span></h1></a
                     >
                   </li>
                 </ul>
