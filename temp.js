@@ -85,7 +85,7 @@ nav.innerHTML = `
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  ACADEMICS
+                  ACADEMICS <span class="badge bg-info">New</span>
                 </a>
                 <ul class="dropdown-menu">
                   <li>
@@ -158,7 +158,7 @@ nav.innerHTML = `
                         </a>
                         <ul class="dropdown-menu sub-menu">
                           <li>
-                            <a class="dropdown-item" href="/assets/pdf/BE_Syllabus_rev_for_2019.pdf">BEIT-CBCS</a>
+                            <a class="dropdown-item" href="/students/contributors.html">BEIT-CBCS</a>
                           </li>
                         </ul>
                       </li>
@@ -324,7 +324,7 @@ nav.innerHTML = `
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  PLACEMENT & INTERNSHIP
+                  PLACEMENT & INTERNSHIP <span class="badge bg-info">New</span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
