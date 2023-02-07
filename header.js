@@ -16,7 +16,7 @@ footer.innerHTML =
      <!-- Grid column -->
      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
        <!-- Content -->
-       <div class="cell-sm-6 cell-lg-3 cell-xl-4"><a rel="noopener" href="index.html"><img class="img-responsive"
+       <div class="cell-sm-6 cell-lg-3 cell-xl-4"><a rel="noopener" href="/index.html"><img class="img-responsive"
          src="/assets/dbit-logo-inverse.webp" alt="DBIT" width="250" height="80" /></a>
      <p class="offset-top-20 offset-md-top-35 inset-xl-right-30" style="color:white;padding: 1rem; text-align: left;"><b>Don Bosco Institute of Technology offers
        high-quality education to students in the field of engineering. With our help, you can master any
@@ -72,13 +72,13 @@ footer.innerHTML =
        <!-- Right -->
        <div style="padding: 2px;">
          <a  style="padding: 2px;"class="text-muted" href="https://www.facebook.com/dbitofficialfb" target="_blank"
-                  ><i class="bi bi-facebook footer-icon" ></i
+                  ><i class="bi bi-facebook footer-icon"  style="color:	#3b5998"></i
                ></a>
                <a style="padding: 2px;" class="text-muted" href="https://twitter.com/dbit_mumbai" target="_blank"
-               ><i class="bi bi-youtube footer-icon"></i
+               ><i class="bi bi-youtube footer-icon" style="color:	#FF0000"></i
              ></a>
              <a style="padding:2px" class="text-muted" href="https://www.instagram.com/dbitofficial_mumbai/" target="_blank"
-                 ><i class="bi bi-instagram footer-icon"></i
+                 ><i class="bi bi-instagram footer-icon"  style="color:#E1306C"></i
                ></a>
        </div>
      </div>
@@ -91,7 +91,7 @@ footer.innerHTML =
 <!-- Copyright -->
 <div class="text-center p-4" style="color:white" >
  © 2021 Copyright :
- <a class="" style="text-decoration: none; color: white;"> Desgined and Maintained by DBIT Website Maintainance Team</a>
+ <a class="" style="text-decoration: none; color: white;"> <a href="/students/contributors.html" style="text-decoration:none; color: white;">Desgined and Maintained by DBIT Website Maintainance Team</a></a>
 </div>
 <!-- Copyright -->
 </footer>
