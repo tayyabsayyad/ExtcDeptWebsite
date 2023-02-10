@@ -241,7 +241,7 @@ nav.innerHTML = `
                     <a class="dropdown-item" href="/assets/pdf/V3_EXTC_ClassTimeTable_AY2022-23_Odd_Semester.pdf">Time Table</a>
                   </li>
                   <li><a class="dropdown-item" href="/students/recognition2.html">Recognition</a></li>
-                  <li><a class="dropdown-item" href="/student/sports.html">CO-Corricular</a></li>
+                  <li><a class="dropdown-item" href="/student/sports.html">Sports</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown text-center">
