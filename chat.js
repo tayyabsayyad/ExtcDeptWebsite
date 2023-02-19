@@ -94,7 +94,7 @@ function sendButton() {
 }
 
 function heartButton() {
-    buttonSendText("Heart clicked!")
+    buttonSendText("Welcome To Department Of EXTC DBIT!")
 }
 
 // Press enter to send a message
