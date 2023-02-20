@@ -79,7 +79,7 @@ function getBotResponse(input) {
     let secondMessage ="Which of the following user groups do you belong to?</br> 1.) Parent</br> 2.) Student</br> 3.) Faculty </br>"
   //rock paper scissors
   if (result == "student") {
-    return `The following are frequently searched terms related to parents.</br>Please select one from the options below :</br>
+    return `The following are frequently searched terms related to students.</br>Please select one from the options below :</br>
         <button onclick="window.open('/aboutus/aboutus.html', '_blank')">About us</button>
        <button onclick="window.open('/faculty/faculty_profile.html', '_blank')">Faculty</button>
         <button onclick="window.open('/placement&internship/placement2.html', '_blank')">Placement</button>

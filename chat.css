@@ -142,6 +142,15 @@
     margin-left: 10px;
     animation: floatup .5s forwards
 }
+.botText button{
+    border-radius: 1rem;
+    margin: 0.2em;
+    color: white;
+    background-color:  #333333;
+}
+.botText button:hover{
+    transform: scale(1.1);
+}
 
 @keyframes floatup {
     from {

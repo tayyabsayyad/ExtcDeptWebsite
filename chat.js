@@ -60,7 +60,7 @@ function getResponse() {
     let userText = $("#textInput").val();
 
     if (userText == "") {
-        userText = "I love Code Palace!";
+        userText = "Welcome To Department Of EXTC DBIT!</br>";
     }
 
     let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
@@ -94,7 +94,7 @@ function sendButton() {
 }
 
 function heartButton() {
-    buttonSendText("Welcome To Department Of EXTC DBIT!")
+    buttonSendText("Welcome To Department Of EXTC DBIT!</br>")
 }
 
 // Press enter to send a message
