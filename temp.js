@@ -92,7 +92,6 @@ nav.innerHTML = `
                     <a class="dropdown-item" href="/academics/academic-calendar.html">Academic Calender</a>
                   </li>
                   <li><a class="dropdown-item" href="https://www.dbit.in/timetable.html">Exam Timetable</a></li>
-                  <li><a class="dropdown-item" href="https://www.dbit.in/timetable.html">Timetable</a></li>
                   <li><a class="dropdown-item" href="/academics/syllabus.html">Syllabus</a></li>
                     <a class="dropdown-item" href="#"
                       >Academic Advisory Board</a
