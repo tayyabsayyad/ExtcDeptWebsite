@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <!-- <link rel="stylesheet" href="main.css"> -->
+    <!-- <link rel="stylesheet" href="../style/nav.css" /> -->
+    <link rel="stylesheet" href="/style/nav.css">
+    <link rel="stylesheet" href="about.css" /> 
+    <link rel="stylesheet" href="../style/footer.css" />
+    <link rel="icon" href="/assets/logo.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="../style/main.css" /> -->
+    <title>DBIT EXTC</title>
+    <!-- <script src="../temp.js" defer></script> -->
+  </head>
+  <body class="bg-color">
+    <div id="navbar">
+      <div class="container-fluid">
+      <div class="row">
+        <nav class="navbar bgcol_pri navbar-expand-sm nav-hide">
+          <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link top-nav-text" aria-current="page" href="#">DBIT Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-nav-text" href="http://parent.dbit.in/"
+                  >Parent Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-nav-text" href="https://alumni.dbit.in/">Alumni</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-nav-text" href="https://moodle.dbit.in/">Moodle</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-nav-text" href="https://elearn.dbit.in/">E-Learn</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-nav-text" href="http://dbitlrc.dbit.in/">Library</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-nav-text" href="https://dbcldrive.dbit.in/"
+                  >DBCL Drive</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="row">
+        <img class="p-0" src="/assets/final.jpg" alt="" srcset="" />
+      </div>
+    </div>
+
+    <header class="sticky-top bgcol_pri" style="z-index: 10">
+      <nav
+        class="navbar navbar-expand-xl bg-light container-fluid justify-content-between"
+      >
+        <span class="navbar-brand mb-0 h1 ms-3">EXTC DBIT</span>
+        <button
+          class="navbar-toggler me-2"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header justify-content-end">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 offcanvas-nav">
+              <li class="nav-item text-center">
+                <a class="nav-link active" aria-current="page" href="/index.html">HOME</a>
+              </li>
+              <li class="nav-item text-center">
+                <a class="nav-link" href="/aboutus/aboutus.html">ABOUT US</a>
+              </li>
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  ACADEMICS
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="academics/academic-calendar.html">Academic Calender</a>
+                  </li>
+                  <li><a class="dropdown-item" href="/academics/exam-calendar.html">Exam Timetable</a></li>
+                  <li><a class="dropdown-item" href="/academics/timetable.html">Timetable</a></li>
+                  <li class="dropend drop-down">
+                    <a
+                      class="dropdown-item dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Syllabus
+                    </a>
+                    <ul class="dropdown-menu sub-menu">
+                      <li class="dropend drop-down">
+                        <a
+                          class="dropdown-item dropdown-toggle"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Second Year
+                        </a>
+                        <ul class="dropdown-menu sub-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">SEIT-C Scheme</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">SEIT-CBCGS</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropend drop-down">
+                        <a
+                          class="dropdown-item dropdown-toggle"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Third Year
+                        </a>
+                        <ul class="dropdown-menu sub-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">TEIT-CBCS</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">TEIT-C Scheme</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropend drop-down">
+                        <a
+                          class="dropdown-item dropdown-toggle"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Final Year
+                        </a>
+                        <ul class="dropdown-menu sub-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">BEIT-CBCS</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Academic Advisory Board</a
+                    >
+                  </li>
+                  <!-- <li><a class="dropdown-item" href="#">Faculty Profile</a></li> -->
+                </ul>
+              </li>
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  FACULTY
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#">Profile</a>
+                  </li>
+                  <li><a class="dropdown-item" href="recognition.html">Recognition</a></li>
+                  <li class="dropend drop-down">
+                    <a
+                      class="dropdown-item dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Research
+                    </a>
+                    <ul class="dropdown-menu sub-menu">
+                      <li>
+                        <a class="dropdown-item" href="">Game Of Codes</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  STUDENTS
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="">Time Table</a>
+                  </li>
+                  <li><a class="dropdown-item" href="students/recognition.html">Recognition</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  EXAMINATION
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="students/undergraduate-project.html">Undergraduate Projects</a>
+                  </li>
+                  <li class="dropend drop-down">
+                    <a
+                      class="dropdown-item dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                        Rank Holders
+                    </a>
+                    <ul class="dropdown-menu sub-menu">
+                      <li>
+                        <a class="dropdown-item" href="">Internal Assesment</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="">MU Examination</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  CO-CURRICULAR ACTIVITIES
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="">Newsletter</a></li>
+                  <li class="dropend drop-down">
+                    <a
+                      class="dropdown-item dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Events
+                    </a>
+                    <ul class="dropdown-menu sub-menu">
+                      <li>
+                        <a class="dropdown-item" href="">Game Of Codes</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="">Mumbai Hackathon</a>
+                      </li>
+                      <li><a class="dropdown-item" href="">Innovex</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="#">CSI</a></li>
+                  <li class="dropend drop-down">
+                    <a
+                      class="dropdown-item dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Student Club
+                    </a>
+                    <ul class="dropdown-menu sub-menu">
+                      <li><a class="dropdown-item" href="#">AI Club</a></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Web Development</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  PLACEMENT & INTERNSHIP
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/placement&internship/intenship.html"
+                      >Internship Record</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/placement&internship/placement.html"
+                      >Placement Record</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <!-- <ul class="main-navigation">
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">ABOUT US</a></li>
+              <li><a href="#">ACADEMICS</a>
+                <ul>
+                  <li><a href="#">Academic Calender</a></li>
+                  <li><a href="#">Exam Timetable</a></li>
+                  <li><a href="#">Timetable</a></li>
+                  <li><a href="#">Syllabus</a>
+                    <ul>
+                      <li><a href="#">Second Year</a>
+                        <ul>
+                          <li><a href="#">SEIT-C Scheme</a></li>
+                          <li><a href="#">SEIT-CBCGS</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Third Year</a>
+                        <ul>
+                          <li><a href="#">TEIT-C Scheme</a></li>
+                          <li><a href="#">TEIT-CBCGS</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">FInal Year</a>
+                        <ul>
+                          <li><a href="#">SEIT-CBCS</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Academic Advisory Board</a></li>
+                  <li><a href="#">Faculty Profile</a></li>
+                </ul>
+              </li>
+              <li><a href="#">RECOGNITION</a></li>
+              <li><a href="#">STUDENTS</a>
+                <ul>
+                  <li><a href="#">Undergraduate Projects</a></li>
+                  <li><a href="#">Recognition</a></li>
+                </ul>
+              </li>
+              <li><a href="#">CO-CURRICULAR ACTIVITIES</a>
+                <ul>
+                  <li><a href="./cocurricular/newsletter/newsletter.html">Newsletter</a></li>
+                  <li><a href="#">Events</a>
+                    <ul>
+                      <li><a href="#">Game Of Codes</a></li>
+                      <li><a href="#">Mumbai Hackathon</a></li>
+                      <li><a href="#">Innovex</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">CSI</a></li>
+                  <li><a href="#">Student Club</a>
+                    <ul>
+                      <li><a href="#">AI Club</a></li>
+                      <li><a href="#">Web Development</a></li>
+                    </ul>
+                  </li>        
+                </ul>
+              </li>
+              <li><a href="#">PLACEMENT & INTERNSHIP</a>
+                <ul>
+                  <li><a href="#">Internship Record</a></li>
+                  <li><a href="#">Placement Record</a></li>
+                </ul>
+              </li>
+            </ul> -->
+          </div>
+        </div>
+      </nav>
+    </header>
+    </div>
+    <br />
+
+    <div class="container-fluid">
+      <div class="container-fluid p-5">
+        <div class="main-head">
+          <div style="text-align: center; padding: 5px; font-family: sans-serif;" ><h1>INDUSTRIAL VISIT</h1></div>
+          <br><br>
+          <p>
+            The industrial visit was intended to provide students of Electronics and Telecommunication with required exposure to the working environment and practical knowledge. The motive was to learn and supplement the class room teaching.
+           
+         </p>
+        </div>
+
+        
+      </div>
+      <div class="col-md-9"  style="align-items: center;">
+        <table class="table table-hover table-responsive shadow-lg" style="border-collapse: collapse" border="0">
+          <tbody>
+            <tr class="table-dark">
+              <td colspan="3">
+                <p style="text-align: center"><strong>2023-2024</strong></p>
+              </td>
+            </tr>
+          <tr>
+            <td>
+              <p><strong>Sr.No</strong></p>
+            </td>
+            <td>
+              <p><strong>Industrial Visit Details</strong></p>
+            </td>
+            <td>
+                <p><strong>Date of Visit </strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>1.</strong></td>
+            <td>
+              <p><a href="/assets/pdf/IV_BSNL_2024.pdf" target="blank">BSNL Satellite earth station</a> </p>
+            </td>
+            <td>
+                <p>22nd March, 2024</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <div class="col-md-9"  style="align-items: center;">
+          <table class="table table-hover table-responsive shadow-lg" style="border-collapse: collapse" border="0">
+            <tbody>
+              <tr class="table-dark">
+                <td colspan="3">
+                  <p style="text-align: center"><strong>2022-2023</strong></p>
+                </td>
+              </tr>
+            <tr>
+              <td>
+                <p><strong>Sr.No</strong></p>
+              </td>
+              <td>
+                <p><strong>Industrial Visit Details</strong></p>
+              </td>
+              <td>
+                  <p><strong>Date of Visit </strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>1.</strong></td>
+              <td>
+                <p>MECHATRONICS AND AUTOMATION LAB, ST. JOSEPH INDUSTRIAL TRAINING INSTITUTE, DBCL CAMPUS, KURLA(W), MUMBAI</p>
+              </td>
+              <td>
+                  <p>10th October, 2022</p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>2.</strong></td>
+              <td>
+                <p><a href="ExtcDeptWebsite/assets/pdf/Ourpdf/Industrial Visit Report-2022-23.pdf" target="blank">GMRT, NARAYANGAON, PUNE</a> </p>
+              </td>
+              <td>
+                  <p>27-28th February, 2023</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+        </div>
+        <div class="col-md-9"  style="align-items: center;">
+            <table class="table table-hover table-responsive shadow-lg" style="border-collapse: collapse" border="0">
+              <tbody>
+                <tr class="table-dark">
+                  <td colspan="3">
+                    <p style="text-align: center"><strong>2019-2020</strong></p>
+                  </td>
+                </tr>
+              <tr>
+                <td>
+                  <p><strong>Sr.No</strong></p>
+                </td>
+                <td>
+                  <p><strong>Industrial Visit Details</strong></p>
+                </td>
+                <td>
+                    <p><strong>Date of Visit </strong></p>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>1.</strong></td>
+                <td>
+                  <p>RELIANCE JIO GHANSOLI, NAVI MUMBAI</p>
+                </td>
+                <td>
+                    <p>14th September, 2019</p>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>2.</strong></td>
+                <td>
+                  <p>SOCIETY FOR APPLIED MICROWAVE ELECTRONICS ENGINEERING
+                    AND RESEARCH (SAMEER), CBD Belapur, Navi Mumbai</p>
+                </td>
+                <td>
+                    <p>27th September, 2019</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        
+        <div class="row justify-content-center text-center p-1 fw-bold">
+            <p></p>
+          </div>
+          <div class="col-md-9">
+              <table class="table table-hover table-responsive shadow-lg" style="border-collapse: collapse" border="0">
+                <tbody>
+                  <tr class="table-dark">
+                    <td colspan="3">
+                      <p style="text-align: center"><strong>2018-2019</strong></p>
+                    </td>
+                  </tr>
+                <tr>
+                  <td>
+                    <p><strong>Sr.No</strong></p>
+                  </td>
+                  <td>
+                    <p><strong>Industrial Visit Details</strong></p>
+                  </td>
+                  <td>
+                      <p><strong>Date of Visit </strong></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>1.</strong></td>
+                  <td>
+                    <p>Satellite Earth Station, Yeur </p>
+                  </td>
+                  <td>
+                      <p>08th April, 2019</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>2.</strong></td>
+                  <td>
+                    <p>BARC- National Science day(NSD-2019)</p>
+                  </td>
+                  <td>
+                      <p>01th March, 2019</p>
+                  </td>
+                </tr>
+
+                <tr>
+                    <td><strong>3.</strong></td>
+                    <td>
+                      <p>Mahindra Automobile plant, Chakan</p>
+                    </td>
+                    <td>
+                        <p>23rd February, 2019</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>4.</strong></td>
+                    <td>
+                      <p>Directorate of Forensic Science Laboratory,
+                        Santacruz East, Mumbai</p>
+                    </td>
+                    <td>
+                        <p>06th February, 2019</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>5.</strong></td>
+                    <td>
+                      <p>Society for Applied Microwave Electronics
+                        Engineering & Research (SAMEER) Kharghar, Navi Mumbai.</p>
+                    </td>
+                    <td>
+                        <p>28th September, 2018</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>6.</strong></td>
+                    <td>
+                      <p>Centre for Excellence in Telecom Technology and Management (CETTM) Mumbai.</p>
+                    </td>
+                    <td>
+                        <p>01th September, 2018</p>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div class="row justify-content-center text-center p-1 fw-bold">
+            <p></p>
+          </div>
+          <div class="col-md-9">
+              <table class="table table-hover table-responsive shadow-lg" style="border-collapse: collapse" border="0">
+                <tbody>
+                  <tr class="table-dark">
+                    <td colspan="3">
+                      <p style="text-align: center"><strong>2016-2017</strong></p>
+                    </td>
+                  </tr>
+                <tr>
+                  <td>
+                    <p><strong>Sr.No</strong></p>
+                  </td>
+                  <td>
+                    <p><strong>Industrial Visit Details</strong></p>
+                  </td>
+                  <td>
+                      <p><strong>Date of Visit </strong></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>1.</strong></td>
+                  <td>
+                    <p>Industrial Visit to Imaginarium  </p>
+                  </td>
+                  <td>
+                      <p>24th March, 2017</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>2.</strong></td>
+                  <td>
+                    <p>Industrial visit to Satellite Earth Station at Yeur,Thane under Department of Telecommunication, BSNL</p>
+                  </td>
+                  <td>
+                      <p>20th March, 2017</p>
+                  </td>
+                </tr>
+
+                <tr>
+                    <td><strong>3.</strong></td>
+                    <td>
+                      <p>Industial visit to Giant MeterWave Radio Telescope (GMRT),Narayangaon</p>
+                    </td>
+                    <td>
+                        <p>28th February, 2017</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>4.</strong></td>
+                    <td>
+                      <p>Industial visit to CETTM, Powai</p>
+                    </td>
+                    <td>
+                        <p>29th September, 2016</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>5.</strong></td>
+                    <td>
+                      <p>	
+                        Industial visit to SAMEER, Kharghar </p>
+                    </td>
+                    <td>
+                        <p>	
+                            07th September, 2016</p>
+                    </td>
+                  
+              </tbody>
+            </table>
+          </div>
+
+
+
+          </div>
+          
+          <div style="padding: 2rem;"></div>
+
+          <div id = "footer">
+
+          </div>
+        </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="nav.js"></script>
+    <script src ="/temp.js"></script>
+    <script src="/header.js"></script>
+  </body>
+</html>
