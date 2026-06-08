@@ -111,6 +111,230 @@
                 <div class="col recognition-box">
   <h3 class="recognition-heading">Students Recognition 2024-2025</h3>
   <br>
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Achievement Card</title>
+
+<style>
+body{
+    background:#f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding:30px;
+}
+
+/* Main Card */
+.achievement-card{
+    position:relative;
+    max-width:950px;
+    margin:auto;
+    padding:20px 30px;
+    border-radius:24px;
+
+    background: linear-gradient(
+        135deg,
+        #163b78 0%,
+        #06295e 50%,
+        #011b46 100%
+    );
+
+    color:white;
+    text-align:center;
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Gold Top Border */
+.achievement-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:#d4af37;
+}
+
+/* Decorative Circles */
+.achievement-card::after{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:200px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.03);
+    right:-120px;
+    top:-120px;
+}
+
+/* Student Image */
+.student-image{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    object-fit:cover;
+
+    border:3px solid #f5d17b;
+
+    box-shadow:
+        10px 10px 10px rgba(0,0,0,0.25);
+
+    margin-bottom:5px;
+}
+
+/* Heading */
+.heading{
+    font-size:25px;
+    font-weight:600;
+    margin-bottom:10px;
+    color:#ffffff;
+}
+
+.heading span{
+    color:#f5c75d;
+}
+
+/* Badge */
+.package-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+
+    padding:10px 20px;
+    border-radius:50px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:2px solid rgba(245,199,93,0.5);
+
+    backdrop-filter:blur(15px);
+
+    margin-bottom:25px;
+}
+
+.package-badge .title{
+    font-size:18px;
+    font-weight:500;
+}
+
+.package-badge .amount{
+    background:#f5c75d;
+    color:#0d2c5f;
+
+    padding:10px 22px;
+    border-radius:12px;
+
+    font-size:20px;
+    font-weight:600;
+}
+
+/* Description */
+.description{
+    max-width:900px;
+    margin:auto;
+
+    font-size:18px;
+    line-height:1.05;
+
+    color:#f2f2f2;
+}
+
+.description strong{
+    color:#f5c75d;
+}
+
+/* Footer */
+.footer-text{
+    margin-top:20px;
+    font-size:15px;
+    font-style:italic;
+    color:#dcdcdc;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .achievement-card{
+        padding:25px;
+    }
+
+    .heading{
+        font-size:25px;
+    }
+
+    .package-badge{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .description{
+        font-size:15px;
+    }
+
+    .student-image{
+        width:20px;
+        height:100px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="achievement-card">
+
+    <img
+        src="../assets/students/nisha_singh.jpeg"
+        alt="Nisha Singh"
+        class="student-image"
+    >
+
+    <h1 class="heading">
+        GOOD NEWS FOR <span>EXTC DEPARTMENT!</span>
+    </h1>
+
+    <div class="package-badge">
+        <div class="title">
+            🏆 HIGHEST PACKAGE
+        </div>
+
+        <div class="amount">
+            ₹8.8 LPA
+        </div>
+    </div>
+
+    <div class="description">
+
+        Congratulations to our BE student
+        <strong>Ms. Nisha Singh</strong>
+        on her selection as a
+        <strong>Robotics and Design Assistant</strong>
+        at the
+        <strong>American School of Bombay, BKC</strong>.
+
+        <br><br>
+
+        Her achievement of securing a
+        <strong>CTC of ₹8.8 LPA</strong>
+        marks the
+        <strong>highest package in the EXTC Department.</strong>
+
+    </div>
+
+    <div class="footer-text">
+        We wish her continued success and excellence in her professional journey!
+    </div>
+
+</div>
+
+</body>
+</html>
+  
   <ul class="recognition-list">
                   <br>
                   <ul>
