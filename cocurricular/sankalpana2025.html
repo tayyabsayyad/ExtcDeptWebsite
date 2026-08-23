@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
+  <link rel="stylesheet" href="/style/nav.css" />
+  <link rel="stylesheet" href="/chat.css" />
+  <link rel="stylesheet" href="/home.css" />
+  <link rel="icon" href="/assets/logo.ico" type="image/x-icon" />
+  <title>Sankalpana 2025 - EXTC Project Competition | DBIT</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JDMRE8FDJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4JDMRE8FDJ');
+  </script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .event-hero-banner {
+      background: linear-gradient(135deg, #0b2545 0%, #133c55 50%, #1d4e89 100%);
+      color: #ffffff;
+      padding: 50px 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(11, 37, 69, 0.15);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+
+    .event-hero-banner::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+    }
+
+    .event-tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.6);
+      color: #fbbf24;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .about-box-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      border-left: 6px solid #1d4e89;
+      margin-bottom: 40px;
+    }
+
+    .about-box-card h3 {
+      color: #0b2545;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-box-card p {
+      font-size: 1.12rem;
+      line-height: 1.8;
+      color: #334155;
+      margin-bottom: 0;
+      text-align: justify;
+    }
+
+    .domain-badge {
+      background: #f1f5f9;
+      color: #0b2545;
+      border: 1px solid #cbd5e1;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .domain-badge:hover {
+      background: #0b2545;
+      color: #ffffff;
+      border-color: #0b2545;
+    }
+
+    .gallery-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(11, 37, 69, 0.15);
+    }
+
+    .gallery-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+      background: #0f172a;
+      cursor: pointer;
+    }
+
+    .gallery-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-card:hover .gallery-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay-btn {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 37, 69, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-card:hover .gallery-overlay-btn {
+      opacity: 1;
+    }
+
+    .gallery-card-body {
+      padding: 18px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .gallery-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .gallery-card-desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 0;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      text-align: center;
+      height: 100%;
+    }
+
+    .feature-icon-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #e0f2fe;
+      color: #0284c7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header / Navbar injected via temp.js -->
+  <div id="navbar"></div>
+
+  <main class="container py-4">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/index.html" class="text-decoration-none text-muted"><i class="bi bi-house-door"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="/cocurricular/events.html" class="text-decoration-none text-muted">Co-Curricular Activities</a></li>
+        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Sankalpana 2025</li>
+      </ol>
+    </nav>
+
+    <!-- Hero Header -->
+    <div class="event-hero-banner">
+      <div class="event-tag-badge">
+        <i class="bi bi-cpu-fill"></i> Flagship EXTC Project Competition
+      </div>
+      <h1 class="display-5 fw-bold mb-2">Sankalpana 2025</h1>
+      <h4 class="fw-normal mb-2 text-warning" style="letter-spacing: 0.5px;">
+        EXTC Project Competition &nbsp;|&nbsp; Department of Electronics & Telecommunication Engineering
+      </h4>
+      <p class="h6 fw-normal mb-0 text-white-50">
+        Don Bosco Institute of Technology, Mumbai
+      </p>
+    </div>
+
+    <!-- About Sankalpana Box -->
+    <div class="about-box-card">
+      <h3>
+        <i class="bi bi-info-circle-fill text-primary"></i> About Sankalpana
+      </h3>
+      <p>
+        Sankalpana is the flagship project competition of the EXTC Department at DBIT, where students showcase their innovative projects and technical achievements. The event provides a platform for students across all years to demonstrate their skills, present working models, and compete for recognition in a wide range of domains including embedded systems, IoT, communication, signal processing, and more.
+      </p>
+    </div>
+
+    <!-- Key Domains Covered -->
+    <div class="card border-0 bg-white shadow-sm p-4 rounded-4 mb-4">
+      <h4 class="fw-bold text-dark mb-3">
+        <i class="bi bi-grid-fill text-primary me-2"></i>Key Project Domains & Tracks
+      </h4>
+      <div class="d-flex flex-wrap gap-2">
+        <span class="domain-badge"><i class="bi bi-cpu text-primary"></i> Embedded Systems</span>
+        <span class="domain-badge"><i class="bi bi-router text-success"></i> Internet of Things (IoT)</span>
+        <span class="domain-badge"><i class="bi bi-broadcast-pin text-danger"></i> Wireless & RF Communication</span>
+        <span class="domain-badge"><i class="bi bi-soundwave text-warning"></i> Signal & Image Processing</span>
+        <span class="domain-badge"><i class="bi bi-robot text-info"></i> Robotics & Automation</span>
+        <span class="domain-badge"><i class="bi bi-motherboard text-secondary"></i> VLSI & Hardware Design</span>
+      </div>
+    </div>
+
+    <!-- Event Gallery Section -->
+    <div class="my-5">
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <div>
+          <h2 class="fw-bold text-dark mb-1">
+            <i class="bi bi-images text-primary me-2"></i>Event Gallery
+          </h2>
+          <p class="text-muted mb-0">Moments of technical demonstrations, project presentations, and evaluation during Sankalpana 2025.</p>
+        </div>
+        <span class="badge bg-light text-dark border px-3 py-2">
+          <i class="bi bi-camera me-1"></i> Live Project Demonstrations
+        </span>
+      </div>
+
+      <div class="row g-4">
+        <!-- Gallery Photo 1 -->
+        <div class="col-md-4">
+          <div class="gallery-card">
+            <div class="gallery-img-wrapper" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_img1.jpg', 'Software & Hardware System Demonstration', 'Students demonstrating their real-time computing setup and project interface to faculty members.')">
+              <img src="/assets/events/sankalpana2025/sankalpana_img1.jpg" alt="Sankalpana 2025 Presentation 1" />
+              <div class="gallery-overlay-btn">
+                <i class="bi bi-arrows-fullscreen fs-3 mb-1"></i>
+                <span class="fw-bold small">Click to View Full Size</span>
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <h5 class="gallery-card-title">System & Interface Demo</h5>
+              <p class="gallery-card-desc">Students demonstrating project software architecture and data telemetry on laptop to examining faculty.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Photo 2 -->
+        <div class="col-md-4">
+          <div class="gallery-card">
+            <div class="gallery-img-wrapper" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_img2.jpg', 'Lab Evaluation & Project Viva', 'Faculty examining project documentation and reviewing technical methodologies.')">
+              <img src="/assets/events/sankalpana2025/sankalpana_img2.jpg" alt="Sankalpana 2025 Presentation 2" />
+              <div class="gallery-overlay-btn">
+                <i class="bi bi-arrows-fullscreen fs-3 mb-1"></i>
+                <span class="fw-bold small">Click to View Full Size</span>
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <h5 class="gallery-card-title">Technical Viva & Review</h5>
+              <p class="gallery-card-desc">Project team explaining project reports, circuit schematics, and design methodology to evaluating professors.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Photo 3 -->
+        <div class="col-md-4">
+          <div class="gallery-card">
+            <div class="gallery-img-wrapper" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_img3.jpg', 'Working Hardware Model Testing', 'Live prototype hardware testing and demonstration of working model.')">
+              <img src="/assets/events/sankalpana2025/sankalpana_img3.jpg" alt="Sankalpana 2025 Presentation 3" />
+              <div class="gallery-overlay-btn">
+                <i class="bi bi-arrows-fullscreen fs-3 mb-1"></i>
+                <span class="fw-bold small">Click to View Full Size</span>
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <h5 class="gallery-card-title">Hardware Prototype Demo</h5>
+              <p class="gallery-card-desc">Live demonstration of physical sensor-integrated prototype enclosure and hardware circuit operation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Highlights Grid -->
+    <div class="row g-3 mt-3">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon-circle"><i class="bi bi-lightbulb-fill"></i></div>
+          <h5 class="fw-bold text-dark">Innovation & Design</h5>
+          <p class="text-muted small mb-0">Platform encouraging students to ideate, prototype, and build practical engineering solutions for modern challenges.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon-circle"><i class="bi bi-gear-wide-connected"></i></div>
+          <h5 class="fw-bold text-dark">Working Models</h5>
+          <p class="text-muted small mb-0">Hands-on experience demonstrating end-to-end working hardware models and software integrations.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon-circle"><i class="bi bi-award-fill"></i></div>
+          <h5 class="fw-bold text-dark">Recognition & Growth</h5>
+          <p class="text-muted small mb-0">Expert evaluation and constructive feedback from experienced faculty and industry experts.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox Modal for Gallery Images -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-dark text-white">
+          <div>
+            <h5 class="modal-title mb-0" id="galleryModalLabel">Sankalpana 2025 Gallery</h5>
+            <small class="text-white-50" id="galleryModalSub"></small>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center p-2 bg-black">
+          <img id="galleryModalImg" src="" alt="Sankalpana 2025 Photo" class="img-fluid rounded" style="max-height: 80vh; object-fit: contain;" />
+        </div>
+        <div class="modal-footer justify-content-between bg-light">
+          <span class="text-muted small">Sankalpana 2025 • Department of EXTC, DBIT</span>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer injected via header.js -->
+  <div id="footer"></div>
+
+  <!-- Bootstrap and Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="/nav.js"></script>
+  <script src="/temp.js"></script>
+  <script src="/header.js"></script>
+
+  <script>
+    function openGalleryModal(imgSrc, title, subtitle) {
+      const modalImg = document.getElementById('galleryModalImg');
+      const modalTitle = document.getElementById('galleryModalLabel');
+      const modalSub = document.getElementById('galleryModalSub');
+
+      if (modalImg && modalTitle) {
+        modalImg.src = imgSrc;
+        modalTitle.innerText = title;
+        modalSub.innerText = subtitle || '';
+
+        const modalInstance = new bootstrap.Modal(document.getElementById('galleryModal'));
+        modalInstance.show();
+      }
+    }
+  </script>
+</body>
+
+</html>
