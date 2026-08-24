@@ -213,6 +213,135 @@
       font-size: 1.4rem;
       margin-bottom: 12px;
     }
+
+    .winner-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 25px;
+    }
+
+    .winner-badge-gold {
+      background: linear-gradient(135deg, #ffd700, #f59e0b);
+      color: #78350f;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
+    }
+
+    .winner-badge-silver {
+      background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+      color: #1e293b;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(148, 163, 184, 0.25);
+    }
+
+    .winner-badge-bronze {
+      background: linear-gradient(135deg, #fed7aa, #ea580c);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+    }
+
+    .winner-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+    }
+
+    .winner-table thead {
+      background-color: #0b2545;
+      color: #ffffff;
+    }
+
+    .winner-table th {
+      padding: 14px 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      border: none;
+    }
+
+    .winner-table td {
+      padding: 16px;
+      border-top: 1px solid #f1f5f9;
+      vertical-align: middle;
+    }
+
+    .winner-table tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    .student-tag {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #334155;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      margin: 2px 4px 2px 0;
+      font-weight: 500;
+      border: 1px solid #e2e8f0;
+    }
+
+    .winner-poster-preview {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .winner-poster-preview:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(11, 37, 69, 0.15);
+    }
+
+    .winner-poster-preview img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .nav-pills .nav-link {
+      color: #0b2545;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+      margin-right: 8px;
+      transition: all 0.2s ease;
+      background: #ffffff;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: #0b2545;
+      color: #ffffff;
+      border-color: #0b2545;
+    }
   </style>
 </head>
 
@@ -266,6 +395,187 @@
         <span class="domain-badge"><i class="bi bi-soundwave text-warning"></i> Signal & Image Processing</span>
         <span class="domain-badge"><i class="bi bi-robot text-info"></i> Robotics & Automation</span>
         <span class="domain-badge"><i class="bi bi-motherboard text-secondary"></i> VLSI & Hardware Design</span>
+      </div>
+    </div>
+
+    <!-- Competition Winners Section -->
+    <div class="my-5" id="winners">
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <div>
+          <h2 class="fw-bold text-dark mb-1">
+            <i class="bi bi-trophy-fill text-warning me-2"></i>Sankalpana 2025 Winners
+          </h2>
+          <p class="text-muted mb-0">Congratulations to the winning project teams of SE and TE (Held on 5<sup>th</sup> April 2025).</p>
+        </div>
+        <div>
+          <ul class="nav nav-pills" id="winnerTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="se-tab" data-bs-toggle="pill" data-bs-target="#se-winners" type="button" role="tab" aria-controls="se-winners" aria-selected="true">
+                <i class="bi bi-mortarboard-fill me-1"></i> SE Winners
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="te-tab" data-bs-toggle="pill" data-bs-target="#te-winners" type="button" role="tab" aria-controls="te-winners" aria-selected="false">
+                <i class="bi bi-mortarboard-fill me-1"></i> TE Winners
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-content" id="winnerTabsContent">
+        <!-- SE Winners Pane -->
+        <div class="tab-pane fade show active" id="se-winners" role="tabpanel" aria-labelledby="se-tab">
+          <div class="winner-card">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+              <h4 class="fw-bold text-dark mb-0">
+                <i class="bi bi-award-fill text-primary me-2"></i>Second Year (SE) Project Winners
+                <span class="badge bg-light text-muted border ms-2 fs-6 fw-normal">5<sup>th</sup> April 2025</span>
+              </h4>
+              <button class="btn btn-sm btn-outline-primary rounded-pill px-3" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_se_winner.jpg', 'Sankalpana 2025 SE Winners', 'Official Announcement - 5th April 2025')">
+                <i class="bi bi-image me-1"></i> View Official Poster
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="winner-table">
+                <thead>
+                  <tr>
+                    <th style="width: 14%;">Rank</th>
+                    <th style="width: 14%;">Group No.</th>
+                    <th style="width: 36%;">Project Title</th>
+                    <th style="width: 36%;">Name Of Students</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="winner-badge-gold"><i class="bi bi-trophy-fill"></i> 1<sup>st</sup></span></td>
+                    <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 1</span></td>
+                    <td>
+                      <h6 class="fw-bold text-dark mb-0">Pollution Monitoring System</h6>
+                    </td>
+                    <td>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Yashvi Jain</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Saha Anu</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Dhruv Tarev</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Vipaak Gaikwad</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2" class="align-middle bg-light bg-opacity-50">
+                      <span class="winner-badge-silver"><i class="bi bi-award-fill"></i> 2<sup>nd</sup></span>
+                      <div class="small text-muted mt-1 fw-bold">Joint 2<sup>nd</sup></div>
+                    </td>
+                    <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 6</span></td>
+                    <td>
+                      <h6 class="fw-bold text-dark mb-0">Bad Posture Detection and Alerting System</h6>
+                    </td>
+                    <td>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aayush Jangam</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Sumit Botle</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Atharva Badhe</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Gavin Lobo</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 11</span></td>
+                    <td>
+                      <h6 class="fw-bold text-dark mb-0">Robotic Vacuum Cleaner</h6>
+                    </td>
+                    <td>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Atif Siddiuqe</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Shravan Philse</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Vinayak Yadav</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Harsh Rai</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="winner-badge-bronze"><i class="bi bi-award-fill"></i> 3<sup>rd</sup></span></td>
+                    <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 12</span></td>
+                    <td>
+                      <h6 class="fw-bold text-dark mb-0">WiFi Controlled Cart</h6>
+                    </td>
+                    <td>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Mrunmai Patekar</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aryan Puranik</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Kripa Dewoolkar</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Saeesh Gidh</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TE Winners Pane -->
+        <div class="tab-pane fade" id="te-winners" role="tabpanel" aria-labelledby="te-tab">
+          <div class="winner-card">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+              <h4 class="fw-bold text-dark mb-0">
+                <i class="bi bi-award-fill text-primary me-2"></i>Third Year (TE) Project Winners
+                <span class="badge bg-light text-muted border ms-2 fs-6 fw-normal">5<sup>th</sup> April 2025</span>
+              </h4>
+              <button class="btn btn-sm btn-outline-primary rounded-pill px-3" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_te_winner.jpg', 'Sankalpana 2025 TE Winners', 'Official Announcement - 5th April 2025')">
+                <i class="bi bi-image me-1"></i> View Official Poster
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="winner-table">
+                <thead>
+                  <tr>
+                    <th style="width: 14%;">Rank</th>
+                    <th style="width: 14%;">Group No.</th>
+                    <th style="width: 36%;">Project Title</th>
+                    <th style="width: 36%;">Name Of Students</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="winner-badge-gold"><i class="bi bi-trophy-fill"></i> 1<sup>st</sup></span></td>
+                    <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 11</span></td>
+                    <td>
+                      <h6 class="fw-bold text-dark mb-0">Digital Clock</h6>
+                    </td>
+                    <td>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Samruddhi Kapdnis</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Harsh Dusane</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aditya Shetty</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Ruchi Tiwari</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="winner-badge-silver"><i class="bi bi-award-fill"></i> 2<sup>nd</sup></span></td>
+                    <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 5</span></td>
+                    <td>
+                      <h6 class="fw-bold text-dark mb-0">SPI Protocol</h6>
+                    </td>
+                    <td>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Zubia Sarang</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Kartik Dandelia</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aditya Punekar</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Tanmayee Ahire</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="winner-badge-bronze"><i class="bi bi-award-fill"></i> 3<sup>rd</sup></span></td>
+                    <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 4</span></td>
+                    <td>
+                      <h6 class="fw-bold text-dark mb-0">Voting Machine</h6>
+                    </td>
+                    <td>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aftab Shaikh</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Arpita Pawar</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Samruddhi Patil</span>
+                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Roystan Poobalarayan</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
