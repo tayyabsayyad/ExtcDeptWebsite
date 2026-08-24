@@ -1,165 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="/style/main.css" />
-    <link rel="stylesheet" href="/style/footer.css" />
-    <link rel="stylesheet" href="/style/nav.css" />
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>
-      EXAM CALENDAR
-      </title>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="/style/nav.css" />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
+  <link rel="icon" href="/assets/logo.ico" type="image/x-icon" />
+  <title>Exam Timetable - EXTC | DBIT</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JDMRE8FDJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4JDMRE8FDJ');
+  </script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .header-section {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: url('/assets/collegepic.webp') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .discover-box {
+      background-color: white;
+      padding: 12px 28px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #b8860b;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .academic-calendar-header {
+      text-align: center;
+      padding: 15px 0 25px 0;
+    }
+
+    .academic-calendar-header h2 {
+      color: #003366;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .exam-tt-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 30px;
+    }
+
+    .exam-tt-header {
+      background: linear-gradient(135deg, #003366 0%, #0b4f8c 100%);
+      color: #ffffff;
+      padding: 18px 24px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .academic-calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .academic-calendar-table thead {
+      background-color: #003366;
+      color: white;
+    }
+
+    .academic-calendar-table th,
+    .academic-calendar-table td {
+      padding: 12px 16px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .academic-calendar-table tbody tr:hover {
+      background-color: #f0f7ff;
+    }
+
+    .academic-calendar-table a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: 600;
+    }
+
+    .academic-calendar-table a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-pills .nav-link {
+      color: #003366;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      background: #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: #003366;
+      color: #ffffff;
+      border-color: #003366;
+      box-shadow: 0 4px 10px rgba(0, 51, 102, 0.25);
+    }
+
+    .signatory-box {
+      background-color: #f8fafc;
+      border-top: 2px dashed #cbd5e1;
+      padding: 20px;
+      border-radius: 0 0 10px 10px;
+      margin-top: 15px;
+    }
+
+    .signatory-item {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .signatory-name {
+      font-weight: 700;
+      color: #003366;
+      margin-bottom: 2px;
+    }
+
+    .signatory-title {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+
 <body class="bg-color">
-        <div id="navbar"></div>
-  <main class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-md-8 p-0 justify-content-center">
-        <div class="row border rounded my-3 mx-4 py-3 bg-light">
-            <table class="table ">
-                <thead>
-                      <tr>
-                    <th class="text-center" colspan="3">
-                        Academic Year 2020-21 (Odd Sem)
-                    </th>
-                  </tr>
-                  <tr>
-                    <th>Sr No.</th>
-                    <th>Title</th>
-                    <th>Details</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td scope="row">1</td>
-                    <td>IA 1</td>
-                    <td><a href="/assets/pdf/IA-1_TT_ODD_Sem_2022-2023.pdf" target="_blank">link</a></td>
-                  </tr>
-                  <tr>
-                    <td scope="row">2</td>
-                    <td>IA 2</td>
-                    <td><a href="/assets/pdf/IA2_Schedule__Syllabus_April_2022.pdf" target="_blank">link</a></td>
-                  </tr>
-                  <tr>
-                    <td scope="row">3</td>
-                    <td>End Sem</td>
-                    <td>link</td>
-                  </tr>
-                </tbody>
-              
-              </table>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <main class="container my-4">
+    <!-- Header Banner -->
+    <div class="header-section">
+      <div class="discover-box">
+        Discover EXTC
+        <br />
+        Academics
+      </div>
+    </div>
+
+    <!-- Page Title -->
+    <div class="academic-calendar-header">
+      <h2>EXAMINATION TIME TABLE</h2>
+      <p class="text-muted mb-0">Department of Electronics &amp; Telecommunication Engineering | AY (2026-2027) ODD SEMESTER</p>
+    </div>
+
+    <!-- Navigation Pills for Classes -->
+    <div class="d-flex justify-content-center mb-4">
+      <ul class="nav nav-pills flex-wrap justify-content-center" id="examTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="se-tab" data-bs-toggle="pill" data-bs-target="#se-exam" type="button" role="tab" aria-controls="se-exam" aria-selected="true">
+            <i class="bi bi-calendar-event me-1"></i> SE Semester III (MSE)
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="te-tab" data-bs-toggle="pill" data-bs-target="#te-exam" type="button" role="tab" aria-controls="te-exam" aria-selected="false">
+            <i class="bi bi-calendar-event me-1"></i> TE Semester V (MSE)
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="be-tab" data-bs-toggle="pill" data-bs-target="#be-exam" type="button" role="tab" aria-controls="be-exam" aria-selected="false">
+            <i class="bi bi-calendar-event me-1"></i> BE Semester VII (IA-1)
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="summary-tab" data-bs-toggle="pill" data-bs-target="#summary-exam" type="button" role="tab" aria-controls="summary-exam" aria-selected="false">
+            <i class="bi bi-archive me-1"></i> All Downloads &amp; Archives
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="examTabsContent">
+      <!-- ================= SE SEMESTER III TAB ================= -->
+      <div class="tab-pane fade show active" id="se-exam" role="tabpanel" aria-labelledby="se-tab">
+        <div class="exam-tt-card">
+          <div class="exam-tt-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div>
+              <h4 class="fw-bold mb-1"><i class="bi bi-journal-text me-2"></i>Time Table for Mid Semester Examination</h4>
+              <p class="mb-0 text-white-50">AY (2026-2027), ODD SEMESTER &bull; <strong>SE SEMESTER III</strong></p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-warning text-dark px-3 py-2 fw-bold">Date: 24/08/2026</span>
+              <a href="/assets/pdf/EXTC_SE_MSE_TimeTable_AY2026-27_ODD.pdf" target="_blank" class="btn btn-light btn-sm fw-bold">
+                <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Download PDF
+              </a>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="academic-calendar-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">Day &amp; Date</th>
+                  <th style="width: 25%;">Time</th>
+                  <th style="width: 20%;">Course Code</th>
+                  <th style="width: 30%; text-align: left;">Course Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Monday, 31 August 2026</strong></td>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25ET3PCC03</span></td>
+                  <td style="text-align: left; font-weight: 600;">Digital System Design Using Verilog</td>
+                </tr>
+                <tr>
+                  <td><strong>Tuesday, 01 September 2026</strong></td>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25ET3PCC04</span></td>
+                  <td style="text-align: left; font-weight: 600;">Linear Integrated Circuits</td>
+                </tr>
+                <tr>
+                  <td><strong>Wednesday, 02 September 2026</strong></td>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25ET3PCC02</span></td>
+                  <td style="text-align: left; font-weight: 600;">Analog and Digital Communication</td>
+                </tr>
+                <tr>
+                  <td><strong>Thursday, 03 September 2026</strong></td>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25ET3PCC01</span></td>
+                  <td style="text-align: left; font-weight: 600;">Mathematics for Signal Processing</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Signatories Footer -->
+          <div class="signatory-box">
+            <div class="row text-center gy-3">
+              <div class="col-md-4 signatory-item">
+                <div class="signatory-name">Dr. Revathy Sundararajan</div>
+                <div class="signatory-title">Controller of Examinations</div>
+              </div>
+              <div class="col-md-4 signatory-item">
+                <div class="signatory-name">Dr. Madhavi S. Pednekar</div>
+                <div class="signatory-title">Head of Department</div>
+              </div>
+              <div class="col-md-4 signatory-item">
+                <div class="signatory-name">Dr. Sudhakar Mande</div>
+                <div class="signatory-title">Principal</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TE SEMESTER V TAB ================= -->
+      <div class="tab-pane fade" id="te-exam" role="tabpanel" aria-labelledby="te-tab">
+        <div class="exam-tt-card">
+          <div class="exam-tt-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div>
+              <h4 class="fw-bold mb-1"><i class="bi bi-journal-text me-2"></i>Time Table for Mid Semester Examination</h4>
+              <p class="mb-0 text-white-50">AY (2026-2027), ODD SEMESTER &bull; <strong>TE SEMESTER V</strong></p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-warning text-dark px-3 py-2 fw-bold">Date: 24/08/2026</span>
+              <a href="/assets/pdf/EXTC_TE_MSE_TimeTable_AY2026-27_ODD.pdf" target="_blank" class="btn btn-light btn-sm fw-bold">
+                <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Download PDF
+              </a>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="academic-calendar-table">
+              <thead>
+                <tr>
+                  <th style="width: 24%;">Day &amp; Date</th>
+                  <th style="width: 22%;">Time</th>
+                  <th style="width: 24%;">Course Code</th>
+                  <th style="width: 30%; text-align: left;">Course Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2"><strong>Monday, 31 August 2026</strong></td>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25IT5MDM01</span></td>
+                  <td style="text-align: left; font-weight: 600;">MDM - Database Management Systems</td>
+                </tr>
+                <tr>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25ME5MDM01</span></td>
+                  <td style="text-align: left; font-weight: 600;">MDM - Quality Engineering</td>
+                </tr>
+                <tr>
+                  <td><strong>Tuesday, 01 September 2026</strong></td>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25ET5PCC01</span></td>
+                  <td style="text-align: left; font-weight: 600;">Data Communication and Networking</td>
+                </tr>
+                <tr>
+                  <td rowspan="2"><strong>Wednesday, 02 September 2026</strong></td>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25ET5PEC01</span></td>
+                  <td style="text-align: left; font-weight: 600;">Cryptography and Network Security</td>
+                </tr>
+                <tr>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25ET5PEC03</span></td>
+                  <td style="text-align: left; font-weight: 600;">RTL Design and Functional Verification</td>
+                </tr>
+                <tr>
+                  <td><strong>Thursday, 03 September 2026</strong></td>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-light text-dark border">25ET5PCC02</span></td>
+                  <td style="text-align: left; font-weight: 600;">Communication Data Analytics</td>
+                </tr>
+                <tr>
+                  <td rowspan="3"><strong>Friday, 04 September 2026</strong></td>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-secondary">Honors &amp; Minor</span></td>
+                  <td style="text-align: left; font-weight: 600;">Mathematics Foundation for Machine Learning</td>
+                </tr>
+                <tr>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-secondary">Honors &amp; Minor</span></td>
+                  <td style="text-align: left; font-weight: 600;">Ethical Hacking</td>
+                </tr>
+                <tr>
+                  <td>10:00 am - 11:30 am</td>
+                  <td><span class="badge bg-secondary">Honors &amp; Minor</span></td>
+                  <td style="text-align: left; font-weight: 600;">Energy Scenario and Management</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Signatories Footer -->
+          <div class="signatory-box">
+            <div class="row text-center gy-3">
+              <div class="col-md-4 signatory-item">
+                <div class="signatory-name">Dr. Revathy Sundararajan</div>
+                <div class="signatory-title">Controller of Examinations</div>
+              </div>
+              <div class="col-md-4 signatory-item">
+                <div class="signatory-name">Dr. Madhavi S. Pednekar</div>
+                <div class="signatory-title">Head of Department</div>
+              </div>
+              <div class="col-md-4 signatory-item">
+                <div class="signatory-name">Dr. Sudhakar Mande</div>
+                <div class="signatory-title">Principal</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= BE SEMESTER VII TAB ================= -->
+      <div class="tab-pane fade" id="be-exam" role="tabpanel" aria-labelledby="be-tab">
+        <div class="exam-tt-card">
+          <div class="exam-tt-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div>
+              <h4 class="fw-bold mb-1"><i class="bi bi-journal-text me-2"></i>Time Table for Internal Assessment – I (IA1)</h4>
+              <p class="mb-0 text-white-50">AY (2026-2027) - ODD Semester &bull; <strong>BE SEMESTER VII</strong></p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-warning text-dark px-3 py-2 fw-bold">Date: 24/08/2026</span>
+              <a href="/assets/pdf/EXTC_BE_IA1_TimeTable_AY2026-27_ODD.pdf" target="_blank" class="btn btn-light btn-sm fw-bold">
+                <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Download PDF
+              </a>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="academic-calendar-table">
+              <thead>
+                <tr>
+                  <th style="width: 24%;">Day &amp; Date</th>
+                  <th style="width: 22%;">Time</th>
+                  <th style="width: 20%;">Course Code</th>
+                  <th style="width: 34%; text-align: left;">Course Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="3"><strong>Monday, 31 August 2026</strong></td>
+                  <td>12:30 pm - 01:30 pm</td>
+                  <td><span class="badge bg-light text-dark border">ILO 7013</span></td>
+                  <td style="text-align: left; font-weight: 600;">Management Information System</td>
+                </tr>
+                <tr>
+                  <td>12:30 pm - 01:30 pm</td>
+                  <td><span class="badge bg-light text-dark border">ILO 7016</span></td>
+                  <td style="text-align: left; font-weight: 600;">Cyber Security and Laws</td>
+                </tr>
+                <tr>
+                  <td>12:30 pm - 01:30 pm</td>
+                  <td><span class="badge bg-light text-dark border">ILO 7018</span></td>
+                  <td style="text-align: left; font-weight: 600;">Energy Audit and Management</td>
+                </tr>
+                <tr>
+                  <td><strong>Tuesday, 01 September 2026</strong></td>
+                  <td>12:30 pm - 01:30 pm</td>
+                  <td><span class="badge bg-light text-dark border">ECC702</span></td>
+                  <td style="text-align: left; font-weight: 600;">Mobile Communication System</td>
+                </tr>
+                <tr>
+                  <td rowspan="2"><strong>Wednesday, 02 September 2026</strong></td>
+                  <td>12:30 pm - 01:30 pm</td>
+                  <td><span class="badge bg-light text-dark border">ECCDLO7014</span></td>
+                  <td style="text-align: left; font-weight: 600;">Big Data Analytics</td>
+                </tr>
+                <tr>
+                  <td>12:30 pm - 01:30 pm</td>
+                  <td><span class="badge bg-light text-dark border">ECCDLO7012</span></td>
+                  <td style="text-align: left; font-weight: 600;">Deep Learning</td>
+                </tr>
+                <tr>
+                  <td><strong>Thursday, 03 September 2026</strong></td>
+                  <td>12:30 pm - 01:30 pm</td>
+                  <td><span class="badge bg-light text-dark border">ECC701</span></td>
+                  <td style="text-align: left; font-weight: 600;">Microwave Engineering</td>
+                </tr>
+                <tr>
+                  <td rowspan="2"><strong>Friday, 04 September 2026</strong></td>
+                  <td>12:30 pm - 01:30 pm</td>
+                  <td><span class="badge bg-light text-dark border">ECCDLO7023</span></td>
+                  <td style="text-align: left; font-weight: 600;">Internet Communication Engineering</td>
+                </tr>
+                <tr>
+                  <td>03:00 pm - 04:00 pm</td>
+                  <td><span class="badge bg-light text-dark border">HAIMLC701</span></td>
+                  <td style="text-align: left; font-weight: 600;">AI and ML: AI&amp;ML in Healthcare</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Signatories Footer -->
+          <div class="signatory-box">
+            <div class="row text-center gy-3">
+              <div class="col-md-4 signatory-item">
+                <div class="signatory-name">Dr. Revathy Sundararajan</div>
+                <div class="signatory-title">Controller of Examinations</div>
+              </div>
+              <div class="col-md-4 signatory-item">
+                <div class="signatory-name">Dr. Madhavi S. Pednekar</div>
+                <div class="signatory-title">Head of Department</div>
+              </div>
+              <div class="col-md-4 signatory-item">
+                <div class="signatory-name">Dr. Sudhakar Mande</div>
+                <div class="signatory-title">Principal</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SUMMARY & ARCHIVES TAB ================= -->
+      <div class="tab-pane fade" id="summary-exam" role="tabpanel" aria-labelledby="summary-tab">
+        <div class="exam-tt-card">
+          <h4 class="fw-bold text-primary mb-3"><i class="bi bi-folder2-open me-2"></i>Exam Timetables &amp; Archives</h4>
+          <div class="table-responsive">
+            <table class="academic-calendar-table">
+              <thead>
+                <tr>
+                  <th style="width: 10%;">Sr No.</th>
+                  <th style="width: 30%;">Academic Year / Semester</th>
+                  <th style="width: 40%; text-align: left;">Examination Title</th>
+                  <th style="width: 20%;">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-primary bg-opacity-10">
+                  <td><strong>1</strong></td>
+                  <td><strong>AY 2026-2027 (Odd Sem)</strong></td>
+                  <td style="text-align: left;"><strong>SE Semester III - Mid Semester Examination (MSE)</strong></td>
+                  <td>
+                    <a href="/assets/pdf/EXTC_SE_MSE_TimeTable_AY2026-27_ODD.pdf" target="_blank" class="btn btn-sm btn-primary">
+                      <i class="bi bi-file-pdf me-1"></i> View PDF
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-primary bg-opacity-10">
+                  <td><strong>2</strong></td>
+                  <td><strong>AY 2026-2027 (Odd Sem)</strong></td>
+                  <td style="text-align: left;"><strong>TE Semester V - Mid Semester Examination (MSE)</strong></td>
+                  <td>
+                    <a href="/assets/pdf/EXTC_TE_MSE_TimeTable_AY2026-27_ODD.pdf" target="_blank" class="btn btn-sm btn-primary">
+                      <i class="bi bi-file-pdf me-1"></i> View PDF
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-primary bg-opacity-10">
+                  <td><strong>3</strong></td>
+                  <td><strong>AY 2026-2027 (Odd Sem)</strong></td>
+                  <td style="text-align: left;"><strong>BE Semester VII - Internal Assessment – I (IA1)</strong></td>
+                  <td>
+                    <a href="/assets/pdf/EXTC_BE_IA1_TimeTable_AY2026-27_ODD.pdf" target="_blank" class="btn btn-sm btn-primary">
+                      <i class="bi bi-file-pdf me-1"></i> View PDF
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>AY 2024-2025 (Odd Sem)</td>
+                  <td style="text-align: left;">IA-1 Time Table</td>
+                  <td>
+                    <a href="/assets/pdf/IA1_TIME TABLE_ODD 2024-25.pdf" target="_blank">View PDF</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>AY 2024-2025 (Even Sem)</td>
+                  <td style="text-align: left;">IA-1 Time Table</td>
+                  <td>
+                    <a href="/assets/pdf/IA-1_Time_Table_Even_sem_2024-25.pdf" target="_blank">View PDF</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>AY 2024-2025 (Even Sem)</td>
+                  <td style="text-align: left;">EXTC IA-2 Time Table</td>
+                  <td>
+                    <a href="/assets/pdf/EXTC IA-2 Time Table AY 2024-2025 (even semester).pdf" target="_blank">View PDF</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>AY 2022-2023 (Odd Sem)</td>
+                  <td style="text-align: left;">IA 1 Time Table</td>
+                  <td>
+                    <a href="/assets/pdf/IA-1_TT_ODD_Sem_2022-2023.pdf" target="_blank">View PDF</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>AY 2021-2022 (Even Sem)</td>
+                  <td style="text-align: left;">IA 2 Schedule &amp; Syllabus</td>
+                  <td>
+                    <a href="/assets/pdf/IA2_Schedule__Syllabus_April_2022.pdf" target="_blank">View PDF</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </main>
 
-  <div class="container">
-    <footer class="text-center text-lg-start text-muted" style="text-align: left; background-color: #333333;">
-      <!-- Section: Social media -->
-      
-      <!-- Section: Social media -->
-      
-      <!-- Section: Links  -->
-      <section class="" style="padding: 5px;">
-       <div class="container text-center text-md-start mt-5">
-         <!-- Grid row -->
-         <div class="row mt-3">
-           <!-- Grid column -->
-           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-             <!-- Content -->
-             <div class="cell-sm-6 cell-lg-3 cell-xl-4"><a rel="noopener" href="index.html"><img class="img-responsive"
-               src="/assets/dbit-logo-inverse.webp" alt="DBIT" width="250" height="80" /></a>
-           <p class="offset-top-20 offset-md-top-35 inset-xl-right-30" style="color:white;padding: 1rem; text-align: left;"><b>Don Bosco Institute of Technology offers
-             high-quality education to students in the field of engineering. With our help, you can master any
-             sphere
-             you prefer, from computer engineering to mechanical engineering.</b></p>
-         </div>
-           </div>
-          
-           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="color: 
-           #e5e5e5; margin-top: 2rem; text-align: left;">
-             <!-- Links -->
-             <h5 class="text-uppercase fw-bold mb-4"  style="text-align: center;">
-              <b>quick links</b>
-             </h5>
-             <p>
-               > <a href="https://www.dbit.in/nirf.html" class="text-reset text-school-bus-yellow-white" style="text-decoration: none;text-align: left;">NIRF</a>
-             </p>
-             <p>
-               > <a href="https://www.dbit.in/naac.html" class="text-reset" style="text-decoration: none;  text-align: left;">NAAC</a>
-             </p>
-             <p>
-               > <a href="https://www.dbit.in/nisp.html" class="text-reset" style="text-decoration: none;  text-align: left;">NISP</a>
-             </p>
-             <p>
-               > <a href="/students/contributors.html" class="text-reset" style="text-decoration: none;  text-align: left;">CONTRIBUTORS</a>
-             </p>
-           </div>
-           <!-- Grid column -->
-      
-           <!-- Grid column -->
-           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="color:#e5e5e5; text-align: left;
-           ">
-             <!-- Links -->
-             <p  style=" text-align: left;"><b><h5 style=" text-align: left;" >Department of Electronics & Telecommunication Engineering</h5></b><br>
-      
-               1st Floor, C Wing <br>
-               
-               Don Bosco Institute Of Technology Premier Automobiles Road, Opp. Fiat Company, Kurla (W), Mumbai- 400 070 <br>
-             
-               <b>Contact :</b> 022-25042424 / 25040508 / 25042018 / 25041631 / 25042828 <br>
-      
-               <b>Email -</b> dbit@dbit.in
-             </p>
-           </div>
-           <!-- Grid column -->
-           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-           <div style="padding: 5px;"></div>
-             <div class="me-5 d-none d-lg-block" style="color:white; text-align: left;">
-               <span><b>Get connected with us on social networks:</b></span>
-             </div>
-             <!-- Left -->
-             
-             <!-- Right -->
-             <div style="padding: 2px;">
-               <a  style="padding: 2px;"class="text-muted" href="https://www.facebook.com/dbitofficialfb" target="_blank"
-                        ><i class="bi bi-facebook footer-icon" ></i
-                     ></a>
-                     <a style="padding: 2px;" class="text-muted" href="https://twitter.com/dbit_mumbai" target="_blank"
-                     ><i class="bi bi-youtube footer-icon"></i
-                   ></a>
-                   <a style="padding:2px" class="text-muted" href="https://www.instagram.com/dbitofficial_mumbai/" target="_blank"
-                       ><i class="bi bi-instagram footer-icon"></i
-                     ></a>
-             </div>
-           </div>
-         </div>
-         <!-- Grid row -->
-       </div>
-      </section>
-      <!-- Section: Links  -->
-      
-      <!-- Copyright -->
-      <div class="text-center p-4" style="color:white" >
-       © 2021 Copyright :
-       <a class="" style="text-decoration: none; color: white;"> Desgined and Maintained by DBIT Website Maintainance Team</a>
-      </div>
-      <!-- Copyright -->
-      </footer>
-  </div>
-  
+  <div style="padding: 2rem;"></div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="/nav.js"></script>
   <script src="/temp.js"></script>
+  <script src="/header.js"></script>
 </body>
+
 </html>
