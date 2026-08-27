@@ -22,7 +22,7 @@
 }
 
 .carousel-control-prev, .carousel-control-next {
-    z-index: 0;
+    z-index: 5;
 }
 
 @-webkit-keyframes my-animation {
