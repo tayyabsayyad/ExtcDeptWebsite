@@ -272,7 +272,7 @@ nav.innerHTML = `
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Student Chapters
+                    Student Chapters & Club
                   </a>
                   <ul class="dropdown-menu sub-menu">
                     <li>
@@ -280,6 +280,9 @@ nav.innerHTML = `
                     </li>
                     <li>
                       <a class="dropdown-item" href="https://iete.dbit.in/" target="blank">IETE</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Robotics & Automation Club</a>
                     </li>
                   </ul>
                 </li>
