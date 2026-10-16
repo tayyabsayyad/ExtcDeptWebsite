@@ -260,6 +260,7 @@ nav.innerHTML = `
                 Co-Curricular Activities
               </a>
               <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/cocurricular/activity_reports.html">Activity Reports (AY 2026-27) <span class="badge bg-danger">New</span></a></li>
                 <li><a class="dropdown-item" href="/cocurricular/sankalpana2025.html">Sankalpana 2025</a></li>
                 <li><a class="dropdown-item" href="/cocurricular/events.html">Events & Competitions</a></li>
                 <li><a class="dropdown-item" href="/cocurricular/newsletter.html">Newsletter</a></li>
