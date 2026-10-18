@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="/style/nav.css" />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
+  <link rel="icon" href="/assets/logo.ico" type="image/x-icon" />
+  <title>PubTech - EXTC | DBIT</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JDMRE8FDJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4JDMRE8FDJ');
+  </script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .header-section {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: url('/assets/collegepic.webp') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .discover-box {
+      background-color: white;
+      padding: 12px 28px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #b8860b;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .pubtech-header {
+      text-align: center;
+      padding: 15px 0 25px 0;
+    }
+
+    .pubtech-header h2 {
+      color: #003366;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .pubtech-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 30px;
+    }
+
+    .pubtech-banner {
+      background: linear-gradient(135deg, #002244 0%, #003366 50%, #0a4f8a 100%);
+      color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 20px rgba(0, 34, 68, 0.25);
+    }
+
+    .pubtech-banner-teal {
+      background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+      color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 20px rgba(6, 78, 59, 0.25);
+    }
+
+    .nav-pills .nav-link {
+      color: #003366;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      background: #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: #003366;
+      color: #ffffff;
+      border-color: #003366;
+      box-shadow: 0 4px 10px rgba(0, 51, 102, 0.25);
+    }
+
+    .table-papers {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .table-papers thead {
+      background-color: #003366;
+      color: white;
+    }
+
+    .table-papers th,
+    .table-papers td {
+      padding: 12px 16px;
+      border: 1px solid #e2e8f0;
+      vertical-align: middle;
+    }
+
+    .table-papers tbody tr:hover {
+      background-color: #f0f7ff;
+    }
+
+    .badge-category {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .pdf-viewer-container {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .pdf-viewer-toolbar {
+      background: #002244;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 12px 18px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffdd57;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #e2e8f0;
+      margin-top: 4px;
+    }
+
+    .message-card {
+      background: #f8fafc;
+      border-left: 4px solid #003366;
+      padding: 18px 22px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+    }
+
+    .team-badge {
+      display: inline-flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 50px;
+      padding: 6px 16px;
+      margin: 4px;
+      font-size: 0.88rem;
+      color: #1e293b;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+
+<body class="bg-color">
+  <!-- Navbar (Injected by temp.js) -->
+  <div id="navbar"></div>
+
+  <main class="container my-4">
+    <!-- Header Banner -->
+    <div class="header-section">
+      <div class="discover-box">
+        Discover EXTC
+        <br />
+        Academics
+      </div>
+    </div>
+
+    <!-- Page Title -->
+    <div class="pubtech-header">
+      <h2>PUBTECH</h2>
+      <p class="text-muted mb-0">Department of Electronics &amp; Telecommunication Engineering &bull; Don Bosco Institute of Technology</p>
+      <p class="text-secondary small mt-1">Research Papers based on Final Year Capstone Projects</p>
+    </div>
+
+    <!-- Edition Quick Switcher Nav Pills -->
+    <ul class="nav nav-pills justify-content-center mb-4" id="pubtechTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="vol5-tab" data-bs-toggle="pill" data-bs-target="#vol5-content" type="button" role="tab">
+          <i class="bi bi-star-fill text-warning me-1"></i> PubTech Vol. 5.0 (AY 2023-24) <span class="badge bg-success ms-1">Latest</span>
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="vol4-tab" data-bs-toggle="pill" data-bs-target="#vol4-content" type="button" role="tab">
+          <i class="bi bi-journal-bookmark-fill me-1"></i> PubTech Vol. 4.0 (AY 2021-22) <span class="badge bg-primary ms-1">Vol 4.0</span>
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="about-tab" data-bs-toggle="pill" data-bs-target="#about-content" type="button" role="tab">
+          <i class="bi bi-info-circle-fill me-1"></i> About PubTech &amp; Leadership
+        </button>
+      </li>
+    </ul>
+
+    <!-- Tab Contents -->
+    <div class="tab-content" id="pubtechTabContent">
+
+      <!-- ======================================================== -->
+      <!-- TAB 1: PUBTECH VOLUME 5.0 (LATEST AY 2023-2024)          -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade show active" id="vol5-content" role="tabpanel">
+        
+        <!-- Hero Banner for Volume 5.0 -->
+        <div class="pubtech-banner-teal">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="badge bg-warning text-dark px-3 py-2 fw-bold text-uppercase mb-2">
+                <i class="bi bi-award-fill me-1"></i> Academic Year 2023 - 2024 &bull; Volume 5.0
+              </span>
+              <h1 class="display-6 fw-bold mb-2 text-white">PubTech &bull; Volume 5.0</h1>
+              <p class="lead mb-3 text-light" style="font-size: 1.05rem;">
+                Department of Electronics &amp; Telecommunication Engineering Technical Compendium. Featuring capstone research papers on Metasurface Antennas, C-Band Phase Shifters, LoRaWAN Smart Water Grids, Real-Time RTK GPS Navigation, LiDAR Systems via OptiSystem, Speech Recognition for Marathi, ESP32 Mesh Mining Safety Systems, Operating Theatre Multi-Object Detection, Ultra-Wideband RF Jamming Antennas, ICU Real-Time Patient Monitoring, and Low-Power FPGA MAC Units.
+              </p>
+              
+              <div class="d-flex flex-wrap gap-2 pt-2">
+                <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf" target="_blank" class="btn btn-warning fw-bold text-dark px-4 py-2 shadow-sm">
+                  <i class="bi bi-box-arrow-up-right me-2"></i>Open Full PDF in New Tab
+                </a>
+                <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf" download="PubTech_Vol5_2023-2024.pdf" class="btn btn-outline-light fw-bold px-4 py-2">
+                  <i class="bi bi-download me-2"></i>Download PDF (23 MB)
+                </a>
+                <a href="#pdfViewerVol5" class="btn btn-light fw-bold text-dark px-3 py-2">
+                  <i class="bi bi-eye-fill me-1"></i>Scroll to Embedded Viewer
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="stat-box">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">Capstone Papers</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-box">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Published &amp; Accepted</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-box">
+                    <div class="stat-number">105</div>
+                    <div class="stat-label">Pages Total Compendium</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-box">
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">INNOVEX-2024 Edition</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial & Coordination Credits for Vol 5.0 -->
+        <div class="pubtech-card">
+          <h5 class="fw-bold text-success mb-3">
+            <i class="bi bi-people-fill me-2"></i>PubTech Volume 5.0 Editorial &amp; Project Coordination Team
+          </h5>
+          <div class="d-flex flex-wrap align-items-center">
+            <div class="team-badge">
+              <i class="bi bi-mortarboard-fill text-primary me-2"></i><strong>Principal:</strong>&nbsp;Dr. Sudhakar S. Mande
+            </div>
+            <div class="team-badge">
+              <i class="bi bi-person-badge text-success me-2"></i><strong>HOD:</strong>&nbsp;Ms. Namita Agarwal
+            </div>
+            <div class="team-badge">
+              <i class="bi bi-briefcase-fill text-info me-2"></i><strong>B.E. Project Coordinator:</strong>&nbsp;Ms. Madhavi S. Pednekar
+            </div>
+            <div class="team-badge">
+              <i class="bi bi-person-fill text-secondary me-2"></i><strong>Student Coordinator:</strong>&nbsp;Mr. Jero Royston Poobalarayan
+            </div>
+          </div>
+        </div>
+
+        <!-- Published and Accepted Papers (Volume 5.0) -->
+        <div class="pubtech-card">
+          <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap">
+            <h4 class="fw-bold text-primary m-0">
+              <i class="bi bi-journal-check me-2"></i>Published &amp; Accepted Research Papers &bull; Volume 5.0
+            </h4>
+            <span class="badge bg-primary px-3 py-2">Refereed Journals &amp; IEEE Conferences</span>
+          </div>
+          <p class="text-muted small">
+            Three outstanding research projects from the 2023–2024 batch achieved peer-reviewed publications:
+          </p>
+
+          <div class="row g-3">
+            <!-- Paper 1 -->
+            <div class="col-md-4">
+              <div class="card h-100 border-primary border-opacity-25 shadow-sm p-3">
+                <div class="badge bg-primary bg-opacity-10 text-primary align-self-start mb-2 px-2 py-1">ISTE Journal &bull; Feb 2024</div>
+                <h6 class="fw-bold text-dark">Evaluating the Effectiveness of ML Models for Early Diagnosis of Chronic Kidney Disease</h6>
+                <p class="text-muted small mb-2">
+                  <strong>Authors:</strong> Siddhant Kedar, Pranjali Raval, Amogh Workilar, Sarika Galphade, Pratibha Dumane, Satishkumar Chavan
+                </p>
+                <p class="text-secondary small mb-3">
+                  <strong>Publication:</strong> ISTE Online Journal, Vol. 47 Special Issue No. 1, Feb 2024, pp. 235-239.
+                </p>
+                <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=90" target="_blank" class="btn btn-sm btn-outline-primary mt-auto">
+                  <i class="bi bi-file-earmark-text me-1"></i> Read Paper (Page 85)
+                </a>
+              </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="col-md-4">
+              <div class="card h-100 border-primary border-opacity-25 shadow-sm p-3">
+                <div class="badge bg-primary bg-opacity-10 text-primary align-self-start mb-2 px-2 py-1">IEEE TKD-2024</div>
+                <h6 class="fw-bold text-dark">Design of Web based Student Information System</h6>
+                <p class="text-muted small mb-2">
+                  <strong>Authors:</strong> Shivam Sharma, Anuj Dhumal, Vivek Kamble, Namita Agarwal
+                </p>
+                <p class="text-secondary small mb-3">
+                  <strong>Publication:</strong> IEEE TECHNICOKNOCKDOWN-2024 (TKD-24), ISBN: 978-81-992245-6-7.
+                </p>
+                <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=95" target="_blank" class="btn btn-sm btn-outline-primary mt-auto">
+                  <i class="bi bi-file-earmark-text me-1"></i> Read Paper (Page 90)
+                </a>
+              </div>
+            </div>
+
+            <!-- Paper 3 -->
+            <div class="col-md-4">
+              <div class="card h-100 border-primary border-opacity-25 shadow-sm p-3">
+                <div class="badge bg-primary bg-opacity-10 text-primary align-self-start mb-2 px-2 py-1">eSmarTA-2024</div>
+                <h6 class="fw-bold text-dark">A-eye: Attendance Monitoring using Face Detection &amp; Recognition from CCTV Footage</h6>
+                <p class="text-muted small mb-2">
+                  <strong>Authors:</strong> Nimesh Ambre, Raveena Pitale, Prajeet Rao, Satishkumar Chavan, Hemalata Mote
+                </p>
+                <p class="text-secondary small mb-3">
+                  <strong>Conference:</strong> International Conference, eSmarTA-2024.
+                </p>
+                <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=100" target="_blank" class="btn btn-sm btn-outline-primary mt-auto">
+                  <i class="bi bi-file-earmark-text me-1"></i> Read Paper (Page 95)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table of Papers (Volume 5.0) -->
+        <div class="pubtech-card">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div>
+              <h4 class="fw-bold text-success m-0">
+                <i class="bi bi-table me-2"></i>Table of Contents &bull; Research Papers (Volume 5.0)
+              </h4>
+              <p class="text-muted small mb-0">Search or filter through all 16 papers (13 Capstone + 3 Published/Accepted) in Volume 5.0.</p>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                <input type="text" id="paperSearchInputVol5" class="form-control border-start-0" placeholder="Search title, author, guide..." onkeyup="filterPapersVol5()" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Category filter buttons for Vol 5 -->
+          <div class="d-flex flex-wrap gap-1 mb-3" id="categoryFiltersVol5">
+            <button class="btn btn-sm btn-outline-success active" onclick="setCategoryFilterVol5('all', this)">All Papers (16)</button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="setCategoryFilterVol5('Antenna & Microwave', this)">Antennas &amp; Microwave</button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="setCategoryFilterVol5('IoT & Networks', this)">IoT &amp; LoRaWAN</button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="setCategoryFilterVol5('Navigation & GPS', this)">GPS &amp; Tracking</button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="setCategoryFilterVol5('Healthcare & AI', this)">Healthcare &amp; AI</button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="setCategoryFilterVol5('VLSI & FPGA', this)">VLSI, FPGA &amp; Optics</button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table-papers" id="papersTableVol5">
+              <thead>
+                <tr>
+                  <th style="width: 6%; text-align: center;">#</th>
+                  <th style="width: 40%;">Paper Title</th>
+                  <th style="width: 26%;">Student Authors</th>
+                  <th style="width: 18%;">Faculty Guide / Mentor</th>
+                  <th style="width: 10%; text-align: center;">View PDF</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-category="Antenna & Microwave">
+                  <td class="text-center fw-bold">1</td>
+                  <td>
+                    <strong>Design and Development of a Metasurface Antenna for Sensing Applications</strong><br>
+                    <span class="badge bg-success badge-category">Antenna & Microwave</span>
+                    <span class="text-muted small d-block mt-1">2.4 GHz ISM band antenna with engineered subwavelength elements, 10dB return loss, and 10dB gain for biosensing and industrial sensing.</span>
+                  </td>
+                  <td>Rakshita Khantwal, Suraj Kumar</td>
+                  <td>Dr. Ashwini Kotrashetti, Ms. Freda Carvalho</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=6" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 1
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Antenna & Microwave">
+                  <td class="text-center fw-bold">2</td>
+                  <td>
+                    <strong>Design and Development of a Metasurface Based C-Band Phase Shifter</strong><br>
+                    <span class="badge bg-success badge-category">Antenna & Microwave</span>
+                    <span class="text-muted small d-block mt-1">Compact Omega-shaped metasurface phase shifter operating from 4 to 8 GHz with attenuation as low as 1 dB for radar and communications.</span>
+                  </td>
+                  <td>Shruti Gokhale, Umer Shaikh</td>
+                  <td>Ms. Freda Carvalho, Dr. Ashwini Kotrashetti</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=12" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 7
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="IoT & Networks">
+                  <td class="text-center fw-bold">3</td>
+                  <td>
+                    <strong>Smart Water Management using LoRaWAN</strong><br>
+                    <span class="badge bg-info text-dark badge-category">IoT & Networks</span>
+                    <span class="text-muted small d-block mt-1">Long-range, low-power remote water distribution monitoring using Arduino, STM32, sensor fusion, and LoRa SX1278 (with QDNet Technologies).</span>
+                  </td>
+                  <td>Benish Christo, Simran Koparkar, Deep Patel, Leroy Rodrigues</td>
+                  <td>Prof. Poonam Chakraborty</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=18" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 13
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Navigation & GPS">
+                  <td class="text-center fw-bold">4</td>
+                  <td>
+                    <strong>Advanced Navigational System for Accurate GPS Localization</strong><br>
+                    <span class="badge bg-warning text-dark badge-category">Navigation & GPS</span>
+                    <span class="text-muted small d-block mt-1">Real-Time Kinematic (RTK) and NTRIP streaming system with ZED-F9P Ublox and STM32WLE5 achieving 10 cm centimeter-level localization.</span>
+                  </td>
+                  <td>Adarsh Rao, Lovely Varshney, Gouresh Sankhe, Abhishek Waghmare</td>
+                  <td>Dr. Ashwini Kotrashetti</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=29" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 24
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Navigation & GPS">
+                  <td class="text-center fw-bold">5</td>
+                  <td>
+                    <strong>Development of a Container GPS Tracking System to Enhance Supply Chain Security</strong><br>
+                    <span class="badge bg-warning text-dark badge-category">Navigation & GPS</span>
+                    <span class="text-muted small d-block mt-1">Anti-theft GPS/GSM asset tracker with STM32F302R8, Quectel M66, current-break sensor, and Google Earth real-time tracking.</span>
+                  </td>
+                  <td>Sanskar Kumar, Russel Dmello, Sakshi Kaveri, Shreyas Nanaware</td>
+                  <td>Ms. Freda Carvalho</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=35" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 30
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="VLSI & FPGA">
+                  <td class="text-center fw-bold">6</td>
+                  <td>
+                    <strong>Design of a LiDAR System using Optisim Scans</strong><br>
+                    <span class="badge bg-secondary badge-category">VLSI & FPGA</span>
+                    <span class="text-muted small d-block mt-1">Comprehensive OptiSystem simulation integrating Time of Flight (ToF), FMCW radar, and Phase Shift for high-resolution 3D environmental mapping.</span>
+                  </td>
+                  <td>Kanishka Aware, Jaipreet Singh, Simran Kot, Satyam Shukla</td>
+                  <td>Prof. Poonam Chakraborty</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=41" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 36
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Antenna & Microwave">
+                  <td class="text-center fw-bold">7</td>
+                  <td>
+                    <strong>Design and Development of Duplexer for GSM Applications</strong><br>
+                    <span class="badge bg-success badge-category">Antenna & Microwave</span>
+                    <span class="text-muted small d-block mt-1">Microstrip hairpin duplexer for GSM uplink (890–915 MHz) and downlink (935–960 MHz) bands with -10dB return loss simulated in Genesys and HFSS.</span>
+                  </td>
+                  <td>Darshan Kadlag, Vaishnav Nadar, Kajal Sathe, Anto Ridon</td>
+                  <td>Ms. Freda Carvalho</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=47" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 42
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Healthcare & AI">
+                  <td class="text-center fw-bold">8</td>
+                  <td>
+                    <strong>Analysis and Comparison of Methods of Speech Recognition Using Neural Network</strong><br>
+                    <span class="badge bg-primary badge-category">Healthcare & AI</span>
+                    <span class="text-muted small d-block mt-1">Marathi speech recognition using MFCC, FFO/TSO optimization, and comparative analysis of RF, RBF, and MLP neural classifiers.</span>
+                  </td>
+                  <td>Divya Sharma, Dhanshree Pansare, Gracy Borra</td>
+                  <td>Ms. Madhavi S. Pednekar</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=55" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 50
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="IoT & Networks">
+                  <td class="text-center fw-bold">9</td>
+                  <td>
+                    <strong>Implementation of Mesh Topology for IoT Network</strong><br>
+                    <span class="badge bg-info text-dark badge-category">IoT & Networks</span>
+                    <span class="text-muted small d-block mt-1">Self-healing ESP32 ESP-MESH network deployed for coal miner safety, toxic gas detection, and pulse/temperature monitoring.</span>
+                  </td>
+                  <td>Aniket Pawar, Anushk Sawant, Omkar Bidwai</td>
+                  <td>Prof. Aparna M. Telgote</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=61" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 56
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Healthcare & AI">
+                  <td class="text-center fw-bold">10</td>
+                  <td>
+                    <strong>Multi-Object Detection in Operation Theatre</strong><br>
+                    <span class="badge bg-primary badge-category">Healthcare & AI</span>
+                    <span class="text-muted small d-block mt-1">Intelligent shadow-reduction surgical lighting with LiDAR sensor distance measurement and AC dimmer circuitry on Arduino.</span>
+                  </td>
+                  <td>Disha Maggu, Nitish Chavan, Rohit Gupta, Yash Sonavane</td>
+                  <td>Prof. Hemalata Mote, Prof. Satishkumar Chavan</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=66" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 61
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Antenna & Microwave">
+                  <td class="text-center fw-bold">11</td>
+                  <td>
+                    <strong>Design and Development Of A Ultra Wide Band Antenna Configuration For Radio Jamming Applications</strong><br>
+                    <span class="badge bg-success badge-category">Antenna & Microwave</span>
+                    <span class="text-muted small d-block mt-1">Cavity-backed Archimedean spiral antenna operating from 0.7 to 5.9 GHz for defence and security jamming against RCIEDs.</span>
+                  </td>
+                  <td>Hasan Ali Dalal, Rishi Dubey, Sakshi Morey, Zoya Shaikh</td>
+                  <td>Dr. Ashwini Kotrashetti</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=69" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 64
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Healthcare & AI">
+                  <td class="text-center fw-bold">12</td>
+                  <td>
+                    <strong>Real Time ICU Patient Monitoring &amp; Visualisation of Critical Parameters of Patients Health for Hospital Professionals</strong><br>
+                    <span class="badge bg-primary badge-category">Healthcare & AI</span>
+                    <span class="text-muted small d-block mt-1">Vital health parameters (ECG, PPG, temperature, SpO2) streaming via MQTTS and Node.js with web visualization and alerting.</span>
+                  </td>
+                  <td>Kshitij Bare, Jignesh Bhandi, Aditya Moozhayil, Omkar Mundhe</td>
+                  <td>Prof. Hemalata Mote</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=76" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 71
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="VLSI & FPGA">
+                  <td class="text-center fw-bold">13</td>
+                  <td>
+                    <strong>Design And Implementation Of Low Power MAC Unit For Image Processing On FPGA</strong><br>
+                    <span class="badge bg-secondary badge-category">VLSI & FPGA</span>
+                    <span class="text-muted small d-block mt-1">Spartan-6 FPGA implementation of Vedic multiplier and Brent-Kung adder for pipelined Sobel edge detection in Verilog.</span>
+                  </td>
+                  <td>Bhagyesh Manjrekar, Jay Dulange, Pratham Amare, Pratham Koturwar</td>
+                  <td>Dr. Sudhakar Mande</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=84" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 79
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Healthcare & AI">
+                  <td class="text-center fw-bold">14</td>
+                  <td>
+                    <strong>Evaluating the Effectiveness of Machine Learning Models for Early Diagnosis of Chronic Kidney Disease</strong><br>
+                    <span class="badge bg-info text-dark badge-category">Published &bull; ISTE</span>
+                    <span class="text-muted small d-block mt-1">Published in ISTE Online Journal. Comparative evaluation of Random Forest, SVM, and Decision Tree for clinical CKD risk prediction.</span>
+                  </td>
+                  <td>Siddhant Kedar, Pranjali Raval, Amogh Workilar</td>
+                  <td>Prof. Sarika Galphade, Prof. Pratibha Dumane, Prof. Satishkumar Chavan</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=90" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 85
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="IoT & Networks">
+                  <td class="text-center fw-bold">15</td>
+                  <td>
+                    <strong>Design of Web based Student Information System</strong><br>
+                    <span class="badge bg-info text-dark badge-category">Published &bull; IEEE TKD-24</span>
+                    <span class="text-muted small d-block mt-1">Published in IEEE TKD-24. ASP.NET MVC architecture with role-based access control for students, faculty, and administration.</span>
+                  </td>
+                  <td>Shivam Sharma, Vivek Kamble, Anuj Dhumal</td>
+                  <td>Prof. Namita Agarwal</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=95" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 90
+                    </a>
+                  </td>
+                </tr>
+
+                <tr data-category="Healthcare & AI">
+                  <td class="text-center fw-bold">16</td>
+                  <td>
+                    <strong>A-eye: Attendance Monitoring using Face Detection and Recognition from CCTV Footage</strong><br>
+                    <span class="badge bg-info text-dark badge-category">Accepted &bull; eSmarTA-2024</span>
+                    <span class="text-muted small d-block mt-1">Accepted at eSmarTA-2024. Automated classroom attendance with Haar Cascade and CNN on low-resolution video with video augmentation.</span>
+                  </td>
+                  <td>Nimesh Ambre, Raveena Pitale, Prajeet Rao</td>
+                  <td>Prof. Satishkumar Chavan, Prof. Hemalata Mote</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf#page=100" target="_blank" class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 95
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Embedded Interactive PDF Viewer for Volume 5.0 -->
+        <div class="pubtech-card" id="pdfViewerVol5">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div>
+              <h4 class="fw-bold text-success m-0">
+                <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>Interactive PDF Viewer: PubTech Vol. 5.0
+              </h4>
+              <p class="text-muted small mb-0">Read all 105 pages of PubTech Volume 5.0 directly below, or expand to full screen.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-outline-success" onclick="toggleFullScreenViewer('viewerContainerVol5')">
+                <i class="bi bi-arrows-fullscreen me-1"></i> Fullscreen
+              </button>
+              <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf" target="_blank" class="btn btn-sm btn-success">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Pop-out Viewer
+              </a>
+            </div>
+          </div>
+
+          <div class="pdf-viewer-container" id="viewerContainerVol5">
+            <div class="pdf-viewer-toolbar" style="background-color: #064e3b;">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-file-earmark-text-fill text-warning"></i>
+                <span class="fw-bold text-white">PubTech Volume 5.0 &bull; Academic Year 2023 - 2024</span>
+                <span class="badge bg-light text-dark">105 Pages (23 MB)</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf" download class="btn btn-sm btn-warning text-dark fw-bold">
+                  <i class="bi bi-download me-1"></i> Download
+                </a>
+              </div>
+            </div>
+            
+            <iframe id="pdfFrameVol5" src="/assets/pdf/PubTech_Vol5_2023-2024.pdf#toolbar=1&navpanes=1&scrollbar=1" width="100%" height="850px" style="border: none; display: block;">
+              <p class="p-4 text-center">
+                Your browser does not support embedded PDF viewing. 
+                <a href="/assets/pdf/PubTech_Vol5_2023-2024.pdf" class="btn btn-success mt-2" target="_blank">
+                  Click here to download or view the PDF.
+                </a>
+              </p>
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- TAB 2: PUBTECH VOLUME 4.0 (ACADEMIC YEAR 2021-2022)      -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade" id="vol4-content" role="tabpanel">
+        
+        <!-- Hero Banner for Volume 4.0 -->
+        <div class="pubtech-banner">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="badge bg-warning text-dark px-3 py-2 fw-bold text-uppercase mb-2">
+                <i class="bi bi-award-fill me-1"></i> Academic Year 2021 - 2022 &bull; Volume 4.0
+              </span>
+              <h1 class="display-6 fw-bold mb-2 text-white">PubTech &bull; Volume 4.0</h1>
+              <p class="lead mb-3 text-light" style="font-size: 1.05rem;">
+                Compendium of Research Papers based on Final Year Capstone Projects. Showcasing innovations across TinyML, Deep Learning, Biomedical Imaging, Electric Vehicles, VLSI CMOS Design, and Metasurface Waveguides.
+              </p>
+              
+              <div class="d-flex flex-wrap gap-2 pt-2">
+                <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf" target="_blank" class="btn btn-warning fw-bold text-dark px-4 py-2 shadow-sm">
+                  <i class="bi bi-box-arrow-up-right me-2"></i>Open Full PDF in New Tab
+                </a>
+                <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf" download="PubTech_Vol4_2021-2022.pdf" class="btn btn-outline-light fw-bold px-4 py-2">
+                  <i class="bi bi-download me-2"></i>Download PDF (4.4 MB)
+                </a>
+                <a href="#pdfViewerVol4" class="btn btn-light fw-bold text-primary px-3 py-2">
+                  <i class="bi bi-eye-fill me-1"></i>Scroll to Embedded Viewer
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="stat-box">
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">Capstone Papers</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-box">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">IEEE TENSYMP '22</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-box">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Collaborative Projects</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-box">
+                    <div class="stat-number">93</div>
+                    <div class="stat-label">Pages Compendium</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial & Coordination Credits for Vol 4.0 -->
+        <div class="pubtech-card">
+          <h5 class="fw-bold text-primary mb-3">
+            <i class="bi bi-people-fill me-2"></i>PubTech Volume 4.0 Editorial &amp; Project Mentorship Team
+          </h5>
+          <div class="d-flex flex-wrap align-items-center">
+            <div class="team-badge">
+              <i class="bi bi-person-badge text-primary me-2"></i><strong>HOD:</strong>&nbsp;Dr. Ashwini Kotrashetti
+            </div>
+            <div class="team-badge">
+              <i class="bi bi-mortarboard-fill text-success me-2"></i><strong>Project Mentor:</strong>&nbsp;Dr. Sudhakar Mande
+            </div>
+            <div class="team-badge">
+              <i class="bi bi-briefcase-fill text-info me-2"></i><strong>Project Coordinator:</strong>&nbsp;Ms. Freda Carvalho
+            </div>
+            <div class="team-badge">
+              <i class="bi bi-person-fill text-secondary me-2"></i><strong>Student Coordinator:</strong>&nbsp;Mr. Ankit Kumar
+            </div>
+            <div class="team-badge">
+              <i class="bi bi-palette-fill text-warning me-2"></i><strong>Cover Design:</strong>&nbsp;Mr. Roni Thomas (Alumnus Batch 2021)
+            </div>
+          </div>
+        </div>
+
+        <!-- Papers Accepted for International Publication (IEEE TENSYMP 2022) -->
+        <div class="pubtech-card">
+          <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap">
+            <h4 class="fw-bold text-success m-0">
+              <i class="bi bi-patch-check-fill me-2"></i>Papers Accepted for Publication in IEEE Region 10 Symposium (TENSYMP 2022)
+            </h4>
+            <span class="badge bg-success px-3 py-2">Peer-Reviewed International Conference</span>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card h-100 border-success border-opacity-25 shadow-sm p-3">
+                <div class="badge bg-success bg-opacity-10 text-success align-self-start mb-2 px-2 py-1">IEEE TENSYMP 2022 &bull; Metasurfaces</div>
+                <h6 class="fw-bold text-dark">Design of a Dual Band Monolayer Metasurface Based Bandpass Filter</h6>
+                <p class="text-muted small mb-2">
+                  <strong>Authors:</strong> Hitesh Badgujar, Aman Khan, Freda Carvalho, Ashwini Kotrashetti, Sambit Ghosh, Somak Bhattacharjee
+                </p>
+                <p class="text-secondary small mb-3">
+                  <strong>Institution:</strong> Dept. of EXTC, DBIT Mumbai &amp; Dept. of Electronics Engg., IIT (BHU) Varanasi.
+                </p>
+                <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=84" target="_blank" class="btn btn-sm btn-outline-success mt-auto">
+                  <i class="bi bi-file-earmark-text me-1"></i> Read Paper (Page 84)
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card h-100 border-success border-opacity-25 shadow-sm p-3">
+                <div class="badge bg-success bg-opacity-10 text-success align-self-start mb-2 px-2 py-1">IEEE TENSYMP 2022 &bull; Microwave Filters</div>
+                <h6 class="fw-bold text-dark">Design and Analysis of a Compact Metasurface Based Filter for Broadband Performance</h6>
+                <p class="text-muted small mb-2">
+                  <strong>Authors:</strong> Sadanand Chauhan, Solomon Stephen, Freda Carvalho, Ashwini Kotrashetti, Sambit Ghosh, Somak Bhattacharjee
+                </p>
+                <p class="text-secondary small mb-3">
+                  <strong>Institution:</strong> Dept. of EXTC, DBIT Mumbai &amp; Dept. of Electronics Engg., IIT (BHU) Varanasi.
+                </p>
+                <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=88" target="_blank" class="btn btn-sm btn-outline-success mt-auto">
+                  <i class="bi bi-file-earmark-text me-1"></i> Read Paper (Page 88)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search & Filterable Table of Vol 4.0 Papers -->
+        <div class="pubtech-card">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div>
+              <h4 class="fw-bold text-primary m-0">
+                <i class="bi bi-table me-2"></i>Table of Contents &bull; Research Papers (Volume 4.0)
+              </h4>
+              <p class="text-muted small mb-0">Search or filter through the 16 Capstone Research Papers compiled in Volume 4.0.</p>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                <input type="text" id="paperSearchInputVol4" class="form-control border-start-0" placeholder="Search title, author, guide..." onkeyup="filterPapersVol4()" />
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table-papers" id="papersTableVol4">
+              <thead>
+                <tr>
+                  <th style="width: 6%; text-align: center;">#</th>
+                  <th style="width: 38%;">Paper Title</th>
+                  <th style="width: 26%;">Student Authors</th>
+                  <th style="width: 18%;">Faculty Guide</th>
+                  <th style="width: 12%; text-align: center;">View PDF</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center fw-bold">1</td>
+                  <td>
+                    <strong>Single/Dual-Axis Solar Tracker for Domestic Use</strong><br>
+                    <span class="badge bg-info text-dark badge-category">IoT / Embedded</span>
+                  </td>
+                  <td>Sagar Madhavi, Rudra Pangerkar, Neil Furtado, Aditya Patil</td>
+                  <td>Prof. Poonam Chakraborty</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=5" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 1
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">2</td>
+                  <td>
+                    <strong>Vibration Analysis for Condition Monitoring &amp; Predictive Maintenance using Embedded tinyML</strong><br>
+                    <span class="badge bg-info text-dark badge-category">IoT / Embedded</span>
+                  </td>
+                  <td>Pramod Mohanty, Srujan Mhase, Shantanu Patil, Sahil Yelgonda</td>
+                  <td>Prof. Jithin Isaac</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=9" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 5
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">3</td>
+                  <td>
+                    <strong>Low-Cost Portable Digital Storage Oscilloscope with Function Generator</strong><br>
+                    <span class="badge bg-secondary badge-category">VLSI / Hardware</span>
+                  </td>
+                  <td>Joshua Chettiar, Nilesh Dharap, Atul Kumar, Ankit Kumar</td>
+                  <td>Mr. Yogesh Gholap</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=12" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 8
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">4</td>
+                  <td>
+                    <strong>Energy Monitoring System For Electric Vehicle Supply Equipment (EVSE)</strong><br>
+                    <span class="badge bg-warning text-dark badge-category">Robotics / EV</span>
+                  </td>
+                  <td>Rohan Ghai, Abhijit More, Shardul Powale, Balkrishna Sawant</td>
+                  <td>Prof. Jithin Issac</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=20" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 16
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">5</td>
+                  <td>
+                    <strong>Low Power CMOS VLSI Design MAC Unit</strong><br>
+                    <span class="badge bg-secondary badge-category">VLSI / Hardware</span>
+                  </td>
+                  <td>Satyajit Behura, Adarsh Pandey, Abhinav Shukla, Krupakar Arroju</td>
+                  <td>Dr. Sudhakar Mande</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=24" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 20
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">6</td>
+                  <td>
+                    <strong>Design &amp; Development of Wireless Charger for EV</strong><br>
+                    <span class="badge bg-warning text-dark badge-category">Robotics / EV</span>
+                  </td>
+                  <td>Bhavesh Barde, Kyle D’souza, Chaitanya Muzumdar, Saurabh Shete</td>
+                  <td>Dr. Ashwini Kotrashetti</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=28" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 24
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">7</td>
+                  <td>
+                    <strong>Multipurpose Stair Climbing Robot</strong><br>
+                    <span class="badge bg-warning text-dark badge-category">Robotics / EV</span>
+                  </td>
+                  <td>Perez Samko, Akash Sagare, Amit Rajbhar, Nilesh Pal</td>
+                  <td>Prof. Gejo George</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=37" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 33
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">8</td>
+                  <td>
+                    <strong>Medical Report Generation using Chest X-Ray</strong><br>
+                    <span class="badge bg-danger badge-category">Biomedical / Healthcare</span>
+                  </td>
+                  <td>Vidit Prabhu, Varun Gokarn, Ashutosh Rane, Nikhit Rapelli</td>
+                  <td>Prof. Pratibha Dumane</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=41" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 37
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">9</td>
+                  <td>
+                    <strong>Design and Implementation of Intravenous Fluid Monitoring and Alerting System</strong><br>
+                    <span class="badge bg-danger badge-category">Biomedical / Healthcare</span>
+                  </td>
+                  <td>Avi Sahay, Krishna Panhale, Suraj Pandit, Manthan Kulkarni</td>
+                  <td>Prof. Ms. Namita Agarwal</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=47" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 43
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">10</td>
+                  <td>
+                    <strong>Implementation of Smart Electronic Voting Machine</strong><br>
+                    <span class="badge bg-secondary badge-category">VLSI / Hardware</span>
+                  </td>
+                  <td>Vivek Bangera, Callistus George, Ritik Kumar, James Kundukulangara</td>
+                  <td>Dr. Sudhakar Mande</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=51" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 47
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">11</td>
+                  <td>
+                    <strong>MRI based Classification and Segmentation of Brain Tumour using Deep Learning</strong><br>
+                    <span class="badge bg-primary badge-category">AI / Deep Learning</span>
+                  </td>
+                  <td>Magdeline James, Dhanashree Chilap, Rahul Singh, Nishant Madke</td>
+                  <td>Prof. Satishkumar Chavan, Prof. Pratibha Dumane</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=56" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 52
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">12</td>
+                  <td>
+                    <strong>Home Automation System</strong><br>
+                    <span class="badge bg-info text-dark badge-category">IoT / Embedded</span>
+                  </td>
+                  <td>Preeti Rajpure, Rushali Kadam, Sakshi Gadekar, Ankita Kadam</td>
+                  <td>Prof. Ms. Aparna Telgote</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=63" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 59
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">13</td>
+                  <td>
+                    <strong>Age Progression and Regression using cycleGAN</strong><br>
+                    <span class="badge bg-primary badge-category">AI / Deep Learning</span>
+                  </td>
+                  <td>Vaibhav Parate, Arka Dey, Manas Bhandarkar, Saadiya Dafedar</td>
+                  <td>Prof. Satishkumar Chavan</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=67" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 63
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">14</td>
+                  <td>
+                    <strong>Liver Tumor Detection and Segmentation</strong><br>
+                    <span class="badge bg-primary badge-category">AI / Deep Learning</span>
+                  </td>
+                  <td>Kaustubh Deshmukh, Vedant Devrukhkar, Yash Pujari</td>
+                  <td>Prof. Satishkumar Chavan</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=72" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 68
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">15</td>
+                  <td>
+                    <strong>Capacitive Level Sensor for Water Level Detection</strong><br>
+                    <span class="badge bg-secondary badge-category">VLSI / Hardware</span>
+                  </td>
+                  <td>Ashwini Sapkale, Ankit Naphade, Rutvik Kadam, Shubham Kandalgaonkar</td>
+                  <td>Prof. Poonam Chakraborty</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=76" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 72
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-center fw-bold">16</td>
+                  <td>
+                    <strong>Renal Cell Carcinoma Segmentation</strong><br>
+                    <span class="badge bg-primary badge-category">AI / Deep Learning</span>
+                  </td>
+                  <td>Ajitha Rajkumar, Merlin Tomy, Velton D’souza, Shubhangi Katariyar</td>
+                  <td>Prof. Satishkumar Chavan</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf#page=80" target="_blank" class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-file-earmark-pdf"></i> Page 76
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Embedded Interactive PDF Viewer for Volume 4.0 -->
+        <div class="pubtech-card" id="pdfViewerVol4">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div>
+              <h4 class="fw-bold text-primary m-0">
+                <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>Interactive PDF Viewer: PubTech Vol. 4.0
+              </h4>
+              <p class="text-muted small mb-0">Browse through the full 93-page document directly below, or switch to full screen.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-outline-primary" onclick="toggleFullScreenViewer('viewerContainerVol4')">
+                <i class="bi bi-arrows-fullscreen me-1"></i> Fullscreen
+              </button>
+              <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf" target="_blank" class="btn btn-sm btn-primary">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Pop-out Viewer
+              </a>
+            </div>
+          </div>
+
+          <div class="pdf-viewer-container" id="viewerContainerVol4">
+            <div class="pdf-viewer-toolbar">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-file-earmark-text-fill text-warning"></i>
+                <span class="fw-bold">PubTech Volume 4.0 (AY 2021-2022)</span>
+                <span class="badge bg-light text-dark">93 Pages</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf" download class="btn btn-sm btn-warning text-dark fw-bold">
+                  <i class="bi bi-download me-1"></i> Download
+                </a>
+              </div>
+            </div>
+            
+            <iframe id="pdfFrameVol4" src="/assets/pdf/PubTech_Vol4_2021-2022.pdf#toolbar=1&navpanes=1&scrollbar=1" width="100%" height="850px" style="border: none; display: block;">
+              <p class="p-4 text-center">
+                Your browser does not support embedded PDF viewing. 
+                <a href="/assets/pdf/PubTech_Vol4_2021-2022.pdf" class="btn btn-primary mt-2" target="_blank">
+                  Click here to download or view the PDF.
+                </a>
+              </p>
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- TAB 3: ABOUT PUBTECH & LEADERSHIP MESSAGES               -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade" id="about-content" role="tabpanel">
+        
+        <div class="pubtech-card">
+          <h4 class="fw-bold text-primary mb-3">
+            <i class="bi bi-info-circle-fill me-2"></i>About PubTech
+          </h4>
+          <p class="text-secondary leading-relaxed">
+            <strong>PubTech</strong> is the flagship research publication compendium created by the 
+            <strong>Department of Electronics and Telecommunication Engineering</strong> at 
+            <strong>Don Bosco Institute of Technology (DBIT), Mumbai</strong>. It is designed to celebrate and 
+            disseminate high-quality technical papers authored by final-year engineering students based on their capstone 
+            projects.
+          </p>
+          <p class="text-secondary leading-relaxed">
+            Every year, final-year undergraduate students undertake complex, industry-relevant, and society-oriented hardware 
+            and software projects. Under the guidance of faculty mentors, these efforts culminate in rigorous research papers, 
+            prototypes presented at the annual <em>INNOVEX</em> project exhibition, and publications in prestigious international 
+            conferences such as IEEE and refereed journals.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Principal Message -->
+          <div class="col-lg-6">
+            <div class="pubtech-card h-100">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-quote text-primary me-2" style="font-size: 2.2rem;"></i>
+                <div>
+                  <h5 class="fw-bold text-dark m-0">Principal's Message (Vol. 5)</h5>
+                  <span class="text-muted small">Dr. Sudhakar S. Mande &bull; Principal, DBIT</span>
+                </div>
+              </div>
+              <div class="message-card">
+                <p class="fst-italic text-dark mb-0">
+                  "It is with great pride and enthusiasm that I welcome you to this special edition of 'PubTech, Vol. 5' featuring a collection of technical papers based on the exceptional final year project work from the Electronics and Telecommunication (EXTC) Department. The culmination of an engineering student's academic journey is marked by the final year project - a testament to their hard work, innovative thinking, and technical acumen... Together, let us celebrate the achievements of our students and look forward to a future filled with groundbreaking discoveries and technological advancements."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- HOD Message Vol 5 -->
+          <div class="col-lg-6">
+            <div class="pubtech-card h-100">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-quote text-success me-2" style="font-size: 2.2rem;"></i>
+                <div>
+                  <h5 class="fw-bold text-dark m-0">HOD's Message (Vol. 5)</h5>
+                  <span class="text-muted small">Ms. Namita Agarwal &bull; Head of Department, EXTC</span>
+                </div>
+              </div>
+              <div class="message-card" style="border-left-color: #047857;">
+                <p class="fst-italic text-dark mb-0">
+                  "It is with great pride and enthusiasm that I introduce PubTech 5.0, a compilation of research papers based on the final year projects of AY-2023-24. It is a testament to the remarkable work done by our students in collaboration with their research guides... The projects featured in this booklet cover a diverse array of disciplines and topics, reflecting the broad spectrum of interests and expertise within our department. These projects were very much appreciated by Industry professionals and external peers from academia during 'INNOVEX-2024'."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Former HOD Message Vol 4 -->
+          <div class="col-lg-6">
+            <div class="pubtech-card h-100">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-quote text-primary me-2" style="font-size: 2.2rem;"></i>
+                <div>
+                  <h5 class="fw-bold text-dark m-0">HOD's Message (Vol. 4)</h5>
+                  <span class="text-muted small">Dr. Ashwini Kotrashetti &bull; Former Head of Department, EXTC</span>
+                </div>
+              </div>
+              <div class="message-card">
+                <p class="fst-italic text-dark mb-0">
+                  "The final year projects of academic year 2021-2022 compelled the faculty and students to be at their best of creativity. Despite all odds, the projects were very well implemented and tested. The zeal and commitment of the students and their project guide is definitely praiseworthy... PUBTECH 4.0 showcases a compilation of all the papers written based on their projects."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Mentor Message Vol 4 -->
+          <div class="col-lg-6">
+            <div class="pubtech-card h-100">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-quote text-warning me-2" style="font-size: 2.2rem;"></i>
+                <div>
+                  <h5 class="fw-bold text-dark m-0">Department Project Mentor's Message (Vol. 4)</h5>
+                  <span class="text-muted small">Dr. Sudhakar Mande &bull; Project Mentor &amp; Professor, EXTC</span>
+                </div>
+              </div>
+              <div class="message-card" style="border-left-color: #b8860b;">
+                <p class="fst-italic text-dark mb-0">
+                  "PubTech 4.0 is more than simply a compendium of technical papers; it also serves as an example of how students think creatively and how hard faculty members work to make those ideas a reality. Over the years, the EXTC Department has put in place robust procedures which have raised the bar of project work quality."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collaborative Projects Banner -->
+        <div class="pubtech-card mt-4">
+          <h5 class="fw-bold text-primary mb-3">
+            <i class="bi bi-diagram-3-fill me-2"></i>Institutional &amp; Industry Research Collaborations
+          </h5>
+          <div class="row g-3 text-center">
+            <div class="col-md-6">
+              <div class="p-3 border rounded bg-light">
+                <i class="bi bi-building-check text-primary fs-3 d-block mb-2"></i>
+                <h6 class="fw-bold text-dark mb-1">Collaborative Research with IIT (BHU) Varanasi</h6>
+                <p class="text-muted small mb-0">Joint research and co-authored publications on Metasurface Bandpass and Broadband Filters presented at IEEE TENSYMP.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 border rounded bg-light">
+                <i class="bi bi-cpu-fill text-success fs-3 d-block mb-2"></i>
+                <h6 class="fw-bold text-dark mb-1">Industry Collaboration with QDNet Technologies</h6>
+                <p class="text-muted small mb-0">Industry-linked technical project implementation and mentorship for advanced LoRaWAN smart water networks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <div style="padding: 2rem;"></div>
+
+  <!-- Footer placeholder (Injected by header.js) -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="/nav.js"></script>
+  <script src="/temp.js"></script>
+  <script src="/header.js"></script>
+
+  <!-- Filter & Fullscreen Scripts -->
+  <script>
+    // Filter for Volume 5.0
+    function filterPapersVol5() {
+      const input = document.getElementById("paperSearchInputVol5");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("papersTableVol5");
+      const trs = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < trs.length; i++) {
+        const text = trs[i].textContent || trs[i].innerText;
+        if (text.toLowerCase().indexOf(filter) > -1) {
+          trs[i].style.display = "";
+        } else {
+          trs[i].style.display = "none";
+        }
+      }
+    }
+
+    function setCategoryFilterVol5(category, btn) {
+      const buttons = document.querySelectorAll("#categoryFiltersVol5 button");
+      buttons.forEach(b => {
+        b.classList.remove("active", "btn-outline-success");
+        b.classList.add("btn-outline-secondary");
+      });
+      btn.classList.add("active", "btn-outline-success");
+      btn.classList.remove("btn-outline-secondary");
+
+      const table = document.getElementById("papersTableVol5");
+      const rows = table.querySelectorAll("tbody tr");
+
+      rows.forEach(row => {
+        const rowCategory = row.getAttribute("data-category");
+        if (category === "all" || rowCategory === category) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    }
+
+    // Filter for Volume 4.0
+    function filterPapersVol4() {
+      const input = document.getElementById("paperSearchInputVol4");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("papersTableVol4");
+      const trs = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < trs.length; i++) {
+        const text = trs[i].textContent || trs[i].innerText;
+        if (text.toLowerCase().indexOf(filter) > -1) {
+          trs[i].style.display = "";
+        } else {
+          trs[i].style.display = "none";
+        }
+      }
+    }
+
+    // Fullscreen Toggle
+    function toggleFullScreenViewer(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      if (!document.fullscreenElement) {
+        if (container.requestFullscreen) {
+          container.requestFullscreen();
+        } else if (container.webkitRequestFullscreen) {
+          container.webkitRequestFullscreen();
+        } else if (container.msRequestFullscreen) {
+          container.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

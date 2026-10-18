@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/nav.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
+  <link rel="stylesheet" href="/home.css" />
+  <link rel="icon" href="/assets/logo.ico" type="image/x-icon" />
+  <title>IETE-DBIT-ISF Student Chapter - EXTC Department | DBIT</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JDMRE8FDJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4JDMRE8FDJ');
+  </script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .iete-hero-banner {
+      background: linear-gradient(135deg, #002244 0%, #003366 50%, #0b4f8c 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 38px 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 24px rgba(0, 34, 68, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .iete-hero-banner::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .iete-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffd700;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Tabs Styling */
+    .iete-nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+      border-bottom: none;
+    }
+
+    .iete-nav-pills .nav-link {
+      background-color: #ffffff;
+      color: #003366;
+      font-weight: 600;
+      padding: 12px 26px;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .iete-nav-pills .nav-link:hover {
+      background-color: #f0f7ff;
+      border-color: #003366;
+      color: #003366;
+      transform: translateY(-2px);
+    }
+
+    .iete-nav-pills .nav-link.active {
+      background-color: #003366;
+      color: #ffffff;
+      border-color: #003366;
+      box-shadow: 0 4px 12px rgba(0, 51, 102, 0.25);
+    }
+
+    /* Activity Card */
+    .activity-card {
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      margin-bottom: 32px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .activity-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+    }
+
+    .activity-card-header {
+      background: linear-gradient(135deg, #003366 0%, #0c4a80 100%);
+      color: #ffffff;
+      padding: 20px 24px;
+      border-bottom: 3px solid #ffc107;
+    }
+
+    .activity-meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .meta-pill {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #f1f5f9;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .meta-pill-gold {
+      background: rgba(255, 193, 7, 0.2);
+      color: #ffd700;
+      border: 1px solid rgba(255, 193, 7, 0.4);
+      font-weight: 600;
+    }
+
+    .activity-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .activity-photo-thumb {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      background: #f1f5f9;
+    }
+
+    .activity-photo-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .activity-photo-thumb:hover img {
+      transform: scale(1.05);
+    }
+
+    .activity-poster-thumb {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      text-align: center;
+      background: #f8fafc;
+      padding: 8px;
+    }
+
+    .activity-poster-thumb img {
+      max-height: 280px;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .impact-stat-box {
+      background: #f0f7ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .impact-stat-number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #003366;
+    }
+
+    .impact-stat-label {
+      font-size: 0.78rem;
+      color: #475569;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .section-title {
+      color: #003366;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .archive-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .archive-table thead {
+      background-color: #003366;
+      color: white;
+    }
+
+    .archive-table th,
+    .archive-table td {
+      padding: 12px 14px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .archive-table tbody tr:hover {
+      background-color: #f1f7fe;
+    }
+  </style>
+</head>
+
+<body class="bg-color">
+  <!-- Navbar injected by temp.js / nav.js -->
+  <div id="navbar"></div>
+
+  <main class="container py-4">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/index.html" class="text-decoration-none text-muted"><i class="bi bi-house-door"></i> Home</a></li>
+        <li class="breadcrumb-item text-muted">Co-Curricular Activities</li>
+        <li class="breadcrumb-item text-muted">Students Chapter &amp; Professional Bodies</li>
+        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">IETE-DBIT-ISF</li>
+      </ol>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="iete-hero-banner">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <div>
+          <div class="iete-badge">
+            <i class="bi bi-patch-check-fill"></i> Recognized Professional Body Student Forum
+          </div>
+          <h1 class="display-6 fw-bold mb-2">IETE-DBIT-ISF Student Chapter</h1>
+          <h5 class="fw-normal text-warning mb-2" style="letter-spacing: 0.4px;">
+            The Institution of Electronics and Telecommunication Engineers (IETE) &bull; Student Forum
+          </h5>
+          <p class="mb-0 text-white-50" style="max-width: 820px;">
+            Department of Electronics &amp; Telecommunication Engineering, Don Bosco Institute of Technology, Mumbai.<br>
+            <strong>Faculty Coordinator:</strong> Mrs. Namita Agarwal &nbsp;|&nbsp; <em>"For the students, by the students!"</em>
+          </p>
+        </div>
+        <div class="d-flex flex-column gap-2">
+          <a href="https://iete.dbit.in/" target="_blank" class="btn btn-warning fw-bold text-dark">
+            <i class="bi bi-globe me-1"></i> Visit Official IETE Portal <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <a href="https://shorturl.at/KmWVG" target="_blank" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-instagram me-1"></i> Follow on Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Year Tabs Navigation: with 2026 Tab prominently featured -->
+    <ul class="nav iete-nav-pills" id="ieteYearTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tab-2026-btn" data-bs-toggle="pill" data-bs-target="#tab-2026" type="button" role="tab" aria-controls="tab-2026" aria-selected="true">
+          <i class="fa-solid fa-calendar-check text-warning"></i> 2026 Activities
+          <span class="badge bg-danger ms-1">August &ndash; September 2026</span>
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab-summary-btn" data-bs-toggle="pill" data-bs-target="#tab-summary" type="button" role="tab" aria-controls="tab-summary" aria-selected="false">
+          <i class="fa-solid fa-file-pdf text-danger"></i> 2026 Activity Reports &amp; Downloads
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab-archive-btn" data-bs-toggle="pill" data-bs-target="#tab-archive" type="button" role="tab" aria-controls="tab-archive" aria-selected="false">
+          <i class="fa-solid fa-clock-rotate-left"></i> Previous Activities Archive (2023&ndash;2016)
+        </button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="ieteYearTabsContent">
+
+      <!-- ================= TAB: 2026 (AUGUST - SEPTEMBER 2026) ================= -->
+      <div class="tab-pane fade show active" id="tab-2026" role="tabpanel" aria-labelledby="tab-2026-btn">
+        
+        <!-- EVENT 1: Tech Canvas 2026 -->
+        <div class="activity-card">
+          <div class="activity-card-header">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">
+                  <i class="fa-solid fa-palette me-1"></i> Technical Competition &bull; 14 August 2026
+                </span>
+                <h3 class="fw-bold mb-1">Tech Canvas 2026 &mdash; Live Poster-Making Competition</h3>
+                <p class="mb-0 text-white-50">
+                  Theme: "Engineering Ideas for Viksit Bharat" &bull; Organised as part of Independence Day Celebrations
+                </p>
+              </div>
+              <div>
+                <a href="/assets/pdf/IETE_Tech_Canvas_Report_August_2026.pdf" target="_blank" class="btn btn-warning fw-bold">
+                  <i class="bi bi-file-earmark-pdf-fill me-1 text-danger"></i> View / Download Report (PDF)
+                </a>
+              </div>
+            </div>
+
+            <div class="activity-meta-pills">
+              <span class="meta-pill meta-pill-gold"><i class="bi bi-calendar-event"></i> 14th August 2026 (3:00 PM &ndash; 4:30 PM)</span>
+              <span class="meta-pill"><i class="bi bi-geo-alt-fill"></i> EXTC Lab 4, First Floor, DBIT</span>
+              <span class="meta-pill"><i class="bi bi-people-fill"></i> 10 Participants (COMP/EXTC/IT/MECH)</span>
+              <span class="meta-pill"><i class="bi bi-person-badge"></i> Faculty Coordinator: Mrs. Namita Agarwal</span>
+              <span class="meta-pill"><i class="bi bi-pen-fill"></i> Student Leads: Sneha Pawar (Treasurer) &amp; Daniel Sebastian (Secretary)</span>
+            </div>
+          </div>
+
+          <div class="card-body p-4">
+            <div class="row g-4 mb-4">
+              <div class="col-lg-8">
+                <h5 class="section-title"><i class="bi bi-bullseye text-primary"></i> Objectives &amp; Highlights</h5>
+                <p class="text-secondary text-justify">
+                  The IETE-ISF Students' Chapter organized <strong>"TechCanvas 2026"</strong>, a live digital poster-making competition using Canva. Students from diverse engineering disciplines brought forward innovative concepts addressing national societal challenges under the theme <em>"Engineering Ideas for Viksit Bharat"</em>.
+                </p>
+                <div class="row g-2">
+                  <div class="col-md-6">
+                    <div class="p-3 bg-light rounded border h-100">
+                      <h6 class="fw-bold text-dark"><i class="bi bi-laptop text-primary me-2"></i>Design Platform &amp; Format</h6>
+                      <p class="small text-muted mb-0">Live hands-on poster design session where students conceptualized and executed visual engineering solutions in real-time within the allotted time.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 bg-light rounded border h-100">
+                      <h6 class="fw-bold text-dark"><i class="bi bi-trophy text-primary me-2"></i>Evaluation &amp; Awards</h6>
+                      <p class="small text-muted mb-0">Judged on theme relevance, creativity, technical depth, and visual clarity. Cash prize pool of Rs. 1500 + achievement certificates awarded to top entries.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <h6 class="fw-bold text-dark mt-3"><i class="bi bi-diagram-3-fill text-primary me-2"></i>Curricular &amp; Global Impact:</h6>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <span class="badge bg-primary">PO3: Solution Design</span>
+                  <span class="badge bg-secondary">PO5: Modern Tool Usage (Canva)</span>
+                  <span class="badge bg-info text-dark">PO6: Engineer &amp; Society</span>
+                  <span class="badge bg-dark">PO10: Communication</span>
+                  <span class="badge bg-success">SDG 4: Quality Education</span>
+                  <span class="badge bg-warning text-dark">SDG 9: Industry &amp; Innovation</span>
+                </div>
+              </div>
+
+              <!-- Stats & Poster -->
+              <div class="col-lg-4">
+                <div class="p-3 bg-light rounded-3 border mb-3">
+                  <h6 class="fw-bold text-dark mb-2 text-center"><i class="bi bi-pie-chart-fill text-success me-1"></i> Participant Feedback</h6>
+                  <div class="row g-2 text-center">
+                    <div class="col-6">
+                      <div class="impact-stat-box">
+                        <div class="impact-stat-number text-primary">100%</div>
+                        <div class="impact-stat-label">Rated 5/5 Overall</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="impact-stat-box">
+                        <div class="impact-stat-number text-success">100%</div>
+                        <div class="impact-stat-label">Creativity Fostered</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="impact-stat-box">
+                        <div class="impact-stat-number">90%</div>
+                        <div class="impact-stat-label">Management 5/5</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="impact-stat-box">
+                        <div class="impact-stat-number">100%</div>
+                        <div class="impact-stat-label">Want Future Events</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="activity-poster-thumb">
+                  <a href="/assets/events/iete_2026/tech_canvas_poster.jpg" target="_blank" title="View Poster">
+                    <img src="/assets/events/iete_2026/tech_canvas_poster.jpg" alt="Tech Canvas 2026 Poster" class="img-fluid" />
+                  </a>
+                  <div class="small text-muted mt-2 fw-semibold"><i class="bi bi-image me-1"></i> Official Event Poster</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery -->
+            <h5 class="section-title"><i class="bi bi-camera-fill text-primary"></i> Event Snapshots &amp; Felicitation</h5>
+            <div class="activity-photo-grid">
+              <div class="activity-photo-thumb">
+                <a href="/assets/events/iete_2026/tech_canvas_photo1.jpg" target="_blank">
+                  <img src="/assets/events/iete_2026/tech_canvas_photo1.jpg" alt="Students designing in EXTC Lab 4" />
+                </a>
+              </div>
+              <div class="activity-photo-thumb">
+                <a href="/assets/events/iete_2026/tech_canvas_photo2.jpg" target="_blank">
+                  <img src="/assets/events/iete_2026/tech_canvas_photo2.jpg" alt="Participants engaged in poster making" />
+                </a>
+              </div>
+              <div class="activity-photo-thumb">
+                <a href="/assets/events/iete_2026/tech_canvas_photo3.jpg" target="_blank">
+                  <img src="/assets/events/iete_2026/tech_canvas_photo3.jpg" alt="Winner felicitation with certificate" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EVENT 2: Applications of AI, GenAI & Agentic AI in Industry -->
+        <div class="activity-card">
+          <div class="activity-card-header">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">
+                  <i class="fa-solid fa-robot me-1"></i> Industry Expert Interactive Session &bull; 18 August 2026
+                </span>
+                <h3 class="fw-bold mb-1">Applications of AI, GenAI &amp; Agentic AI in Industry</h3>
+                <p class="mb-0 text-white-50">
+                  Speaker: Dr. Pushkar M. Sathe (Assistant Manager, Selec Controls Pvt. Ltd., Technical Training - R&amp;D)
+                </p>
+              </div>
+              <div>
+                <a href="/assets/pdf/IETE_AI_GenAI_Agentic_AI_Session_Report_August_2026.pdf" target="_blank" class="btn btn-warning fw-bold">
+                  <i class="bi bi-file-earmark-pdf-fill me-1 text-danger"></i> View / Download Report (PDF)
+                </a>
+              </div>
+            </div>
+
+            <div class="activity-meta-pills">
+              <span class="meta-pill meta-pill-gold"><i class="bi bi-calendar-event"></i> 18th August 2026 (9:00 AM &ndash; 11:00 AM)</span>
+              <span class="meta-pill"><i class="bi bi-geo-alt-fill"></i> Mech CR-3, DBIT</span>
+              <span class="meta-pill"><i class="bi bi-people-fill"></i> 54 TE EXTC Students Present</span>
+              <span class="meta-pill"><i class="bi bi-person-badge"></i> Faculty Coordinator: Mrs. Namita Agarwal</span>
+              <span class="meta-pill"><i class="bi bi-pen-fill"></i> Documentation Head: Ms. Sakshi Talkar</span>
+            </div>
+          </div>
+
+          <div class="card-body p-4">
+            <div class="row g-4 mb-4">
+              <div class="col-lg-8">
+                <h5 class="section-title"><i class="bi bi-cpu text-primary"></i> Key Takeaways &amp; Technical Coverage</h5>
+                <p class="text-secondary text-justify">
+                  Dr. Pushkar M. Sathe delivered an insightful masterclass covering the continuum from traditional machine learning to Generative AI and autonomous <strong>Agentic AI</strong>. The session emphasized actionable applications in telecom and embedded electronics.
+                </p>
+                <ul class="text-secondary">
+                  <li><strong>Local &amp; Offline LLMs:</strong> Utilizing open tools such as Ollama to run and fine-tune private language models on edge hardware.</li>
+                  <li><strong>RAG &amp; Embeddings:</strong> Retrieval-Augmented Generation architectures for connecting vector databases with enterprise documentation.</li>
+                  <li><strong>Autonomous AI Agents:</strong> How agents formulate multi-step plans, invoke API tools, and automate workflows with minimal human oversight.</li>
+                  <li><strong>EXTC Domain Integrations:</strong> Signal processing, smart IoT nodes, predictive maintenance, and embedded system firmware testing.</li>
+                  <li><strong>Memento Presentation:</strong> Dr. Madhavi Pednekar, HOD EXTC, presented a token of appreciation to Dr. Sathe on behalf of IETE-DBIT-ISF.</li>
+                </ul>
+
+                <h6 class="fw-bold text-dark mt-3"><i class="bi bi-diagram-3-fill text-primary me-2"></i>Curricular &amp; Global Impact:</h6>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <span class="badge bg-primary">PO1: Engineering Knowledge</span>
+                  <span class="badge bg-secondary">PO2: Problem Analysis</span>
+                  <span class="badge bg-info text-dark">PO3: Solution Design</span>
+                  <span class="badge bg-dark">PO5: Modern Tool Usage</span>
+                  <span class="badge bg-primary">PO9: Communication</span>
+                  <span class="badge bg-secondary">PO11: Life-Long Learning</span>
+                  <span class="badge bg-success">SDG 4, 8, 9 &amp; 17</span>
+                </div>
+              </div>
+
+              <!-- Stats & Poster -->
+              <div class="col-lg-4">
+                <div class="p-3 bg-light rounded-3 border mb-3">
+                  <h6 class="fw-bold text-dark mb-2 text-center"><i class="bi bi-bar-chart-fill text-primary me-1"></i> Survey Analysis (51 Responses)</h6>
+                  <div class="row g-2 text-center">
+                    <div class="col-6">
+                      <div class="impact-stat-box">
+                        <div class="impact-stat-number text-primary">80.4%</div>
+                        <div class="impact-stat-label">Rated 5/5 Usefulness</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="impact-stat-box">
+                        <div class="impact-stat-number text-success">74.5%</div>
+                        <div class="impact-stat-label">Industry Insights 5/5</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="impact-stat-box">
+                        <div class="impact-stat-number">80.4%</div>
+                        <div class="impact-stat-label">Highly Motivated</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="impact-stat-box">
+                        <div class="impact-stat-number">96.1%</div>
+                        <div class="impact-stat-label">Career Awareness</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="activity-poster-thumb">
+                  <a href="/assets/events/iete_2026/ai_session_poster.jpg" target="_blank" title="View Poster">
+                    <img src="/assets/events/iete_2026/ai_session_poster.jpg" alt="AI, GenAI & Agentic AI Poster" class="img-fluid" />
+                  </a>
+                  <div class="small text-muted mt-2 fw-semibold"><i class="bi bi-image me-1"></i> Official Event Poster</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery -->
+            <h5 class="section-title"><i class="bi bi-camera-fill text-primary"></i> Session Gallery &amp; Q&amp;A Highlights</h5>
+            <div class="activity-photo-grid">
+              <div class="activity-photo-thumb">
+                <a href="/assets/events/iete_2026/ai_session_photo1.jpg" target="_blank">
+                  <img src="/assets/events/iete_2026/ai_session_photo1.jpg" alt="Dr. Pushkar Sathe presenting to TE EXTC" />
+                </a>
+              </div>
+              <div class="activity-photo-thumb">
+                <a href="/assets/events/iete_2026/ai_session_photo2.jpg" target="_blank">
+                  <img src="/assets/events/iete_2026/ai_session_photo2.jpg" alt="Audience and slides in Mech CR-3" />
+                </a>
+              </div>
+              <div class="activity-photo-thumb">
+                <a href="/assets/events/iete_2026/ai_session_photo3.jpg" target="_blank">
+                  <img src="/assets/events/iete_2026/ai_session_photo3.jpg" alt="Interactive student discussion" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EVENT 3: Teacher's Day Celebration 2026 -->
+        <div class="activity-card">
+          <div class="activity-card-header">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">
+                  <i class="fa-solid fa-heart me-1"></i> Department Celebration &bull; 07 September 2026
+                </span>
+                <h3 class="fw-bold mb-1">Teacher's Day Celebration 2026</h3>
+                <p class="mb-0 text-white-50">
+                  Honouring EXTC faculty and staff &bull; Guest of Honour: Principal Dr. Sudhakar Mande
+                </p>
+              </div>
+              <div>
+                <a href="/assets/pdf/IETE_Teachers_Day_Celebration_Report_September_2026.pdf" target="_blank" class="btn btn-warning fw-bold">
+                  <i class="bi bi-file-earmark-pdf-fill me-1 text-danger"></i> View / Download Report (PDF)
+                </a>
+              </div>
+            </div>
+
+            <div class="activity-meta-pills">
+              <span class="meta-pill meta-pill-gold"><i class="bi bi-calendar-event"></i> 07 September 2026 (3:00 PM &ndash; 5:00 PM)</span>
+              <span class="meta-pill"><i class="bi bi-geo-alt-fill"></i> EXTC Lab-08, DBIT</span>
+              <span class="meta-pill"><i class="bi bi-people-fill"></i> Teaching &amp; Non-Teaching EXTC Staff &amp; Principal</span>
+              <span class="meta-pill"><i class="bi bi-person-badge"></i> Faculty Coordinator: Mrs. Namita Agarwal</span>
+              <span class="meta-pill"><i class="bi bi-pen-fill"></i> Documentation Head: Sakshi Talkar</span>
+            </div>
+          </div>
+
+          <div class="card-body p-4">
+            <div class="row g-4 mb-4">
+              <div class="col-lg-8">
+                <h5 class="section-title"><i class="bi bi-heart-fill text-danger"></i> Event Activities &amp; Fellowship</h5>
+                <p class="text-secondary text-justify">
+                  The IETE-DBIT-ISF student council planned and hosted an affectionate, vibrant celebration for faculty members to unwind from academic duties. Fun-filled intellectual and entertaining challenges were arranged to promote camaraderie and student-faculty bonding.
+                </p>
+                <div class="row g-2">
+                  <div class="col-md-6">
+                    <div class="p-3 bg-light rounded border h-100">
+                      <h6 class="fw-bold text-dark"><i class="bi bi-grid-3x3 text-primary me-2"></i>Electronics Crossword</h6>
+                      <p class="small text-muted mb-0">Tested rapid technical recall of circuit principles in a lighthearted, humorous setting.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 bg-light rounded border h-100">
+                      <h6 class="fw-bold text-dark"><i class="bi bi-pencil me-2 text-primary"></i>Left-Hand Component Sketch</h6>
+                      <p class="small text-muted mb-0">Guessing electronic components hand-sketched with non-dominant hands by faculty teams.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mt-2">
+                    <div class="p-3 bg-light rounded border h-100">
+                      <h6 class="fw-bold text-dark"><i class="bi bi-diagram-2 text-primary me-2"></i>Flowchart Memory Game</h6>
+                      <p class="small text-muted mb-0">Testing concentration and visual memory by reproducing complex algorithm flowcharts.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mt-2">
+                    <div class="p-3 bg-light rounded border h-100">
+                      <h6 class="fw-bold text-dark"><i class="bi bi-music-note-beamed text-primary me-2"></i>Musical Chairs &amp; High Tea</h6>
+                      <p class="small text-muted mb-0">Enthusiastic participation followed by distribution of handcrafted mementos and refreshments.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <h6 class="fw-bold text-dark mt-3"><i class="bi bi-diagram-3-fill text-primary me-2"></i>Curricular &amp; Ethical Mapping:</h6>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <span class="badge bg-primary">PO8: Ethics &amp; Professional Gratitude</span>
+                  <span class="badge bg-secondary">PO9: Teamwork &amp; Coordination</span>
+                  <span class="badge bg-info text-dark">PO10: Verbal Communication</span>
+                  <span class="badge bg-dark">PO11: Event Management</span>
+                  <span class="badge bg-success">SDG 4, 16 &amp; 17</span>
+                </div>
+              </div>
+
+              <!-- Poster -->
+              <div class="col-lg-4">
+                <div class="activity-poster-thumb">
+                  <a href="/assets/events/iete_2026/teachers_day_poster.jpg" target="_blank" title="View Poster">
+                    <img src="/assets/events/iete_2026/teachers_day_poster.jpg" alt="Teachers Day 2026 Poster" class="img-fluid" />
+                  </a>
+                  <div class="small text-muted mt-2 fw-semibold"><i class="bi bi-image me-1"></i> Official Event Poster</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery -->
+            <h5 class="section-title"><i class="bi bi-camera-fill text-primary"></i> Celebration Moments &amp; Felicitation</h5>
+            <div class="activity-photo-grid">
+              <div class="activity-photo-thumb">
+                <a href="/assets/events/iete_2026/teachers_day_photo1.jpg" target="_blank">
+                  <img src="/assets/events/iete_2026/teachers_day_photo1.jpg" alt="Group photo with Principal Dr. Sudhakar Mande and EXTC Faculty" />
+                </a>
+              </div>
+              <div class="activity-photo-thumb">
+                <a href="/assets/events/iete_2026/teachers_day_photo2.jpg" target="_blank">
+                  <img src="/assets/events/iete_2026/teachers_day_photo2.jpg" alt="Faculty participating in fun activities" />
+                </a>
+              </div>
+              <div class="activity-photo-thumb">
+                <a href="/assets/events/iete_2026/teachers_day_photo3.jpg" target="_blank">
+                  <img src="/assets/events/iete_2026/teachers_day_photo3.jpg" alt="Memento presentation to faculty members" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= TAB: 2026 DOWNLOADS & SUMMARY ================= -->
+      <div class="tab-pane fade" id="tab-summary" role="tabpanel" aria-labelledby="tab-summary-btn">
+        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+          <h4 class="fw-bold text-dark mb-3"><i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>Official IETE Activity Reports &bull; August &ndash; September 2026</h4>
+          <p class="text-muted">Signed and approved activity reports complete with participant lists, feedback charts, and outcome attainments.</p>
+
+          <div class="table-responsive">
+            <table class="archive-table">
+              <thead>
+                <tr>
+                  <th style="width: 5%;">Sr.</th>
+                  <th style="width: 35%;">Activity Title</th>
+                  <th style="width: 15%;">Target Audience</th>
+                  <th style="width: 15%;">Date</th>
+                  <th style="width: 15%;">Coordinator</th>
+                  <th style="width: 15%;" class="text-center">Download PDF</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center fw-bold">1</td>
+                  <td class="fw-bold text-primary">
+                    Tech Canvas 2026 &mdash; Live Poster-Making Competition
+                  </td>
+                  <td>COMP / EXTC / IT / MECH</td>
+                  <td>14th August 2026</td>
+                  <td>Mrs. Namita Agarwal</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/IETE_Tech_Canvas_Report_August_2026.pdf" target="_blank" class="btn btn-sm btn-danger fw-bold">
+                      <i class="bi bi-download me-1"></i> PDF (839 KB)
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center fw-bold">2</td>
+                  <td class="fw-bold text-primary">
+                    Applications of AI, GenAI &amp; Agentic AI in Industry (Dr. Pushkar M. Sathe)
+                  </td>
+                  <td>Third Year (TE) EXTC</td>
+                  <td>18th August 2026</td>
+                  <td>Mrs. Namita Agarwal</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/IETE_AI_GenAI_Agentic_AI_Session_Report_August_2026.pdf" target="_blank" class="btn btn-sm btn-danger fw-bold">
+                      <i class="bi bi-download me-1"></i> PDF (2.0 MB)
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center fw-bold">3</td>
+                  <td class="fw-bold text-primary">
+                    Teacher's Day Celebration 2026
+                  </td>
+                  <td>EXTC Faculty &amp; Staff</td>
+                  <td>07th September 2026</td>
+                  <td>Mrs. Namita Agarwal</td>
+                  <td class="text-center">
+                    <a href="/assets/pdf/IETE_Teachers_Day_Celebration_Report_September_2026.pdf" target="_blank" class="btn btn-sm btn-danger fw-bold">
+                      <i class="bi bi-download me-1"></i> PDF (796 KB)
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TAB: ARCHIVE ================= -->
+      <div class="tab-pane fade" id="tab-archive" role="tabpanel" aria-labelledby="tab-archive-btn">
+        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+          <h4 class="fw-bold text-dark mb-3"><i class="bi bi-clock-history text-primary me-2"></i>IETE Historical Activities Archive</h4>
+          <p class="text-muted">A legacy of technical workshops, industrial paper conferences, and skill initiatives conducted under IETE-DBIT-ISF.</p>
+
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="p-3 bg-light rounded border h-100">
+                <h6 class="fw-bold text-dark"><i class="bi bi-robot text-primary me-1"></i> Robowars Workshop</h6>
+                <p class="small text-muted mb-2">Combat robotics workshop during Colosseum technical fest, teaching chassis building, electronics, and combat tactics.</p>
+                <a href="https://tinyurl.com/mv4tbvbs" target="_blank" class="small fw-semibold text-primary">View Robowars Details &rarr;</a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 bg-light rounded border h-100">
+                <h6 class="fw-bold text-dark"><i class="bi bi-router text-primary me-1"></i> IP Networking Session</h6>
+                <p class="small text-muted mb-2">Routing protocols, subnetting, and network packet analysis for telecommunication engineers.</p>
+                <a href="https://tinyurl.com/yc27jbnw" target="_blank" class="small fw-semibold text-primary">View Networking Session &rarr;</a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 bg-light rounded border h-100">
+                <h6 class="fw-bold text-dark"><i class="bi bi-broadcast-pin text-primary me-1"></i> HAM Radio Workshop</h6>
+                <p class="small text-muted mb-2">Hands-on amateur radio frequency communication and license training conducted by Team MARI.</p>
+                <a href="https://tinyurl.com/yt7w3fcf" target="_blank" class="small fw-semibold text-primary">View HAM Radio Details &rarr;</a>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="p-3 bg-light rounded border h-100">
+                <h6 class="fw-bold text-dark"><i class="bi bi-journal-text text-primary me-1"></i> Oscillations Technical Paper Writing</h6>
+                <p class="small text-muted mb-2">Flagship technical paper conference guided by Dr. Sudhakar Mande on research methodology and paper publication.</p>
+                <a href="https://tinyurl.com/bdeywdpb" target="_blank" class="small fw-semibold text-primary">View Oscillations &rarr;</a>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="p-3 bg-light rounded border h-100">
+                <h6 class="fw-bold text-dark"><i class="bi bi-boxes text-primary me-1"></i> Talk: Project to Product</h6>
+                <p class="small text-muted mb-2">Industry insights on converting academic engineering prototypes into commercially viable products.</p>
+                <a href="https://tinyurl.com/2mhydc7d" target="_blank" class="small fw-semibold text-primary">View Talk Details &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-primary mt-4 mb-0 d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div>
+              <i class="bi bi-globe me-1"></i> Explore complete historical documentation and student teams on the official portal:
+            </div>
+            <a href="https://iete.dbit.in/" target="_blank" class="btn btn-sm btn-primary fw-bold">
+              Open iete.dbit.in &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="/nav.js"></script>
+  <script src="/temp.js"></script>
+  <script src="/header.js"></script>
+</body>
+
+</html>

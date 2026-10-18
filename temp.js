@@ -133,7 +133,10 @@ nav.innerHTML = `
                     <a class="dropdown-item" href="/academics/academic-calendar.html">Academic Calender</a>
                   </li>
                   <li><a class="dropdown-item" href="/academics/exam-calendar.html">Exam Timetable</a></li>
+                  <li><a class="dropdown-item" href="/academics/timetable.html">Timetable</a></li>
                   <li><a class="dropdown-item" href="/academics/syllabus.html">Syllabus</a></li>
+                  <li><a class="dropdown-item" href="/academics/pubtech.html">PubTech</a></li>
+                  <li>
                     <a class="dropdown-item" href="#"
                       >Academic Advisory Board</a
                     >
