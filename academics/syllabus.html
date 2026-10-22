@@ -7,141 +7,2009 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
-  <!-- <link rel="stylesheet" href="main.css"> -->
-  <!-- <link rel="stylesheet" href="../style/nav.css" /> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="/style/nav.css">
-  <link rel="stylesheet" href="about.css" />
-  <link rel="stylesheet" href="../style/footer.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
   <link rel="icon" href="/assets/logo.ico" type="image/x-icon">
-  <!-- <link rel="stylesheet" href="../style/main.css" /> -->
-  <title>DBIT EXTC</title>
-  <!-- <script src="../temp.js" defer></script> -->
+  <title>Syllabus &amp; Curriculum - EXTC | DBIT</title>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JDMRE8FDJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4JDMRE8FDJ');
+  </script>
+
   <style>
-
-    .table td {
-      text-align: left;
+    body {
+      background-color: #f8fafc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-      /* Header styling */
-.academic-calendar-header {
-  text-align: center;
-  padding: 20px 0;
-  font-family: sans-serif;
-}
 
-.academic-calendar-header h2 {
-  color: #003366;
-  margin: 0;
-}
+    .header-section {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: url('/assets/collegepic.webp') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .discover-box {
+      background-color: white;
+      padding: 12px 28px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #b8860b;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .academic-calendar-header {
+      text-align: center;
+      padding: 15px 0 25px 0;
+    }
+
+    .academic-calendar-header h2 {
+      color: #003366;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    /* Primary Scheme Navigation Pills */
+    .scheme-nav .nav-link {
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 40px;
+      border: 2px solid #003366;
+      margin: 0 8px 10px 8px;
+      color: #003366;
+      background-color: #ffffff;
+      transition: all 0.25s ease-in-out;
+    }
+
+    .scheme-nav .nav-link:hover {
+      background-color: #e6f2ff;
+      color: #002244;
+    }
+
+    .scheme-nav .nav-link.active {
+      background-color: #003366;
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(0, 51, 102, 0.25);
+    }
+
+    /* Sub-pills for Semesters */
+    .semester-pills .nav-link {
+      font-size: 0.90rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      margin: 0 4px 8px 4px;
+      color: #334155;
+      background-color: #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .semester-pills .nav-link:hover {
+      background-color: #f1f5f9;
+      color: #003366;
+    }
+
+    .semester-pills .nav-link.active {
+      background-color: #0b4f8c;
+      color: #ffffff;
+      border-color: #0b4f8c;
+    }
+
+    /* PDF Hub Cards */
+    .pdf-card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pdf-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 51, 102, 0.12);
+      border-color: #003366;
+    }
+
+    .pdf-card .card-icon {
+      font-size: 2.2rem;
+      color: #dc3545;
+      margin-bottom: 12px;
+    }
+
+    .pdf-card h5 {
+      color: #003366;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .pdf-card .badge-scheme {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      font-weight: 600;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .pdf-card p {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .btn-pdf-download {
+      background-color: #003366;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.88rem;
+      border-radius: 6px;
+      padding: 8px 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-pdf-download:hover {
+      background-color: #0b4f8c;
+      color: #ffffff;
+    }
+
+    /* Card Containers */
+    .syllabus-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 30px;
+    }
+
+    .syllabus-header-banner {
+      background: linear-gradient(135deg, #003366 0%, #0b4f8c 100%);
+      color: #ffffff;
+      padding: 16px 22px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .syllabus-header-banner h4 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .syllabus-header-banner p {
+      margin: 4px 0 0 0;
+      font-size: 0.88rem;
+      opacity: 0.9;
+    }
 
     /* Table styling */
-.academic-calendar-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  font-family: sans-serif;
-  background-color: #f5faff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    .academic-calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
 
-/* Table head */
-.academic-calendar-table thead {
-  background-color: #003366;
-  color: white;
-}
+    .academic-calendar-table thead {
+      background-color: #003366;
+      color: white;
+    }
 
-.academic-calendar-table th,
-.academic-calendar-table td {
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: center;
-}
+    .academic-calendar-table th,
+    .academic-calendar-table td {
+      padding: 10px 14px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 0.92rem;
+      vertical-align: middle;
+    }
 
-/* Table body rows */
-.academic-calendar-table tbody tr {
-  transition: background-color 0.3s ease;
-}
+    .academic-calendar-table td.text-start {
+      text-align: left !important;
+    }
 
-/* Hover effect */
-.academic-calendar-table tbody tr:hover {
-  background-color: #e6f2ff;
-}
+    .academic-calendar-table tbody tr:hover {
+      background-color: #f0f7ff;
+    }
 
-/* Links styling */
-.academic-calendar-table a {
-  text-decoration: none;
-  color: #003366;
-  font-weight: bold;
-}
+    .academic-calendar-table a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: 600;
+    }
 
-.academic-calendar-table a:hover {
-  text-decoration: underline;
-}
+    .academic-calendar-table a:hover {
+      text-decoration: underline;
+      color: #0b4f8c;
+    }
 
-h2 {
-  color : #003366;
-}
+    .badge-vertical {
+      font-size: 0.78rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
 
-.header-section {
-    position: relative;
-    width: 100%;
-    height: 200px; /* Adjust height as needed */
-    background: url('/assets/collegepic.webp') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 7px;
+    .elective-list-box {
+      background-color: #f8fafc;
+      border-left: 4px solid #003366;
+      border-radius: 4px;
+      padding: 14px 18px;
+      margin-top: 15px;
+    }
 
-  }
+    .elective-list-box h6 {
+      color: #003366;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
 
-  .discover-box {
-    background-color: white;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: gold;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+    .elective-list-box ul {
+      margin-bottom: 0;
+      padding-left: 20px;
+      font-size: 0.9rem;
+      color: #334155;
+    }
 
-  h6{
-    text-align: center;
-  }
+    .info-callout {
+      background-color: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 0.92rem;
+      color: #1e3a8a;
+    }
 
-</style>
+    h6.table-subheading {
+      text-align: center;
+      color: #003366;
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin: 25px 0 15px 0;
+    }
   </style>
 </head>
 
-<body class="bg-white" style="background-image: url('bg.jpg');">
+<body class="bg-white">
+  <!-- Navbar rendered by temp.js -->
   <div id="navbar"></div>
 
-  <main>
-    <div class="row justify-content-center text-center p-1 ">
-
+  <main class="container my-4">
+    <!-- Header Banner -->
+    <div class="row justify-content-center text-center p-1">
       <div class="academic-calendar-header row justify-content-center text-center p-3">
-
         <div class="header-section">
-          <div class="discover-box">Discover EXTC
+          <div class="discover-box">
+            Discover EXTC
             <br>
             Syllabus
           </div>
-         
         </div>
-       
-        <br><br><br>
-        <h2 style="font-family: sans-serif;">SYLLABUS</h2>
-        <br><br>
+        <h2 style="font-family: sans-serif; margin-top: 20px;">CURRICULUM &amp; SYLLABUS</h2>
+        <p class="text-muted">
+          Don Bosco Institute of Technology, Mumbai (An Autonomous Institute Affiliated to University of Mumbai)
+          <br>
+          Department of Electronics &amp; Telecommunication Engineering
+        </p>
+      </div>
+    </div>
+
+    <!-- Scheme Navigation Pills -->
+    <div class="d-flex justify-content-center mb-4">
+      <ul class="nav nav-pills scheme-nav flex-wrap justify-content-center" id="schemeTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="autonomous-tab" data-bs-toggle="pill" data-bs-target="#autonomous-scheme"
+            type="button" role="tab" aria-controls="autonomous-scheme" aria-selected="true">
+            <i class="bi bi-patch-check-fill me-1 text-warning"></i> Autonomous Scheme (DB25-V1 | NEP 2020)
+            <span class="badge bg-warning text-dark ms-1">Active</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="mu-tab" data-bs-toggle="pill" data-bs-target="#mu-scheme"
+            type="button" role="tab" aria-controls="mu-scheme" aria-selected="false">
+            <i class="bi bi-mortarboard me-1"></i> Mumbai University Scheme (Rev-2019 'C')
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- TAB CONTENTS -->
+    <div class="tab-content" id="schemeTabsContent">
+
+      <!-- ======================================================== -->
+      <!-- SECTION 1: AUTONOMOUS SCHEME (DB25-V1)                   -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade show active" id="autonomous-scheme" role="tabpanel" aria-labelledby="autonomous-tab">
+
+        <!-- Intro Notification Banner -->
+        <div class="info-callout d-flex align-items-center">
+          <i class="bi bi-info-circle-fill fs-3 me-3 text-primary"></i>
+          <div>
+            <strong>DBIT Autonomous Curriculum Framework (As per NEP 2020 &amp; UGC Guidelines):</strong>
+            The curriculum follows a choice-based, outcome-driven framework with Multidisciplinary Minors (MDM),
+            Honors/Research pathways, Skill enhancement courses (VSEC), Community Engagement Projects (CEP), and multiple entry-exit options with Academic Bank of Credits (ABC).
+          </div>
+        </div>
+
+        <!-- Official PDF Download Hub (4 Key Documents) -->
+        <div class="row g-3 mb-4">
+          <!-- 1. FE Sem I & II Full Curriculum -->
+          <div class="col-lg-3 col-md-6">
+            <div class="pdf-card">
+              <div>
+                <div class="card-icon"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+                <span class="badge-scheme">FE • Semester I &amp; II (Complete)</span>
+                <h5>Basic Science &amp; Humanities</h5>
+                <p>Complete curriculum structure &amp; detailed syllabus for First Year Engineering (Semesters I &amp; II), common across all branches. Includes Exit Guidelines &amp; GR directives (231 pages).</p>
+              </div>
+              <div>
+                <div class="text-muted small mb-2"><i class="bi bi-file-check me-1"></i>42 Credits • AC: 01/02 &amp; 02/26</div>
+                <a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank" class="btn-pdf-download w-100">
+                  <i class="bi bi-box-arrow-up-right"></i> View Full PDF (FE I &amp; II)
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. SE EXTC Sem III -->
+          <div class="col-lg-3 col-md-6">
+            <div class="pdf-card">
+              <div>
+                <div class="card-icon"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+                <span class="badge-scheme">SE • Semester III</span>
+                <h5>EXTC Engineering</h5>
+                <p>Curriculum structure &amp; detailed syllabus for Second Year EXTC (Semester III). Scheme: DB25-V1 (Effective AY 2025-26).</p>
+              </div>
+              <div>
+                <div class="text-muted small mb-2"><i class="bi bi-file-check me-1"></i>21 Credits • AC: 01/25</div>
+                <a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank" class="btn-pdf-download w-100">
+                  <i class="bi bi-box-arrow-up-right"></i> View / Download PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. SE EXTC Sem IV -->
+          <div class="col-lg-3 col-md-6">
+            <div class="pdf-card">
+              <div>
+                <div class="card-icon"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+                <span class="badge-scheme">SE • Semester IV</span>
+                <h5>EXTC Engineering</h5>
+                <p>Curriculum structure &amp; detailed syllabus for Second Year EXTC (Semester IV). Scheme: DB25-V1 (Effective AY 2025-26).</p>
+              </div>
+              <div>
+                <div class="text-muted small mb-2"><i class="bi bi-file-check me-1"></i>21 Credits • AC: 01/26</div>
+                <a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank" class="btn-pdf-download w-100">
+                  <i class="bi bi-box-arrow-up-right"></i> View / Download PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. TE EXTC Sem V -->
+          <div class="col-lg-3 col-md-6">
+            <div class="pdf-card">
+              <div>
+                <div class="card-icon"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+                <span class="badge-scheme">TE • Semester V</span>
+                <h5>EXTC Engineering</h5>
+                <p>Curriculum structure &amp; detailed syllabus for Third Year EXTC (Semester V). Scheme: DB25-V1 (Effective AY 2026-27).</p>
+              </div>
+              <div>
+                <div class="text-muted small mb-2"><i class="bi bi-file-check me-1"></i>22 Credits • AC: 03/2026</div>
+                <a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank" class="btn-pdf-download w-100">
+                  <i class="bi bi-box-arrow-up-right"></i> View / Download PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondary Semester Filter Pills -->
+        <div class="d-flex justify-content-center mb-4">
+          <ul class="nav nav-pills semester-pills flex-wrap justify-content-center" id="autonomySemTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="autosem-all-tab" data-bs-toggle="pill" data-bs-target="#autosem-all" type="button" role="tab">All Autonomous Semesters</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="autosem-fe1-tab" data-bs-toggle="pill" data-bs-target="#autosem-fe1" type="button" role="tab">FE - Sem I</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="autosem-fe2-tab" data-bs-toggle="pill" data-bs-target="#autosem-fe2" type="button" role="tab">FE - Sem II</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="autosem-se3-tab" data-bs-toggle="pill" data-bs-target="#autosem-se3" type="button" role="tab">SE EXTC - Sem III</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="autosem-se4-tab" data-bs-toggle="pill" data-bs-target="#autosem-se4" type="button" role="tab">SE EXTC - Sem IV</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="autosem-te5-tab" data-bs-toggle="pill" data-bs-target="#autosem-te5" type="button" role="tab">TE EXTC - Sem V</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="autosem-exit1-tab" data-bs-toggle="pill" data-bs-target="#autosem-exit1" type="button" role="tab">First Year Exit (EXTC)</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="autosem-framework-tab" data-bs-toggle="pill" data-bs-target="#autosem-framework" type="button" role="tab">NEP Credit Framework</button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- SUB-TAB CONTENT FOR AUTONOMOUS -->
+        <div class="tab-content" id="autonomySemTabsContent">
+
+          <!-- TAB 1: ALL SEMESTERS (Stacked view) -->
+          <div class="tab-pane fade show active" id="autosem-all" role="tabpanel">
+
+            <!-- 1. FE SEMESTER I -->
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>First Year Engineering (FE) — Semester I (All Branches)</h4>
+                  <p>Department of Basic Science and Humanities | Scheme: DB25-V1 (As per NEP 2020) | Effective AY 2025-2026</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Complete FE Syllabus PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 12%;">Course Code</th>
+                      <th style="width: 10%;">Vertical</th>
+                      <th style="width: 38%;" class="text-start">Course Name</th>
+                      <th style="width: 12%;">Teaching Scheme (L-P-T)</th>
+                      <th style="width: 10%;">Credits</th>
+                      <th style="width: 18%;">Exam Scheme (CA-MSE-ESE-TW-PR)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25FE1BSC01</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Fundamentals of Engineering Mathematics – I</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1BSC02</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Applied Physics</a></td>
+                      <td>2 1 -</td>
+                      <td class="fw-bold">2.5</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1BSC03</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Chemistry</a></td>
+                      <td>2 1 -</td>
+                      <td class="fw-bold">2.5</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ESC1C01</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">ESC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Graphics</a></td>
+                      <td>2 2 -</td>
+                      <td class="fw-bold">3</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1ESC02</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">ESC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Basic Electrical and Digital Electronics</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1VSE01</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Skills Workshop-I (EXTC: Measurements, PC Assembly, Wiring)</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1VSEC02</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Problem Solving using C Programming</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1VEC01</td>
+                      <td><span class="badge bg-success badge-vertical">VEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Universal Human Values</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester I Totals:</td>
+                      <td>14 L + 12 P + 1 T</td>
+                      <td class="text-success fs-6">21 Credits</td>
+                      <td>Total Marks: 800</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <!-- 2. FE SEMESTER II -->
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>First Year Engineering (FE) — Semester II (All Branches)</h4>
+                  <p>Department of Basic Science and Humanities | Scheme: DB25-V1 (As per NEP 2020) | Effective AY 2025-2026</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Complete FE Syllabus PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 12%;">Course Code</th>
+                      <th style="width: 10%;">Vertical</th>
+                      <th style="width: 38%;" class="text-start">Course Name</th>
+                      <th style="width: 12%;">Teaching Scheme (L-P-T)</th>
+                      <th style="width: 10%;">Credits</th>
+                      <th style="width: 18%;">Exam Scheme (CA-MSE-ESE-TW-OR-PR)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25FE2BSC01</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Foundations of Engineering Mathematics-II</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2BSC02</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Environmental Science</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2ESC01</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">ESC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Mechanics</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2PCC01</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Program Core Course: Analog and Digital Circuits (EXTC)</a></td>
+                      <td>2 2 -</td>
+                      <td class="fw-bold">3</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2VSEC01</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Skills Workshop II (EXTC: PCB, Web Design, Arduino)</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2VSEC02</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Object Oriented Programming using Python</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 25 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2IKS01</td>
+                      <td><span class="badge bg-dark badge-vertical">IKS</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Introduction to Indian Knowledge System</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2AEC01</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">AEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Effective Communication Skills</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FECC01</td>
+                      <td><span class="badge bg-success badge-vertical">LLC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Liberal Learning Course (Visual Art / Sports &amp; Fitness / SSR)</a></td>
+                      <td>- 2# -</td>
+                      <td class="fw-bold">1</td>
+                      <td>CA: 50</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester II Totals:</td>
+                      <td>12 L + 14 P + 2 T</td>
+                      <td class="text-success fs-6">21 Credits</td>
+                      <td>Total Marks: 775</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <!-- 3. SE SEMESTER III -->
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>Second Year Engineering (SE EXTC) — Semester III</h4>
+                  <p>Department of Electronics and Telecommunication Engineering | Scheme: DB25-V1 | Effective AY 2025-2026</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Official Syllabus PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 12%;">Course Code</th>
+                      <th style="width: 10%;">Vertical</th>
+                      <th style="width: 38%;" class="text-start">Course Name</th>
+                      <th style="width: 12%;">Teaching Scheme (L-P-T)</th>
+                      <th style="width: 10%;">Credits</th>
+                      <th style="width: 18%;">Exam Scheme (CA-MSE-ESE-TW-OR-PR)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25ET3PCC01</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Mathematics for Signal Processing</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3PCC02</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Linear Integrated Circuits</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3PCC03</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Digital System Design Using Verilog</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3PCC04</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Analog and Digital Communication</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3VSEC01</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Java Programming</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25IL3VEC01</td>
+                      <td><span class="badge bg-success badge-vertical">VEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Sustainable Development</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3CEP01</td>
+                      <td><span class="badge bg-secondary badge-vertical">CEP</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Community Engagement Project 1</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>TW: 25 | OR: 25</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester III Totals:</td>
+                      <td>14 L + 12 P + 1 T</td>
+                      <td class="text-success fs-6">21 Credits</td>
+                      <td>Total Marks: 700</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <!-- 4. SE SEMESTER IV -->
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>Second Year Engineering (SE EXTC) — Semester IV</h4>
+                  <p>Department of Electronics and Telecommunication Engineering | Scheme: DB25-V1 | Effective AY 2025-2026</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Official Syllabus PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 12%;">Course Code</th>
+                      <th style="width: 10%;">Vertical</th>
+                      <th style="width: 38%;" class="text-start">Course Name</th>
+                      <th style="width: 12%;">Teaching Scheme (L-P-T)</th>
+                      <th style="width: 10%;">Credits</th>
+                      <th style="width: 18%;">Exam Scheme (CA-MSE-ESE-TW-OR-PR)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25ET4PCC01</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Discrete Time Signal Processing</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4PCC02</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Electromagnetics and Antennas</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4PCC03</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Digital VLSI Design</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4PCC04</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Microcontrollers and Applications</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4MDMXX</td>
+                      <td><span class="badge bg-danger badge-vertical">MDM</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Multidisciplinary Minor (MDMXX)</a> <span class="badge bg-light text-dark border">Interdepartmental</span></td>
+                      <td>2 2 -</td>
+                      <td class="fw-bold">3</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4CEP02</td>
+                      <td><span class="badge bg-secondary badge-vertical">CEP</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Community Engagement Project – 2</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>TW: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25IL4EEM01</td>
+                      <td><span class="badge bg-dark badge-vertical">EEM</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Entrepreneurship Essentials</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25IL4ELLXX</td>
+                      <td><span class="badge bg-success badge-vertical">LLC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Liberal Learning Course - 1</a></td>
+                      <td>- 2$ -</td>
+                      <td class="fw-bold">1</td>
+                      <td>CA: 50</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester IV Totals:</td>
+                      <td>13 L + 14 P + 1 T</td>
+                      <td class="text-success fs-6">21 Credits</td>
+                      <td>Total Marks: 800</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <!-- 5. TE SEMESTER V -->
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>Third Year Engineering (TE EXTC) — Semester V</h4>
+                  <p>Department of Electronics and Telecommunication Engineering | Scheme: DB25-V1 | Effective AY 2026-2027</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Official Syllabus PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 12%;">Course Code</th>
+                      <th style="width: 10%;">Vertical</th>
+                      <th style="width: 38%;" class="text-start">Course Name</th>
+                      <th style="width: 12%;">Teaching Scheme (L-P-T)</th>
+                      <th style="width: 10%;">Credits</th>
+                      <th style="width: 18%;">Exam Scheme (CA-MSE-ESE-TW-OR-PR)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25ET5PCC01</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Data Communication and Networking</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5PCC02</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Communication Data Analytics</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5PCE01</td>
+                      <td><span class="badge bg-success badge-vertical">PEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Program Elective #</a> <span class="badge bg-light text-dark border">Elective</span></td>
+                      <td>2 2 -</td>
+                      <td class="fw-bold">3</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25XX5MDMYY</td>
+                      <td><span class="badge bg-danger badge-vertical">MDM</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Multidisciplinary Minor (MDM 02)</a> <span class="badge bg-light text-dark border">Interdepartmental</span></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25IL5OEXX</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">OE</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Open Elective 01 (NPTEL Approved)</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 20 | ESE: 30</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5AEC02</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">AEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Professional Communication Skills</a></td>
+                      <td>- 2*2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>TW: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5ELC</td>
+                      <td><span class="badge bg-secondary badge-vertical">ELC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Research Methodology</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>TW: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5CEP03</td>
+                      <td><span class="badge bg-secondary badge-vertical">CEP</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Community Engagement Project 3</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>TW: 25 | PR: 25</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester V Totals:</td>
+                      <td>15 L + 14 P</td>
+                      <td class="text-success fs-6">22 Credits</td>
+                      <td>Total Marks: 775</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <!-- Elective Courses Detail Callout -->
+              <div class="row g-3 mt-2">
+                <div class="col-md-4">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-diagram-3-fill me-1"></i> Program Electives Offered (Sem V)</h6>
+                    <ul>
+                      <li><strong>25ET5PEC01:</strong> Cryptography and Network Security</li>
+                      <li><strong>25ET5PEC02 / 25ET5PE02:</strong> Image Analytics &amp; Machine Vision / Advanced Communication System</li>
+                      <li><strong>25ET5PEC03:</strong> RTL Design and Functional Verification</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-shuffle me-1"></i> Multidisciplinary Minors (MDM 02)</h6>
+                    <ul>
+                      <li><strong>25CE5MDM01/02:</strong> Android App Development (Comp)</li>
+                      <li><strong>25IT5MDM01/02:</strong> Database Management System (IT)</li>
+                      <li><strong>25ME5MDM01:</strong> Quality Engineering (Mech)</li>
+                      <li><strong>25ME5MDM02:</strong> Industrial Automation (Mech)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-globe2 me-1"></i> Open Electives (NPTEL Approved)</h6>
+                    <ul>
+                      <li><strong>25IL5OE01:</strong> Energy Economics and Policy</li>
+                      <li><strong>25IL5OE02:</strong> Ethics in Engineering Practice</li>
+                      <li><strong>25IL5OE03:</strong> IPR, Rights &amp; Competition Law</li>
+                      <li><strong>25IL5OE04:</strong> Principle of Human Resource Mgmt</li>
+                      <li><strong>25IL5OE05/07:</strong> Patent Search for Engineers</li>
+                      <li><strong>25IL5OE06/08/10:</strong> Soft Skills &amp; Personality</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. FIRST YEAR EXIT GUIDELINES -->
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>First Year Exit Option — UG Certificate in Electronics &amp; Telecommunication</h4>
+                  <p>Department of Electronics and Telecommunication Engineering | Scheme: DB25-V1 | NSQF Level 4.5</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Exit Guidelines PDF (p. 190)
+                  </a>
+                </div>
+              </div>
+
+              <p class="text-muted small">
+                Students exiting after securing a minimum of <strong>42 credits</strong> across Semesters I &amp; II are awarded a <strong>UG Certificate in Electronics and Telecommunication Engineering</strong> upon completing an additional <strong>8 credits</strong> (4-credit Vocational course + 4-credit Internship/Apprenticeship).
+              </p>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th>Course Code</th>
+                      <th>Vertical</th>
+                      <th class="text-start">Course Name</th>
+                      <th>Contact Hours</th>
+                      <th>Credits</th>
+                      <th>Assessment Scheme</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25ET2EX01</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">Vocational</span></td>
+                      <td class="text-start">Electronic System Assembly &amp; Maintenance</td>
+                      <td>60 (Practical/Lab)</td>
+                      <td class="fw-bold">4</td>
+                      <td>IA: 50 | End Sem (Practical/Viva): 50 | Total: 100</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET2EX02</td>
+                      <td><span class="badge bg-success badge-vertical">Internship</span></td>
+                      <td class="text-start">Industrial Internship / Apprenticeship</td>
+                      <td>120 (On-site/Online, 2–3 weeks)</td>
+                      <td class="fw-bold">4</td>
+                      <td>IA: 50 | End Sem (Viva): 50 | Total: 100</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="4" class="text-end">Exit Option Total:</td>
+                      <td class="text-success fs-6">8 Credits</td>
+                      <td>Total Marks: 200</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-person-workspace me-1"></i> Suggested Job Profiles (NSQF Level 4.5)</h6>
+                    <ul>
+                      <li>Junior Electronics Technician (Testing &amp; Assembly)</li>
+                      <li>Telecommunication Field Associate (Installation &amp; Maintenance)</li>
+                      <li>PCB Design &amp; Fabrication Assistant</li>
+                      <li>IoT Device Installation Assistant</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-check-circle-fill me-1"></i> Core Competencies Developed</h6>
+                    <ul>
+                      <li>Electronic component identification (SMD &amp; Through-hole) &amp; ESD safety</li>
+                      <li>PCB schematic capture &amp; layout using KiCad/EasyEDA; etching &amp; soldering</li>
+                      <li>Hardware assembly, testing &amp; signal tracing using DSOs, multimeters</li>
+                      <li>BOM preparation, technical datasheets &amp; IPC-A-610 quality standards</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- NEP 2020 Credit Framework Summary -->
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner">
+                <h4>DBIT Autonomous Curriculum Framework (NEP 2020)</h4>
+                <p>Degree Pathways, Credit Allocation &amp; Multiple Entry-Exit Architecture</p>
+              </div>
+
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <h6 class="fw-bold text-primary"><i class="bi bi-award me-1"></i> Undergraduate Degree Pathways</h6>
+                  <ul class="list-group list-group-flush small">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span><strong>B.E. (Major in EXTC)</strong></span>
+                      <span class="badge bg-primary rounded-pill">164 - 169 Credits</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span><strong>B.E. with Minor / Honors</strong></span>
+                      <span class="badge bg-info text-dark rounded-pill">182 - 187 Credits</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span><strong>B.E. Honors with Research</strong></span>
+                      <span class="badge bg-success rounded-pill">182 - 187 Credits</span>
+                    </li>
+                  </ul>
+
+                  <h6 class="fw-bold text-primary mt-4"><i class="bi bi-clock-history me-1"></i> Credit Definition &amp; Contact Hours</h6>
+                  <ul class="list-group list-group-flush small">
+                    <li class="list-group-item"><strong>Theory Course:</strong> 1 Credit = 15 Contact Hours</li>
+                    <li class="list-group-item"><strong>Laboratory / Workshop:</strong> 1 Credit = 30 Contact Hours</li>
+                    <li class="list-group-item"><strong>Internship / Field Work:</strong> 1 Credit = 40 Hours / 2 Weeks</li>
+                    <li class="list-group-item"><strong>Community Engagement Project (CEP):</strong> 1 Credit = 30 Hours</li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <h6 class="fw-bold text-primary"><i class="bi bi-door-open me-1"></i> Multiple Entry &amp; Exit Options</h6>
+                  <ul class="list-group list-group-flush small">
+                    <li class="list-group-item">
+                      <strong>Certificate in Engineering (After Year 1):</strong>
+                      <br><span class="text-muted">42 Credits + 8 Credits (4 Credit Exit Course + 4 Summer Internship)</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Diploma in Engineering (After Year 2):</strong>
+                      <br><span class="text-muted">86 / 84 Credits + 8 Credits (4 Credit Exit Course + 4 Summer Internship)</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>B. Vocational Degree (After Year 3):</strong>
+                      <br><span class="text-muted">125 Credits + 8 Credits (4 Credit Exit Course + 4 Summer Internship)</span>
+                    </li>
+                    <li class="list-group-item bg-light">
+                      <i class="bi bi-bank me-1 text-primary"></i> <strong>Academic Bank of Credits (ABC):</strong> All credits earned are banked in the ABC for lifelong learning flexibility.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- TAB 2: FE SEM I ONLY -->
+          <div class="tab-pane fade" id="autosem-fe1" role="tabpanel">
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>First Year Engineering (FE) — Semester I (All Branches)</h4>
+                  <p>Department of Basic Science and Humanities | Scheme: DB25-V1 | Effective AY 2025-2026</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Complete FE Syllabus PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th>Course Code</th>
+                      <th>Vertical</th>
+                      <th class="text-start">Course Name</th>
+                      <th>Teaching (L-P-T)</th>
+                      <th>Credits</th>
+                      <th>Examination Scheme</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25FE1BSC01</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Fundamentals of Engineering Mathematics – I</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1BSC02</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Applied Physics</a></td>
+                      <td>2 1 -</td>
+                      <td class="fw-bold">2.5</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1BSC03</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Chemistry</a></td>
+                      <td>2 1 -</td>
+                      <td class="fw-bold">2.5</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ESC1C01</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">ESC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Graphics</a></td>
+                      <td>2 2 -</td>
+                      <td class="fw-bold">3</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1ESC02</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">ESC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Basic Electrical and Digital Electronics</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1VSE01</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Skills Workshop-I (EXTC)</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1VSEC02</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Problem Solving using C Programming</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE1VEC01</td>
+                      <td><span class="badge bg-success badge-vertical">VEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Universal Human Values</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester I Totals:</td>
+                      <td>14 L + 12 P + 1 T</td>
+                      <td class="text-success fs-6">21 Credits</td>
+                      <td>Total Marks: 800</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: FE SEM II ONLY -->
+          <div class="tab-pane fade" id="autosem-fe2" role="tabpanel">
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>First Year Engineering (FE) — Semester II (All Branches)</h4>
+                  <p>Department of Basic Science and Humanities | Scheme: DB25-V1 | Effective AY 2025-2026</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Complete FE Syllabus PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th>Course Code</th>
+                      <th>Vertical</th>
+                      <th class="text-start">Course Name</th>
+                      <th>Teaching (L-P-T)</th>
+                      <th>Credits</th>
+                      <th>Examination Scheme</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25FE2BSC01</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Foundations of Engineering Mathematics-II</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2BSC02</td>
+                      <td><span class="badge bg-primary badge-vertical">BSC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Environmental Science</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2ESC01</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">ESC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Mechanics</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2PCC01</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Program Core Course: Analog and Digital Circuits (EXTC)</a></td>
+                      <td>2 2 -</td>
+                      <td class="fw-bold">3</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2VSEC01</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Engineering Skills Workshop II (EXTC: PCB, Web Design, Arduino)</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2VSEC02</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Object Oriented Programming using Python</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 25 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2IKS01</td>
+                      <td><span class="badge bg-dark badge-vertical">IKS</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Introduction to Indian Knowledge System</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FE2AEC01</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">AEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Effective Communication Skills</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25FECC01</td>
+                      <td><span class="badge bg-success badge-vertical">LLC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank">Liberal Learning Course (Creative Visual Art / Sports &amp; Fitness / SSR)</a></td>
+                      <td>- 2# -</td>
+                      <td class="fw-bold">1</td>
+                      <td>CA: 50</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester II Totals:</td>
+                      <td>12 L + 14 P + 2 T</td>
+                      <td class="text-success fs-6">21 Credits</td>
+                      <td>Total Marks: 775</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: SE SEM III ONLY -->
+          <div class="tab-pane fade" id="autosem-se3" role="tabpanel">
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>Second Year Engineering (SE EXTC) — Semester III</h4>
+                  <p>Department of Electronics and Telecommunication Engineering | Scheme: DB25-V1 | Effective AY 2025-2026</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Download Full PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th>Course Code</th>
+                      <th>Vertical</th>
+                      <th class="text-start">Course Name</th>
+                      <th>Teaching (L-P-T)</th>
+                      <th>Credits</th>
+                      <th>Examination Scheme</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25ET3PCC01</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Mathematics for Signal Processing</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3PCC02</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Linear Integrated Circuits</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3PCC03</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Digital System Design Using Verilog</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3PCC04</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Analog and Digital Communication</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3VSEC01</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">VSEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Java Programming</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25IL3VEC01</td>
+                      <td><span class="badge bg-success badge-vertical">VEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Sustainable Development</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET3CEP01</td>
+                      <td><span class="badge bg-secondary badge-vertical">CEP</span></td>
+                      <td class="text-start"><a href="/assets/pdf/DB25-V1_Autonomy Syllabus_SE_SEM 3_EXTC_DBIT_AY 2025-26.pdf" target="_blank">Community Engagement Project 1</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>TW: 25 | OR: 25</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester III Totals:</td>
+                      <td>14 L + 12 P + 1 T</td>
+                      <td class="text-success fs-6">21 Credits</td>
+                      <td>Total Marks: 700</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 5: SE SEM IV ONLY -->
+          <div class="tab-pane fade" id="autosem-se4" role="tabpanel">
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>Second Year Engineering (SE EXTC) — Semester IV</h4>
+                  <p>Department of Electronics and Telecommunication Engineering | Scheme: DB25-V1 | Effective AY 2025-2026</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Download Full PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th>Course Code</th>
+                      <th>Vertical</th>
+                      <th class="text-start">Course Name</th>
+                      <th>Teaching (L-P-T)</th>
+                      <th>Credits</th>
+                      <th>Examination Scheme</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25ET4PCC01</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Discrete Time Signal Processing</a></td>
+                      <td>3 - 1</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4PCC02</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Electromagnetics and Antennas</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4PCC03</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Digital VLSI Design</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4PCC04</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Microcontrollers and Applications</a></td>
+                      <td>- 2*+2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4MDMXX</td>
+                      <td><span class="badge bg-danger badge-vertical">MDM</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Multidisciplinary Minor (MDMXX)</a> <span class="badge bg-light text-dark border">Interdepartmental</span></td>
+                      <td>2 2 -</td>
+                      <td class="fw-bold">3</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET4CEP02</td>
+                      <td><span class="badge bg-secondary badge-vertical">CEP</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Community Engagement Project – 2</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>TW: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25IL4EEM01</td>
+                      <td><span class="badge bg-dark badge-vertical">EEM</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Entrepreneurship Essentials</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25IL4ELLXX</td>
+                      <td><span class="badge bg-success badge-vertical">LLC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/EXTC_SE_SEM IV_Syllabus_Autonomy_Scheme_EVEN_AY 2025-26.pdf" target="_blank">Liberal Learning Course - 1</a></td>
+                      <td>- 2$ -</td>
+                      <td class="fw-bold">1</td>
+                      <td>CA: 50</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester IV Totals:</td>
+                      <td>13 L + 14 P + 1 T</td>
+                      <td class="text-success fs-6">21 Credits</td>
+                      <td>Total Marks: 800</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 6: TE SEM V ONLY -->
+          <div class="tab-pane fade" id="autosem-te5" role="tabpanel">
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>Third Year Engineering (TE EXTC) — Semester V</h4>
+                  <p>Department of Electronics and Telecommunication Engineering | Scheme: DB25-V1 | Effective AY 2026-2027</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Download Full PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th>Course Code</th>
+                      <th>Vertical</th>
+                      <th class="text-start">Course Name</th>
+                      <th>Teaching (L-P-T)</th>
+                      <th>Credits</th>
+                      <th>Examination Scheme</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25ET5PCC01</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Data Communication and Networking</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5PCC02</td>
+                      <td><span class="badge bg-primary badge-vertical">PCC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Communication Data Analytics</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | PR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5PCE01</td>
+                      <td><span class="badge bg-success badge-vertical">PEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Program Elective #</a></td>
+                      <td>2 2 -</td>
+                      <td class="fw-bold">3</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25 | OR: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25XX5MDMYY</td>
+                      <td><span class="badge bg-danger badge-vertical">MDM</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Multidisciplinary Minor (MDM 02)</a></td>
+                      <td>3 2 -</td>
+                      <td class="fw-bold">4</td>
+                      <td>CA: 20 | MSE: 30 | ESE: 50 | TW: 25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25IL5OEXX</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">OE</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Open Elective 01 (NPTEL Approved)</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>CA: 20 | ESE: 30</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5AEC02</td>
+                      <td><span class="badge bg-info text-dark badge-vertical">AEC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Professional Communication Skills</a></td>
+                      <td>- 2*2 -</td>
+                      <td class="fw-bold">2</td>
+                      <td>TW: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5ELC</td>
+                      <td><span class="badge bg-secondary badge-vertical">ELC</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Research Methodology</a></td>
+                      <td>2 - -</td>
+                      <td class="fw-bold">2</td>
+                      <td>TW: 50</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET5CEP03</td>
+                      <td><span class="badge bg-secondary badge-vertical">CEP</span></td>
+                      <td class="text-start"><a href="/assets/pdf/SYLLABUS_EXTC_TE_SEMESTER V_DB25-V1 Scheme_AY 2026-27.pdf" target="_blank">Community Engagement Project 3</a></td>
+                      <td>- 2 -</td>
+                      <td class="fw-bold">1</td>
+                      <td>TW: 25 | PR: 25</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Semester V Totals:</td>
+                      <td>15 L + 14 P</td>
+                      <td class="text-success fs-6">22 Credits</td>
+                      <td>Total Marks: 775</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <!-- Elective Courses Detail Callout -->
+              <div class="row g-3 mt-2">
+                <div class="col-md-4">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-diagram-3-fill me-1"></i> Program Electives Offered (Sem V)</h6>
+                    <ul>
+                      <li><strong>25ET5PEC01:</strong> Cryptography and Network Security</li>
+                      <li><strong>25ET5PEC02 / 25ET5PE02:</strong> Image Analytics &amp; Machine Vision / Advanced Communication System</li>
+                      <li><strong>25ET5PEC03:</strong> RTL Design and Functional Verification</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-shuffle me-1"></i> Multidisciplinary Minors (MDM 02)</h6>
+                    <ul>
+                      <li><strong>25CE5MDM01/02:</strong> Android App Development (Comp)</li>
+                      <li><strong>25IT5MDM01/02:</strong> Database Management System (IT)</li>
+                      <li><strong>25ME5MDM01:</strong> Quality Engineering (Mech)</li>
+                      <li><strong>25ME5MDM02:</strong> Industrial Automation (Mech)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-globe2 me-1"></i> Open Electives (NPTEL Approved)</h6>
+                    <ul>
+                      <li><strong>25IL5OE01:</strong> Energy Economics and Policy</li>
+                      <li><strong>25IL5OE02:</strong> Ethics in Engineering Practice</li>
+                      <li><strong>25IL5OE03:</strong> IPR, Rights &amp; Competition Law</li>
+                      <li><strong>25IL5OE04:</strong> Principle of Human Resource Mgmt</li>
+                      <li><strong>25IL5OE05/07:</strong> Patent Search for Engineers</li>
+                      <li><strong>25IL5OE06/08/10:</strong> Soft Skills &amp; Personality</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 7: FIRST YEAR EXIT (EXTC) -->
+          <div class="tab-pane fade" id="autosem-exit1" role="tabpanel">
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <h4>First Year Exit Option — UG Certificate in Electronics &amp; Telecommunication</h4>
+                  <p>Department of Electronics and Telecommunication Engineering | Scheme: DB25-V1 | NSQF Level 4.5</p>
+                </div>
+                <div>
+                  <a href="/assets/pdf/FE_Sem_I_and_II_Curriculum_Structure_DB25-V1.pdf" target="_blank" class="btn btn-sm btn-light fw-bold text-primary">
+                    <i class="bi bi-file-earmark-pdf me-1 text-danger"></i> Exit Guidelines PDF (p. 190)
+                  </a>
+                </div>
+              </div>
+
+              <div class="info-callout">
+                Students exiting the First-Year programme after securing a minimum of <strong>42 credits</strong> will be awarded a <strong>UG Certificate in Electronics and Telecommunication</strong> provided they secure an additional <strong>8 credits</strong> through the prescribed vocational course and internship/apprenticeship. Credits earned are banked in the <strong>Academic Bank of Credits (ABC)</strong> for lifelong learning flexibility.
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th>Course Code</th>
+                      <th>Course Vertical</th>
+                      <th class="text-start">Course Name</th>
+                      <th>Teaching Scheme</th>
+                      <th>Credits</th>
+                      <th>Internal (IA)</th>
+                      <th>End Sem (Viva)</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">25ET2EX01</td>
+                      <td><span class="badge bg-warning text-dark badge-vertical">Vocational</span></td>
+                      <td class="text-start">Electronic System Assembly &amp; Maintenance</td>
+                      <td>60 (Practical/Lab)</td>
+                      <td class="fw-bold">04</td>
+                      <td>50</td>
+                      <td>50</td>
+                      <td class="fw-bold">100</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">25ET2EX02</td>
+                      <td><span class="badge bg-success badge-vertical">Internship</span></td>
+                      <td class="text-start">Industrial Internship / Apprenticeship</td>
+                      <td>120 (On-site/online, 2 to 3 weeks)</td>
+                      <td class="fw-bold">04</td>
+                      <td>50</td>
+                      <td>50</td>
+                      <td class="fw-bold">100</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-light fw-bold">
+                      <td colspan="4" class="text-end">Exit Option Total:</td>
+                      <td class="text-success fs-6">08 Credits</td>
+                      <td colspan="2"></td>
+                      <td class="text-primary fs-6">200 Marks</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-briefcase-fill me-1"></i> Suggested Job Profiles (NSQF Level 4.5)</h6>
+                    <ul>
+                      <li>Junior Electronics Technician (Testing &amp; Assembly)</li>
+                      <li>Telecommunication Field Associate (Installation &amp; Maintenance)</li>
+                      <li>PCB Design &amp; Fabrication Assistant</li>
+                      <li>IoT Device Installation Assistant</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="elective-list-box">
+                    <h6><i class="bi bi-check-circle-fill me-1"></i> Internship Assessment Criteria (4 Credits)</h6>
+                    <ul>
+                      <li><strong>Industry Mentor Appraisal (20%):</strong> Punctuality, safety compliance &amp; troubleshooting.</li>
+                      <li><strong>Daily Work Log/Diary (20%):</strong> Weekly record of technical tasks performed.</li>
+                      <li><strong>Technical Internship Report (30%):</strong> Formal documentation of workflows handled.</li>
+                      <li><strong>Final Skill Demo &amp; Viva (30%):</strong> Hands-on circuit assembly &amp; oral examination.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 8: NEP FRAMEWORK -->
+          <div class="tab-pane fade" id="autosem-framework" role="tabpanel">
+            <div class="syllabus-card">
+              <div class="syllabus-header-banner">
+                <h4>DBIT Autonomy Credit Framework (As per NEP 2020)</h4>
+                <p>Overall Curriculum Credit Allocation across Semesters I through VIII</p>
+              </div>
+
+              <div class="table-responsive">
+                <table class="academic-calendar-table">
+                  <thead>
+                    <tr>
+                      <th class="text-start">Course Category / Vertical</th>
+                      <th>Sem I</th>
+                      <th>Sem II</th>
+                      <th>Sem III</th>
+                      <th>Sem IV</th>
+                      <th>Sem V</th>
+                      <th>Sem VI</th>
+                      <th>Sem VII</th>
+                      <th>Sem VIII</th>
+                      <th>Total DBIT</th>
+                      <th>DTE Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-start fw-bold">Basic Science Course (BSC)</td>
+                      <td>9</td><td>6</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                      <td class="fw-bold text-primary">15</td><td>14 - 18</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Engineering Science Course (ESC)</td>
+                      <td>7</td><td>4</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                      <td class="fw-bold text-primary">11</td><td>12 - 16</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Program Core Course (PCC)</td>
+                      <td>-</td><td>3</td><td>16</td><td>14</td><td>6 / 8</td><td>6 / 8</td><td>6 / 7</td><td>-</td>
+                      <td class="fw-bold text-primary">51 - 56</td><td>44 - 56</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Program Elective Course (PEC)</td>
+                      <td>-</td><td>-</td><td>-</td><td>-</td><td>3</td><td>3</td><td>6</td><td>6</td>
+                      <td class="fw-bold text-primary">18</td><td>20</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Multidisciplinary Minor (MDM)</td>
+                      <td>-</td><td>-</td><td>-</td><td>3</td><td>4</td><td>4</td><td>3</td><td>-</td>
+                      <td class="fw-bold text-primary">14</td><td>14</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Open Elective (OE)</td>
+                      <td>-</td><td>-</td><td>-</td><td>-</td><td>2</td><td>2</td><td>2</td><td>-</td>
+                      <td class="fw-bold text-primary">6</td><td>8</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Vocational &amp; Skill Enhancement (VSEC)</td>
+                      <td>3</td><td>3</td><td>2</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                      <td class="fw-bold text-primary">8</td><td>8</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Ability Enhancement Course (AEC)</td>
+                      <td>-</td><td>2</td><td>-</td><td>-</td><td>2</td><td>-</td><td>-</td><td>-</td>
+                      <td class="fw-bold text-primary">4</td><td>4</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Entrepreneurship &amp; Mgmt (HSSM)</td>
+                      <td>-</td><td>-</td><td>-</td><td>2</td><td>-</td><td>2</td><td>-</td><td>-</td>
+                      <td class="fw-bold text-primary">4</td><td>4</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Indian Knowledge System (IKS)</td>
+                      <td>-</td><td>2</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                      <td class="fw-bold text-primary">2</td><td>2</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Value Education Course (VEC)</td>
+                      <td>2</td><td>-</td><td>2</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                      <td class="fw-bold text-primary">4</td><td>4</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Experiential Learning (CEP / Project / RM / OJT)</td>
+                      <td>-</td><td>-</td><td>1</td><td>1</td><td>3</td><td>3</td><td>3</td><td>12</td>
+                      <td class="fw-bold text-primary">23</td><td>22</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start fw-bold">Liberal Learning Courses (LLC)</td>
+                      <td>-</td><td>1</td><td>-</td><td>1</td><td>-</td><td>1</td><td>-</td><td>1</td>
+                      <td class="fw-bold text-primary">4</td><td>4</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-primary fw-bold">
+                      <td class="text-start">Total Major Credits</td>
+                      <td>21</td><td>21</td><td>21</td><td>21</td><td>20 / 22</td><td>21 / 23</td><td>20 / 21</td><td>19</td>
+                      <td class="text-success fs-6">164 - 169</td><td>160 - 176</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                  <h6 class="fw-bold text-primary"><i class="bi bi-award me-1"></i> Undergraduate Degree Pathways</h6>
+                  <ul class="list-group list-group-flush small">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span><strong>B.E. (Major in EXTC)</strong></span>
+                      <span class="badge bg-primary rounded-pill">164 - 169 Credits</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span><strong>B.E. with Minor / Honors</strong></span>
+                      <span class="badge bg-info text-dark rounded-pill">182 - 187 Credits</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span><strong>B.E. Honors with Research</strong></span>
+                      <span class="badge bg-success rounded-pill">182 - 187 Credits</span>
+                    </li>
+                  </ul>
+
+                  <h6 class="fw-bold text-primary mt-4"><i class="bi bi-clock-history me-1"></i> Credit Definition &amp; Contact Hours</h6>
+                  <ul class="list-group list-group-flush small">
+                    <li class="list-group-item"><strong>Theory Course:</strong> 1 Credit = 15 Contact Hours</li>
+                    <li class="list-group-item"><strong>Laboratory / Workshop:</strong> 1 Credit = 30 Contact Hours</li>
+                    <li class="list-group-item"><strong>Internship / Field Work:</strong> 1 Credit = 40 Hours / 2 Weeks</li>
+                    <li class="list-group-item"><strong>Community Engagement Project (CEP):</strong> 1 Credit = 30 Hours</li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <h6 class="fw-bold text-primary"><i class="bi bi-door-open me-1"></i> Multiple Entry &amp; Exit Options</h6>
+                  <ul class="list-group list-group-flush small">
+                    <li class="list-group-item">
+                      <strong>Certificate in Engineering (After Year 1):</strong>
+                      <br><span class="text-muted">42 Credits + 8 Credits (4 Credit Exit Course + 4 Summer Internship)</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Diploma in Engineering (After Year 2):</strong>
+                      <br><span class="text-muted">86 / 84 Credits + 8 Credits (4 Credit Exit Course + 4 Summer Internship)</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>B. Vocational Degree (After Year 3):</strong>
+                      <br><span class="text-muted">125 Credits + 8 Credits (4 Credit Exit Course + 4 Summer Internship)</span>
+                    </li>
+                    <li class="list-group-item bg-light">
+                      <i class="bi bi-bank me-1 text-primary"></i> <strong>Academic Bank of Credits (ABC):</strong> All credits earned are banked in the ABC for lifelong learning flexibility.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
-            <h6>SE-EXTC-SEM-III(ODD SEM)</h6>
+      <!-- ======================================================== -->
+      <!-- SECTION 2: MUMBAI UNIVERSITY SCHEME (REV-2019 'C')       -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade" id="mu-scheme" role="tabpanel" aria-labelledby="mu-tab">
 
-      <!--table 2017-2018-->
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="col-sm-12">
+        <div class="info-callout d-flex align-items-center">
+          <i class="bi bi-clock-history fs-3 me-3 text-secondary"></i>
+          <div>
+            <strong>University of Mumbai Affiliated Curriculum (Rev-2019 'C' Scheme):</strong>
+            Applicable for earlier batches prior to Autonomous implementation. All individual subject links and lab syllabi are retained below.
+          </div>
+        </div>
+
+        <h6 class="table-subheading">SE-EXTC-SEM-III (ODD SEM) — Mumbai University Rev-2019</h6>
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-10">
             <table class="academic-calendar-table">
               <thead>
                 <tr>
@@ -162,7 +2030,7 @@ h2 {
                 </tr>
                 <tr>
                   <td>ECC302</td>
-                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-15.pdf" target="_blank">Electronic Devices & Circuits</a></td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-15.pdf" target="_blank">Electronic Devices &amp; Circuits</a></td>
                   <td>YES</td>
                   <td>NO</td>
                   <td>NO</td>
@@ -183,14 +2051,14 @@ h2 {
                 </tr>
                 <tr>
                   <td>ECC305</td>
-                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-24.pdf" target="_blank">Electronic Instrumentation & Control Systems</a></td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-24.pdf" target="_blank">Electronic Instrumentation &amp; Control Systems</a></td>
                   <td>YES</td>
                   <td>NO</td>
                   <td>NO</td>
                 </tr>
                 <tr>
                   <td>ECL301</td>
-                  <td>Electronic Devices & Circuits Lab</td>
+                  <td>Electronic Devices &amp; Circuits Lab</td>
                   <td>NO</td>
                   <td>YES</td>
                   <td>NO</td>
@@ -204,7 +2072,7 @@ h2 {
                 </tr>
                 <tr>
                   <td>ECL303</td>
-                  <td>Electronic Instrumentation & Control Systems Lab</td>
+                  <td>Electronic Instrumentation &amp; Control Systems Lab</td>
                   <td>NO</td>
                   <td>YES</td>
                   <td>NO</td>
@@ -225,398 +2093,368 @@ h2 {
                 </tr>
               </tbody>
             </table>
-            <br>
-                      </div>
+          </div>
         </div>
-      </div>
-    </div>
-    </div>
-  </main>
 
-  <h6>SE-EXTC-SEM-IV(EVEN SEM)</h6>
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="col-sm-12">
-        <table class="academic-calendar-table">
-          
-          <thead>
-            <tr>
-              <th>Course Code</th>
-              <th>Course Name</th>
-              <th>Theory</th>
-              <th>Practical</th>
-              <th>Tutorial</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ECC401</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-45.pdf" target="_blank">Engineering Mathematics IV</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>ECC402</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-49.pdf" target="_blank">Microcontrollers</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECC403</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-52.pdf" target="_blank">Linear Integrated Circuits</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECC404</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-55.pdf" target="_blank">Signals & Systems</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>ECC405</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-59.pdf" target="_blank">Principles of Communication Engineering</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL401</td>
-              <td>Microcontrollers Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL402</td>
-              <td>Linear Integrated Circuits Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL403</td>
-              <td>Principles of Communication Engineering Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL404</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-68.pdf" target="_blank">Skill Lab: Python Programming</a></td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECM401</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-78.pdf" target="_blank">Mini Project 1B</a></td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-          </tbody>
-        </table>
-<br>        
-      </div>
-    </div>
-  </div>
+        <h6 class="table-subheading">SE-EXTC-SEM-IV (EVEN SEM) — Mumbai University Rev-2019</h6>
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-10">
+            <table class="academic-calendar-table">
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Course Name</th>
+                  <th>Theory</th>
+                  <th>Practical</th>
+                  <th>Tutorial</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ECC401</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-45.pdf" target="_blank">Engineering Mathematics IV</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                </tr>
+                <tr>
+                  <td>ECC402</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-49.pdf" target="_blank">Microcontrollers</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECC403</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-52.pdf" target="_blank">Linear Integrated Circuits</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECC404</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-55.pdf" target="_blank">Signals &amp; Systems</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                </tr>
+                <tr>
+                  <td>ECC405</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-59.pdf" target="_blank">Principles of Communication Engineering</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL401</td>
+                  <td>Microcontrollers Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL402</td>
+                  <td>Linear Integrated Circuits Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL403</td>
+                  <td>Principles of Communication Engineering Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL404</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-68.pdf" target="_blank">Skill Lab: Python Programming</a></td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECM401</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages/SEEXTC_Rev2019_C-Scheme-78.pdf" target="_blank">Mini Project 1B</a></td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-  </div>
-  </div>
-  </div>
-  </div>
+        <h6 class="table-subheading">TE-EXTC-SEM-V (ODD SEM) — Mumbai University Rev-2019</h6>
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-10">
+            <table class="academic-calendar-table">
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Course Name</th>
+                  <th>Theory</th>
+                  <th>Practical</th>
+                  <th>Tutorial</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ECC501</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-11.pdf" target="_blank">Digital Communication</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                </tr>
+                <tr>
+                  <td>ECC502</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-14.pdf" target="_blank">Discrete Time Signal Processing</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECC503</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-17.pdf" target="_blank">Digital VLSI</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECC504</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-20.pdf" target="_blank">Random Signal Analysis</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                </tr>
+                <tr>
+                  <td>ECCDLO501X</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-23.pdf" target="_blank">Department Optional Course-1</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL501</td>
+                  <td>Digital Communication Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL502</td>
+                  <td>Discrete Time Signal Processing Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL503</td>
+                  <td>Digital VLSI Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL504</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/ss.pdf" target="_blank">Professional Communication &amp; Ethics- II</a></td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECM501</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-53.pdf" target="_blank">Mini Project 2A - Embedded System Project</a></td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-  <h6>TE-EXTC-SEM-V(ODD SEM)</h6>
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="col-sm-12">
-        <table class="academic-calendar-table">
-          <thead>
-            <tr>
-              <th>Course Code</th>
-              <th>Course Name</th>
-              <th>Theory</th>
-              <th>Practical</th>
-              <th>Tutorial</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ECC501</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-11.pdf" target="_blank">Digital Communication</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>ECC502</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-14.pdf" target="_blank">Discrete Time Signal Processing</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECC503</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-17.pdf" target="_blank">Digital VLSI</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECC504</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-20.pdf" target="_blank">Random Signal Analysis</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>ECCDLO501X</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-23.pdf" target="_blank">Department Optional Course-1</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL501</td>
-              <td>Digital Communication Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL502</td>
-              <td>Discrete Time Signal Processing Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL503</td>
-              <td>Digital VLSI Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL504</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/ss.pdf" target="_blank">Professional Communication & Ethics- II</a></td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECM501</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-53.pdf" target="_blank">Mini Project 2A - Embedded System Project</a></td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-          </tbody>
-        </table>
-        <br>   
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
+        <h6 class="table-subheading">TE-EXTC-SEM-VI (EVEN SEM) — Mumbai University Rev-2019</h6>
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-10">
+            <table class="academic-calendar-table">
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Course Name</th>
+                  <th>Theory</th>
+                  <th>Practical</th>
+                  <th>Tutorial</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ECC601</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-57.pdf" target="_blank">Electromagnetics and Antenna</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                </tr>
+                <tr>
+                  <td>ECC602</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-60.pdf" target="_blank">Computer Communication Networks</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECC603</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-63.pdf" target="_blank">Image Processing and Machine Vision</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECC604</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-66.pdf" target="_blank">Artificial Neural Network and Fuzzy Logic</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                </tr>
+                <tr>
+                  <td>ECCDLO601X</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-69.pdf" target="_blank">Department Level Optional Course-2</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL601</td>
+                  <td>Electromagnetics and Antenna Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL602</td>
+                  <td>Computer Communication Networks Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL603</td>
+                  <td>Image Processing and Machine Vision Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL604</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-94.pdf" target="_blank">Skill Lab: Linux and Networking and Server Configuration</a></td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECM601</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-99.pdf" target="_blank">Mini Project 2B - FPGA based Project</a></td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-  <h6>TE-EXTC-SEM-VI(EVEN SEM)</h6>
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="col-sm-12">
-        <!-- table 06 -->
-        <table class="academic-calendar-table">
-          <thead>
-            <tr>
-              <th>Course Code</th>
-              <th>Course Name</th>
-              <th>Theory</th>
-              <th>Practical</th>
-              <th>Tutorial</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ECC601</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-57.pdf" target="_blank">Electromagnetics and Antenna</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>ECC602</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-60.pdf" target="_blank">Computer Communication Networks</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECC603</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-63.pdf" target="_blank">Image Processing and Machine Vision</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECC604</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-66.pdf" target="_blank">Artificial Neural Network and Fuzzy Logic</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>ECCDLO601X</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-69.pdf" target="_blank">Department Level Optional Course-2</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL601</td>
-              <td>Electromagnetics and Antenna Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL602</td>
-              <td>Computer Communication Networks Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL603</td>
-              <td>Image Processing and Machine Vision Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL604</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-94.pdf" target="_blank">Skill Lab: Linux and Networking and Server Configuration</a></td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECM601</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 2/TE_EXTC_R2019_C-Scheme_Syllabus-99.pdf" target="_blank">Mini Project 2B - FPGA based Project</a></td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-          </tbody>
-        </table>
+        <h6 class="table-subheading">BE-EXTC-SEM-VII (ODD SEM) — Mumbai University Rev-2019</h6>
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-10">
+            <table class="academic-calendar-table">
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Course Name</th>
+                  <th>Theory</th>
+                  <th>Practical</th>
+                  <th>Tutorial</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ECC701</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 3/BE_Syllabus_rev_for_2019-5.pdf" target="_blank">Microwave Engineering</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                </tr>
+                <tr>
+                  <td>ECC702</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 3/BE_Syllabus_rev_for_2019-8.pdf" target="_blank">Mobile Communication System</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECC703</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 3/BE_Syllabus_rev_for_2019-12.pdf" target="_blank">Optical Communication</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECCDLO703X</td>
+                  <td><a href="/assets/pdf/ilovepdf_extracted-pages 3/BE_Syllabus_rev_for_2019-15.pdf" target="_blank">Department Level Optional Course III</a></td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                </tr>
+                <tr>
+                  <td>ILO701X</td>
+                  <td>Institute Level Optional Course I</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL701</td>
+                  <td>Microwave Engineering Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL702</td>
+                  <td>Mobile Communication System Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL703</td>
+                  <td>Optical Communication Lab</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECLDLO703X</td>
+                  <td>Department Level Optional Lab III</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+                <tr>
+                  <td>ECL704</td>
+                  <td>Project-I</td>
+                  <td>NO</td>
+                  <td>YES</td>
+                  <td>NO</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-        <br>
-        
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  <h6>BE-EXTC-SEM-VII(ODD SEM)</h6>
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="col-sm-12">
-        <!-- table 07 -->
-        <table class="academic-calendar-table">
-          <thead>
-            <tr>
-              <th>Course Code</th>
-              <th>Course Name</th>
-              <th>Theory</th>
-              <th>Practical</th>
-              <th>Tutorial</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ECC701</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 3/BE_Syllabus_rev_for_2019-5.pdf" target="_blank">Microwave Engineering</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>ECC702</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 3/BE_Syllabus_rev_for_2019-8.pdf" target="_blank">Mobile Communication System</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECC703</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 3/BE_Syllabus_rev_for_2019-12.pdf" target="_blank">Optical Communication</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECCDLO703X</td>
-              <td><a href="/assets/pdf/ilovepdf_extracted-pages 3/BE_Syllabus_rev_for_2019-15.pdf" target="_blank">Department Level Optional Course III</a></td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>ILO701X</td>
-              <td>Institute Level Optional Course I</td>
-              <td>YES</td>
-              <td>NO</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL701</td>
-              <td>Microwave Engineering Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>CL702</td>
-              <td>Mobile Communication System Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL703</td>
-              <td>Optical Communication Lab</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECLDLO703X</td>
-              <td>Department Level Optional Lab III</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-            <tr>
-              <td>ECL704</td>
-              <td>Project-I</td>
-              <td>NO</td>
-              <td>YES</td>
-              <td>NO</td>
-            </tr>
-          </tbody>
-        </table>
-<br>        
-      </div>
-    </div>
-      
-    <h6>BE-EXTC-SEM-VIII(EVEN SEM)</h6>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="col-sm-12">
+        <h6 class="table-subheading">BE-EXTC-SEM-VIII (EVEN SEM) — Mumbai University Rev-2019</h6>
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-10">
             <table class="academic-calendar-table">
               <thead>
                 <tr>
@@ -693,23 +2531,45 @@ h2 {
                 </tr>
               </tbody>
             </table>
-            <br>
           </div>
         </div>
+
       </div>
+
     </div>
-  </div>
+  </main>
 
+  <div id="footer"></div>
 
-  
-
-  <div id ="footer"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
   </script>
   <script src="/nav.js"></script>
   <script src="/temp.js"></script>
   <script src="/header.js"></script>
+
+  <script>
+    // Handle URL hash or parameter if present (e.g. #mu or ?scheme=mu)
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const scheme = urlParams.get('scheme');
+      const hash = window.location.hash;
+
+      if (scheme === 'mu' || hash === '#mu') {
+        const muTabBtn = document.getElementById('mu-tab');
+        if (muTabBtn) {
+          const tab = new bootstrap.Tab(muTabBtn);
+          tab.show();
+        }
+      } else if (scheme === 'autonomous' || hash === '#autonomous') {
+        const autoTabBtn = document.getElementById('autonomous-tab');
+        if (autoTabBtn) {
+          const tab = new bootstrap.Tab(autoTabBtn);
+          tab.show();
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

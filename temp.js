@@ -134,7 +134,7 @@ nav.innerHTML = `
                   </li>
                   <li><a class="dropdown-item" href="/academics/exam-calendar.html">Exam Timetable</a></li>
                   <li><a class="dropdown-item" href="/academics/timetable.html">Timetable</a></li>
-                  <li><a class="dropdown-item" href="/academics/syllabus.html">Syllabus</a></li>
+                  <li><a class="dropdown-item" href="/academics/syllabus.html">Syllabus <span class="badge bg-warning text-dark">NEP 2020</span></a></li>
                   <li><a class="dropdown-item" href="/academics/pubtech.html">PubTech</a></li>
                   <li>
                     <a class="dropdown-item" href="#"
