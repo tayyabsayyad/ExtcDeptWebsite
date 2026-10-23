@@ -265,6 +265,24 @@ nav.innerHTML = `
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/cocurricular/activity_reports.html">Activity Reports (AY 2026-27) <span class="badge bg-danger">New</span></a></li>
                 <li><a class="dropdown-item" href="/cocurricular/sankalpana2025.html">Sankalpana 2025</a></li>
+                <li class="dropend drop-down">
+                  <a
+                    class="dropdown-item dropdown-toggle"
+                    href="/cocurricular/innoquest.html"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    InnoQuest <span class="badge bg-danger">New</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu">
+                    <li><a class="dropdown-item" href="/cocurricular/innoquest.html">InnoQuest Overview</a></li>
+                    <li><a class="dropdown-item" href="/cocurricular/innoquest.html#innoquest-2025-26">InnoQuest 2025–26 <span class="badge bg-info">Latest</span></a></li>
+                    <li><a class="dropdown-item" href="/cocurricular/innoquest.html#innoquest-2024-25">InnoQuest 2024–25</a></li>
+                    <li><a class="dropdown-item" href="/assets/pdf/InnoQuest25-26_Report.pdf" target="_blank"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>Report 2025–26 (PDF)</a></li>
+                    <li><a class="dropdown-item" href="/assets/pdf/InnoQuest24-25_Report.pdf" target="_blank"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>Report 2024–25 (PDF)</a></li>
+                  </ul>
+                </li>
                 <li><a class="dropdown-item" href="/cocurricular/events.html">Events & Competitions</a></li>
                 <li><a class="dropdown-item" href="/cocurricular/newsletter.html">Newsletter</a></li>
                 <li><a class="dropdown-item" href="/cocurricular/industrial_training.html">Industrial Visit</a></li>

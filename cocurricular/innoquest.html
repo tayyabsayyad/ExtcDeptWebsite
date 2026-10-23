@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/nav.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
+  <link rel="stylesheet" href="/chat.css" />
+  <link rel="stylesheet" href="/home.css" />
+  <link rel="icon" href="/assets/logo.ico" type="image/x-icon" />
+  <title>InnoQuest - Mini Project Exhibition & Competition | DBIT EXTC</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JDMRE8FDJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4JDMRE8FDJ');
+  </script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #1e293b;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #001f3f 0%, #003366 50%, #0b4f8c 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 42px 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0, 31, 63, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(255, 193, 7, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .dept-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffd700;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    /* Stat Cards */
+    .stat-badge-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      transition: transform 0.2s ease;
+    }
+
+    .stat-badge-box:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffc107;
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: #e2e8f0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Nav Pills */
+    .custom-nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+      border: none;
+    }
+
+    .custom-nav-pills .nav-link {
+      background-color: #ffffff;
+      color: #003366;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .custom-nav-pills .nav-link:hover {
+      background-color: #f0f7ff;
+      border-color: #003366;
+      color: #003366;
+      transform: translateY(-2px);
+    }
+
+    .custom-nav-pills .nav-link.active {
+      background-color: #003366;
+      color: #ffffff;
+      border-color: #003366;
+      box-shadow: 0 4px 12px rgba(0, 51, 102, 0.25);
+    }
+
+    /* Content Cards */
+    .inno-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      margin-bottom: 32px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .inno-card:hover {
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+    }
+
+    .inno-card-header {
+      background: linear-gradient(135deg, #003366 0%, #0c4a80 100%);
+      color: #ffffff;
+      padding: 22px 28px;
+      border-bottom: 3px solid #ffc107;
+    }
+
+    .inno-meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .meta-pill {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      color: #f1f5f9;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-pill-gold {
+      background: rgba(255, 193, 7, 0.22);
+      color: #ffd700;
+      border: 1px solid rgba(255, 193, 7, 0.45);
+      font-weight: 600;
+    }
+
+    /* Winner Podium Cards */
+    .winner-card {
+      border-radius: 14px;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      height: 100%;
+      background: #ffffff;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .winner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .winner-gold {
+      border-top: 5px solid #ffc107;
+      background: linear-gradient(to bottom, #fffdf5, #ffffff);
+    }
+
+    .winner-silver {
+      border-top: 5px solid #94a3b8;
+      background: linear-gradient(to bottom, #f8fafc, #ffffff);
+    }
+
+    .winner-bronze {
+      border-top: 5px solid #cd7f32;
+      background: linear-gradient(to bottom, #fdf8f5, #ffffff);
+    }
+
+    .medal-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    /* PDF Action Download Box */
+    .pdf-download-box {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .pdf-download-box .pdf-icon-bubble {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #fee2e2;
+      color: #dc2626;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    /* Photo Grid & Lightbox */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+      aspect-ratio: 4/3;
+      background: #0f172a;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 14px;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Rubric & Feedback */
+    .metric-meter {
+      height: 10px;
+      border-radius: 6px;
+      background-color: #e2e8f0;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .metric-meter-bar {
+      height: 100%;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #003366, #ffc107);
+    }
+
+    /* Project Table */
+    .project-table-container {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .table thead th {
+      background-color: #003366;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      padding: 12px 14px;
+    }
+
+    .table tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    .table td {
+      padding: 12px 14px;
+      vertical-align: middle;
+      font-size: 0.9rem;
+    }
+
+    /* Search & Filter Bar */
+    .filter-btn.active {
+      background-color: #003366 !important;
+      color: #ffffff !important;
+      border-color: #003366 !important;
+    }
+
+    .domain-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+      background: #e0f2fe;
+      color: #0369a1;
+      display: inline-block;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+
+<body class="bg-color">
+  <!-- Navbar injected by temp.js / nav.js -->
+  <div id="navbar"></div>
+
+  <main class="container py-4">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/index.html" class="text-decoration-none text-muted"><i class="bi bi-house-door"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="/cocurricular/events.html" class="text-decoration-none text-muted">Co-Curricular Activities</a></li>
+        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">InnoQuest Exhibition</li>
+      </ol>
+    </nav>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+      <div class="dept-tag">
+        <i class="fa-solid fa-microchip"></i> Department of Electronics &amp; Telecommunication Engineering
+      </div>
+      <h1 class="display-5 fw-bold mb-2">InnoQuest: Mini Project Exhibition &amp; Competition</h1>
+      <h5 class="fw-normal text-warning mb-3" style="letter-spacing: 0.3px;">
+        Empowering Student Creativity &bull; Hardware Prototyping &bull; Real-World Engineering Applications
+      </h5>
+      <p class="mb-4 text-white-50" style="max-width: 860px; font-size: 1.05rem; line-height: 1.6;">
+        InnoQuest is the flagship mini-project exhibition and inter-cohort competition organized by the Department of EXTC at DBIT. The exhibition provides a dynamic, hands-on platform for Second and Third Year students to demonstrate functional working prototypes across IoT, Embedded Systems, Mobile Robotics, Automation, and Healthcare Technology.
+      </p>
+
+      <!-- Key Statistics -->
+      <div class="row g-3 pt-2">
+        <div class="col-6 col-md-3">
+          <div class="stat-badge-box">
+            <div class="stat-number">19+</div>
+            <div class="stat-label">Exhibited Projects (AY 25-26)</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-badge-box">
+            <div class="stat-number">72+</div>
+            <div class="stat-label">TE EXTC Innovators</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-badge-box">
+            <div class="stat-number">&#8377;6,000</div>
+            <div class="stat-label">Cash Awards &amp; Trophies</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-badge-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Working Prototypes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Document Access Card Banner -->
+    <div class="pdf-download-box shadow-sm">
+      <div class="d-flex align-items-center gap-3">
+        <div class="pdf-icon-bubble">
+          <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <div>
+          <h5 class="fw-bold mb-1 text-dark">Official InnoQuest Exhibition Reports (PDF)</h5>
+          <p class="mb-0 text-muted small">
+            Download the signed comprehensive documentation, project abstracts, evaluation rubric sheets, and photographic proceedings.
+          </p>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="/assets/pdf/InnoQuest25-26_Report.pdf" target="_blank" class="btn btn-primary fw-bold">
+          <i class="bi bi-file-earmark-pdf-fill me-1"></i> Report 2025–26 (PDF)
+        </a>
+        <a href="/assets/pdf/InnoQuest24-25_Report.pdf" target="_blank" class="btn btn-outline-primary fw-bold">
+          <i class="bi bi-file-earmark-pdf-fill me-1"></i> Report 2024–25 (PDF)
+        </a>
+        <a href="#pdf-archive" class="btn btn-warning text-dark fw-bold">
+          <i class="bi bi-eye-fill me-1"></i> View Embedded PDF
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Pills -->
+    <ul class="nav custom-nav-pills" id="innoquestTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="edition-2025-tab" data-bs-toggle="pill" data-bs-target="#edition-2025" type="button" role="tab">
+          <i class="fa-solid fa-trophy text-warning"></i> InnoQuest 2025–26 <span class="badge bg-danger ms-1">Latest</span>
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="edition-2024-tab" data-bs-toggle="pill" data-bs-target="#edition-2024" type="button" role="tab">
+          <i class="fa-solid fa-medal text-primary"></i> InnoQuest 2024–25
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="projects-tab" data-bs-toggle="pill" data-bs-target="#projects-directory" type="button" role="tab">
+          <i class="fa-solid fa-list-check"></i> Project Directory (19 Teams)
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="rubrics-tab" data-bs-toggle="pill" data-bs-target="#rubrics-feedback" type="button" role="tab">
+          <i class="fa-solid fa-chart-pie"></i> Rubrics &amp; Feedback
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="gallery-tab" data-bs-toggle="pill" data-bs-target="#photo-gallery" type="button" role="tab">
+          <i class="fa-solid fa-images"></i> Event Gallery &amp; Posters
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="archive-tab" data-bs-toggle="pill" data-bs-target="#pdf-archive" type="button" role="tab">
+          <i class="fa-solid fa-book-open"></i> Embedded Document Viewer
+        </button>
+      </li>
+    </ul>
+
+    <!-- Tab Contents -->
+    <div class="tab-content" id="innoquestTabContent">
+
+      <!-- ======================================================== -->
+      <!-- TAB 1: INNOQUEST 2025-26 (LATEST)                        -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade show active" id="edition-2025" role="tabpanel">
+
+        <div class="inno-card">
+          <div class="inno-card-header">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">
+                  <i class="fa-solid fa-award me-1"></i> Academic Year 2025–26 &bull; Odd Semester
+                </span>
+                <h2 class="fw-bold mb-1">InnoQuest 2025–26: Mini Project Exhibition &amp; Competition</h2>
+                <p class="mb-0 text-white-50">
+                  Department of Electronics and Telecommunication Engineering &bull; Don Bosco Institute of Technology, Mumbai (Autonomous)
+                </p>
+              </div>
+              <div class="d-flex gap-2">
+                <a href="/assets/pdf/InnoQuest25-26_Report.pdf" target="_blank" class="btn btn-warning fw-bold text-dark">
+                  <i class="bi bi-file-earmark-pdf-fill me-1 text-danger"></i> View Report PDF
+                </a>
+                <a href="/assets/pdf/InnoQuest25-26_Report.pdf" download="InnoQuest_2025-26_Report.pdf" class="btn btn-outline-light fw-bold">
+                  <i class="bi bi-download me-1"></i> Download
+                </a>
+              </div>
+            </div>
+
+            <div class="inno-meta-pills">
+              <span class="meta-pill meta-pill-gold"><i class="bi bi-calendar-event"></i> 31 October 2025</span>
+              <span class="meta-pill"><i class="bi bi-clock"></i> 9:00 am &ndash; 4:00 pm</span>
+              <span class="meta-pill"><i class="bi bi-geo-alt-fill"></i> Labs 4, 6 &amp; 7 (1st Floor, C-Wing) &amp; Fr. Mondini Hall</span>
+              <span class="meta-pill"><i class="bi bi-people-fill"></i> 72 Participants &bull; 19 Innovative TE EXTC Teams</span>
+              <span class="meta-pill"><i class="bi bi-person-badge"></i> Faculty Coordinator: Dr. Aparna M. Telgote</span>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <!-- Event Narrative & Objectives -->
+            <div class="row g-4 mb-4">
+              <div class="col-lg-7">
+                <h4 class="fw-bold text-primary mb-3"><i class="bi bi-info-circle-fill me-2"></i>Event Overview</h4>
+                <p class="text-secondary" style="text-align: justify; line-height: 1.7;">
+                  The Department of Electronics and Telecommunication Engineering (EXTC) at Don Bosco Institute of Technology (DBIT) proudly organized <strong>InnoQuest 2025–26</strong> on <strong>31st October 2025</strong>. 
+                </p>
+                <p class="text-secondary" style="text-align: justify; line-height: 1.7;">
+                  The event commenced at 9:30 am with an inauguration ceremony by <strong>Fr. Mylin Noronha sdb</strong>, Assistant Director DBC and Administrator, DBCL, who inspired students to innovate boldly and integrate practical hands-on engineering with theoretical principles.
+                </p>
+                <p class="text-secondary" style="text-align: justify; line-height: 1.7;">
+                  The project exhibition continued until 12:30 pm across specialized department laboratories (Lab 4, Lab 6, and Lab 7). A total of <strong>72 students from Third Year EXTC</strong> presented <strong>19 innovative working projects</strong> across cutting-edge domains including IoT, Embedded Systems, Mobile Robotics, Healthcare Monitoring, Automation, and Telecommunication.
+                </p>
+                <p class="text-secondary" style="text-align: justify; line-height: 1.7;">
+                  A rigorous evaluation was conducted by an esteemed panel of faculty judges alongside final-year (BE) student peer mentors, evaluating teams on criteria mapped to Program Outcomes (POs): problem identification, technical design, real-world relevance, working prototype fidelity, and team presentation. The exhibition concluded with a grand valedictory and prize distribution at 2:30 pm in <strong>Fr. Mondini Hall</strong>.
+                </p>
+              </div>
+
+              <!-- Objectives & Outcomes summary box -->
+              <div class="col-lg-5">
+                <div class="card border-0 bg-light p-3 rounded-3 mb-3 shadow-sm">
+                  <h6 class="fw-bold text-dark mb-2"><i class="bi bi-bullseye text-primary me-2"></i>Event Objectives</h6>
+                  <ul class="text-secondary small mb-0 ps-3">
+                    <li class="mb-2"><strong>Showcase Creativity and Innovation:</strong> Provide a platform for students to demonstrate innovative and technical abilities through project-based learning.</li>
+                    <li class="mb-2"><strong>Encourage Practical Application:</strong> Motivate students to apply theoretical concepts to real-world problems and develop fully working prototypes.</li>
+                    <li><strong>Inspire Younger Students:</strong> Create enthusiasm among FE &amp; SE students by exposing them to advanced project work in the EXTC domain.</li>
+                  </ul>
+                </div>
+
+                <div class="card border-0 bg-light p-3 rounded-3 shadow-sm">
+                  <h6 class="fw-bold text-dark mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Key Event Outcomes</h6>
+                  <ul class="text-secondary small mb-0 ps-3">
+                    <li class="mb-2"><strong>19 Unique Projects Displayed:</strong> Addressing social, health, agricultural, and industrial challenges.</li>
+                    <li class="mb-2"><strong>Collaborative Learning:</strong> Fostering multidisciplinary problem-solving and rigorous technical discussions.</li>
+                    <li><strong>Motivation for Juniors:</strong> Inspiring lower-semester students to engage in project development early.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Winners Podium for 2025-26 -->
+            <div class="my-4">
+              <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap">
+                <div>
+                  <h4 class="fw-bold text-dark mb-1"><i class="bi bi-trophy-fill text-warning me-2"></i>InnoQuest 2025–26 Winners &amp; Cash Prizes</h4>
+                  <p class="text-muted small mb-0">Felicitated with cash awards of &#8377;3,000, &#8377;2,000, and &#8377;1,000 for securing top honours</p>
+                </div>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
+                  Total Prize Pool: &#8377;6,000
+                </span>
+              </div>
+
+              <div class="row g-4">
+                <!-- 1st Place -->
+                <div class="col-md-4">
+                  <div class="winner-card winner-gold">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill">1st Place Winner</span>
+                      <span class="badge bg-dark text-warning fw-bold">&#8377;3,000 Cash Prize</span>
+                    </div>
+                    <div class="text-center my-3">
+                      <div class="medal-icon">&#129351;</div>
+                      <h5 class="fw-bold text-dark mb-1">IoT Based Smart Inhaler</h5>
+                      <span class="badge bg-primary-subtle text-primary border">Group 13 &bull; Lab 7</span>
+                    </div>
+                    <hr class="text-muted" />
+                    <h6 class="text-muted small fw-bold text-uppercase mb-2">Team Members:</h6>
+                    <ul class="list-unstyled small mb-0">
+                      <li class="py-1"><i class="bi bi-person-fill text-warning me-2"></i><strong>Paktekar Mrunmai Ramesh</strong> <span class="text-muted">(Roll 30)</span></li>
+                      <li class="py-1"><i class="bi bi-person-fill text-warning me-2"></i><strong>Dewoolkar Kripa Seema</strong> <span class="text-muted">(Roll 12)</span></li>
+                      <li class="py-1"><i class="bi bi-person-fill text-warning me-2"></i><strong>Puranik Aryan Milind</strong> <span class="text-muted">(Roll 35)</span></li>
+                      <li class="py-1"><i class="bi bi-person-fill text-warning me-2"></i><strong>Gidh Saeesh Rahul</strong> <span class="text-muted">(Roll 15)</span></li>
+                    </ul>
+                    <div class="mt-3 pt-2 border-top text-muted small">
+                      <i class="bi bi-person-workspace text-primary me-1"></i>Guide: <strong>Prof. Dr. Aparna M. Telgote</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2nd Place -->
+                <div class="col-md-4">
+                  <div class="winner-card winner-silver">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge bg-secondary text-white fw-bold px-3 py-1 rounded-pill">2nd Place Winner</span>
+                      <span class="badge bg-dark text-light fw-bold">&#8377;2,000 Cash Prize</span>
+                    </div>
+                    <div class="text-center my-3">
+                      <div class="medal-icon">&#129352;</div>
+                      <h5 class="fw-bold text-dark mb-1">Care-Talk</h5>
+                      <span class="badge bg-primary-subtle text-primary border">Group 2 &bull; Lab 6</span>
+                    </div>
+                    <hr class="text-muted" />
+                    <h6 class="text-muted small fw-bold text-uppercase mb-2">Team Members:</h6>
+                    <ul class="list-unstyled small mb-0">
+                      <li class="py-1"><i class="bi bi-person-fill text-secondary me-2"></i><strong>Jain Yashvi Kishor</strong> <span class="text-muted">(Roll 18)</span></li>
+                      <li class="py-1"><i class="bi bi-person-fill text-secondary me-2"></i><strong>Saha Anu Arunkumar</strong> <span class="text-muted">(Roll 38)</span></li>
+                      <li class="py-1"><i class="bi bi-person-fill text-secondary me-2"></i><strong>Tare Dhruv Rahul</strong> <span class="text-muted">(Roll 45)</span></li>
+                      <li class="py-1"><i class="bi bi-person-fill text-secondary me-2"></i><strong>Vipaak Gaikwad Sudheer</strong> <span class="text-muted">(Roll 46)</span></li>
+                    </ul>
+                    <div class="mt-3 pt-2 border-top text-muted small">
+                      <i class="bi bi-person-workspace text-primary me-1"></i>Guide: <strong>Prof. Dr. Aparna M. Telgote</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3rd Place -->
+                <div class="col-md-4">
+                  <div class="winner-card winner-bronze">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge bg-danger text-white fw-bold px-3 py-1 rounded-pill">3rd Place Winner</span>
+                      <span class="badge bg-dark text-light fw-bold">&#8377;1,000 Cash Prize</span>
+                    </div>
+                    <div class="text-center my-3">
+                      <div class="medal-icon">&#129353;</div>
+                      <h5 class="fw-bold text-dark mb-1">IoT-Enabled Weather Station using ESP32</h5>
+                      <span class="badge bg-primary-subtle text-primary border">Group 19 &bull; Lab 7</span>
+                    </div>
+                    <hr class="text-muted" />
+                    <h6 class="text-muted small fw-bold text-uppercase mb-2">Team Members:</h6>
+                    <ul class="list-unstyled small mb-0">
+                      <li class="py-1"><i class="bi bi-person-fill text-danger me-2"></i><strong>Nabeela Ansari</strong></li>
+                      <li class="py-1"><i class="bi bi-person-fill text-danger me-2"></i><strong>Prathamesh Yerekar</strong></li>
+                      <li class="py-1"><i class="bi bi-person-fill text-danger me-2"></i><strong>Jamnekar Vishakha</strong> <span class="text-muted">(Roll 20)</span></li>
+                      <li class="py-1"><i class="bi bi-person-fill text-danger me-2"></i><strong>Sushant Patil</strong> <span class="text-muted">(Roll 32)</span></li>
+                    </ul>
+                    <div class="mt-3 pt-2 border-top text-muted small">
+                      <i class="bi bi-person-workspace text-primary me-1"></i>Guide: <strong>Prof. Dr. Aparna M. Telgote</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event Visual Showcase (2025-26) -->
+            <div class="my-4">
+              <h5 class="fw-bold text-dark mb-3"><i class="bi bi-camera-fill text-primary me-2"></i>Exhibition Highlights &amp; Working Demos (2025–26)</h5>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_12_p8.jpeg', 'Smart City & Home Automation Prototype Demo')">
+                    <img src="/assets/events/innoquest/innoquest25_img_12_p8.jpeg" alt="Smart Prototype Demo" />
+                    <div class="gallery-caption">Smart City &amp; Automation Working Model</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_13_p8.jpeg', 'Mobile Controlled Robotic Arm Demonstration')">
+                    <img src="/assets/events/innoquest/innoquest25_img_13_p8.jpeg" alt="Robotic Arm Demo" />
+                    <div class="gallery-caption">Mobile Controlled Robotic Arm Demo</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_16_p10.jpeg', 'TE EXTC Team with Faculty Coordinator Dr. Aparna Telgote')">
+                    <img src="/assets/events/innoquest/innoquest25_img_16_p10.jpeg" alt="Coordinator & Team" />
+                    <div class="gallery-caption">Faculty Coordinator &amp; TE EXTC Innovators</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- TAB 2: INNOQUEST 2024-25                                  -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade" id="edition-2024" role="tabpanel">
+
+        <div class="inno-card">
+          <div class="inno-card-header">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">
+                  <i class="fa-solid fa-calendar-check me-1"></i> Academic Year 2024–25 &bull; Odd Semester
+                </span>
+                <h2 class="fw-bold mb-1">InnoQuest 2024–25: Mini Project Exhibition &amp; Competition</h2>
+                <p class="mb-0 text-white-50">
+                  Department of Electronics and Telecommunication Engineering &bull; Don Bosco Institute of Technology, Kurla West, Mumbai
+                </p>
+              </div>
+              <div class="d-flex gap-2">
+                <a href="/assets/pdf/InnoQuest24-25_Report.pdf" target="_blank" class="btn btn-warning fw-bold text-dark">
+                  <i class="bi bi-file-earmark-pdf-fill me-1 text-danger"></i> View Report PDF
+                </a>
+                <a href="/assets/pdf/InnoQuest24-25_Report.pdf" download="InnoQuest_2024-25_Report.pdf" class="btn btn-outline-light fw-bold">
+                  <i class="bi bi-download me-1"></i> Download
+                </a>
+              </div>
+            </div>
+
+            <div class="inno-meta-pills">
+              <span class="meta-pill meta-pill-gold"><i class="bi bi-calendar-event"></i> 4 October 2024</span>
+              <span class="meta-pill"><i class="bi bi-clock"></i> 9:00 am &ndash; 4:00 pm</span>
+              <span class="meta-pill"><i class="bi bi-geo-alt-fill"></i> Labs 4 &amp; 6 (1st Floor, C-Wing) &amp; Fr. Mondini Hall</span>
+              <span class="meta-pill"><i class="bi bi-people-fill"></i> 51 Participants &bull; 12 EXTC Teams</span>
+              <span class="meta-pill"><i class="bi bi-person-badge"></i> Faculty Coordinator: Dr. Aparna M. Telgote</span>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <!-- Event Narrative & Objectives -->
+            <div class="row g-4 mb-4">
+              <div class="col-lg-7">
+                <h4 class="fw-bold text-primary mb-3"><i class="bi bi-journal-text me-2"></i>Detailed Report &amp; Overview</h4>
+                <p class="text-secondary" style="text-align: justify; line-height: 1.7;">
+                  The Department of Electronics and Telecommunication Engineering at Don Bosco Institute of Technology proudly hosted the SE and TE Students' Mini Project Exhibition <strong>InnoQuest 2024–25</strong> on <strong>October 4, 2024</strong> in C-Wing, 1st Floor EXTC Labs.
+                </p>
+                <p class="text-secondary" style="text-align: justify; line-height: 1.7;">
+                  The exhibition served as an interactive and competitive platform for students to demonstrate functional engineering models. The exhibition aimed to stimulate curiosity, promote peer learning, and inspire First Year (FE) and ITI students to engage early in problem-solving and apply theoretical concepts from electronics and telecommunications into tangible hardware.
+                </p>
+                <p class="text-secondary" style="text-align: justify; line-height: 1.7;">
+                  A total of <strong>12 teams from EXTC</strong> exhibited projects. The event concluded with an exhilarating prize distribution ceremony held in <strong>Fr. Mondini Hall (4th Floor, C-Wing)</strong> to honour the dedicated student teams for their innovative spirit.
+                </p>
+              </div>
+
+              <!-- 2024 Objectives -->
+              <div class="col-lg-5">
+                <div class="card border-0 bg-light p-3 rounded-3 mb-3 shadow-sm">
+                  <h6 class="fw-bold text-dark mb-2"><i class="bi bi-stars text-warning me-2"></i>Key Exhibition Pillars</h6>
+                  <ul class="text-secondary small mb-0 ps-3">
+                    <li class="mb-2"><strong>Creativity &amp; Innovation:</strong> Providing an experiential avenue to exhibit creative and technical capabilities.</li>
+                    <li class="mb-2"><strong>Practical Application:</strong> Bridging classroom theory to real-world embedded, biomedical, and communication challenges.</li>
+                    <li><strong>Junior Engagement:</strong> Inspiring FE and ITI scholars to undertake multidisciplinary electronics ventures.</li>
+                  </ul>
+                </div>
+
+                <!-- 2024 Inauguration Photo Card -->
+                <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest24_img_1_p1.jpeg', 'Inauguration Ceremony & Ribbon Cutting by Management & Faculty')">
+                  <img src="/assets/events/innoquest/innoquest24_img_1_p1.jpeg" alt="Ribbon Cutting Ceremony" />
+                  <div class="gallery-caption">Inauguration Ribbon Cutting Ceremony &bull; C-Wing Labs</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Winners Podium for 2024-25 -->
+            <div class="my-4">
+              <h4 class="fw-bold text-dark mb-3"><i class="bi bi-award-fill text-warning me-2"></i>InnoQuest 2024–25 Winners</h4>
+              <div class="row g-4">
+                <!-- 1st Place -->
+                <div class="col-md-3">
+                  <div class="winner-card winner-gold">
+                    <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-2">1st Place</span>
+                    <div class="text-center my-2">
+                      <div class="medal-icon">&#129351;</div>
+                      <h6 class="fw-bold text-dark">Non-Invasive Blood Glucose Monitoring System</h6>
+                      <span class="badge bg-primary-subtle text-primary border">Group 4</span>
+                    </div>
+                    <hr class="text-muted" />
+                    <p class="small text-muted mb-1 fw-bold">Members:</p>
+                    <ul class="list-unstyled small mb-0">
+                      <li>&bull; Prathamesh Kurdekar</li>
+                      <li>&bull; Jero Royston Poobalarayan</li>
+                      <li>&bull; Nisha Snigh</li>
+                      <li>&bull; Yashi Nimje</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 2nd Place -->
+                <div class="col-md-3">
+                  <div class="winner-card winner-silver">
+                    <span class="badge bg-secondary text-white fw-bold px-3 py-1 rounded-pill mb-2">2nd Place</span>
+                    <div class="text-center my-2">
+                      <div class="medal-icon">&#129352;</div>
+                      <h6 class="fw-bold text-dark">Mining Safety and Monitoring System using STM32</h6>
+                      <span class="badge bg-primary-subtle text-primary border">Group 9</span>
+                    </div>
+                    <hr class="text-muted" />
+                    <p class="small text-muted mb-1 fw-bold">Members:</p>
+                    <ul class="list-unstyled small mb-0">
+                      <li>&bull; Aftab Shaikh</li>
+                      <li>&bull; Aditya Punekar</li>
+                      <li>&bull; Umair Shaikh</li>
+                      <li>&bull; Sarvesh Thorat</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 3rd Place -->
+                <div class="col-md-3">
+                  <div class="winner-card winner-bronze">
+                    <span class="badge bg-danger text-white fw-bold px-3 py-1 rounded-pill mb-2">3rd Place</span>
+                    <div class="text-center my-2">
+                      <div class="medal-icon">&#129353;</div>
+                      <h6 class="fw-bold text-dark">Water Cleaning Robot</h6>
+                      <span class="badge bg-primary-subtle text-primary border">Group 3</span>
+                    </div>
+                    <hr class="text-muted" />
+                    <p class="small text-muted mb-1 fw-bold">Members:</p>
+                    <ul class="list-unstyled small mb-0">
+                      <li>&bull; Gopal Jha</li>
+                      <li>&bull; Jasmit Ganvir</li>
+                      <li>&bull; Omkar Dhebe</li>
+                      <li>&bull; Nomaan Choudhary</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 3rd Place Tied -->
+                <div class="col-md-3">
+                  <div class="winner-card winner-bronze">
+                    <span class="badge bg-danger text-white fw-bold px-3 py-1 rounded-pill mb-2">3rd Place (Tied)</span>
+                    <div class="text-center my-2">
+                      <div class="medal-icon">&#129353;</div>
+                      <h6 class="fw-bold text-dark">Secure Package Reception Box</h6>
+                      <span class="badge bg-primary-subtle text-primary border">Group 7</span>
+                    </div>
+                    <hr class="text-muted" />
+                    <p class="small text-muted mb-1 fw-bold">Members:</p>
+                    <ul class="list-unstyled small mb-0">
+                      <li>&bull; Jaden Fernandes</li>
+                      <li>&bull; Ayush Gajbhiye</li>
+                      <li>&bull; Priyanshu Sakharkar</li>
+                      <li>&bull; Soham Ghadigaonkar</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photos from 2024 -->
+            <div class="my-4">
+              <h5 class="fw-bold text-dark mb-3"><i class="bi bi-images text-primary me-2"></i>InnoQuest 2024–25 Photographic Highlights</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest24_img_3_p1.jpeg', 'Demonstration of Hardware Circuits & Laptop Telemetry to Management & Evaluators')">
+                    <img src="/assets/events/innoquest/innoquest24_img_3_p1.jpeg" alt="Hardware Demo" />
+                    <div class="gallery-caption">Demonstrating Prototype Hardware &amp; Sensor Telemetry to Faculty &amp; Dignitaries</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest24_img_2_p1.jpeg', 'Presentation Session in Seminar Lab')">
+                    <img src="/assets/events/innoquest/innoquest24_img_2_p1.jpeg" alt="Lab Presentation" />
+                    <div class="gallery-caption">Interactive Technical Presentation Session with Audience</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- TAB 3: PROJECT DIRECTORY (ALL 19 TEAMS)                  -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade" id="projects-directory" role="tabpanel">
+
+        <div class="inno-card">
+          <div class="inno-card-header">
+            <h3 class="fw-bold mb-1"><i class="fa-solid fa-list-check text-warning me-2"></i>InnoQuest 2025–26 Exhibited Projects Directory</h3>
+            <p class="mb-0 text-white-50">Complete roster of 19 Third Year EXTC working models demonstrated across department labs</p>
+          </div>
+
+          <div class="p-4">
+            <!-- Search & Filter Controls -->
+            <div class="row g-3 mb-4 align-items-center">
+              <div class="col-md-6">
+                <div class="input-group">
+                  <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                  <input type="text" id="projectSearchInput" class="form-control border-start-0" placeholder="Search by project name, member, roll number, or domain..." onkeyup="filterProjects()" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex flex-wrap gap-2 justify-content-md-end">
+                  <button class="btn btn-sm btn-outline-primary filter-btn active" onclick="filterByLab('all', this)">All Labs (19)</button>
+                  <button class="btn btn-sm btn-outline-primary filter-btn" onclick="filterByLab('Lab 6', this)">Lab 6 (Grps 1-6)</button>
+                  <button class="btn btn-sm btn-outline-primary filter-btn" onclick="filterByLab('Lab 4', this)">Lab 4 (Grps 7-12)</button>
+                  <button class="btn btn-sm btn-outline-primary filter-btn" onclick="filterByLab('Lab 7', this)">Lab 7 (Grps 13-19)</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive project-table-container">
+              <table class="table table-hover align-middle mb-0" id="innoquestProjectTable">
+                <thead>
+                  <tr>
+                    <th style="width: 70px;">Grp</th>
+                    <th>Project Title &amp; Domain</th>
+                    <th>Team Members &amp; Roll Nos.</th>
+                    <th>Guide</th>
+                    <th style="width: 110px;">Lab Venue</th>
+                    <th style="width: 110px;" class="text-center">Award</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Group 1 -->
+                  <tr data-lab="Lab 6" data-domain="Communication">
+                    <td><span class="badge bg-secondary">Grp 1</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Offline Communication System</div>
+                      <span class="domain-tag">Communication &amp; Networking</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Botle Sumit Jagdish (5), Shejwal Janhavi Dilip (41),<br />
+                        Mascarenhas Blossom Brian (25), Shetty Nikhil Dayananda (42)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 6</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 2 -->
+                  <tr data-lab="Lab 6" data-domain="Healthcare Assistive" class="table-warning">
+                    <td><span class="badge bg-secondary">Grp 2</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Care-Talk</div>
+                      <span class="domain-tag">Assistive Tech &bull; Healthcare</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Jain Yashvi Kishor (18), Saha Anu Arunkumar (38),<br />
+                        Tare Dhruv Rahul (45), Vipaak Gaikwad Sudheer (46)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 6</span></td>
+                    <td class="text-center">
+                      <span class="badge bg-secondary text-white"><i class="bi bi-award-fill"></i> 2nd Place (&#8377;2k)</span>
+                    </td>
+                  </tr>
+
+                  <!-- Group 3 -->
+                  <tr data-lab="Lab 6" data-domain="Robotics">
+                    <td><span class="badge bg-secondary">Grp 3</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Mobile Controlled Robotic Arm</div>
+                      <span class="domain-tag">Robotics &bull; Wireless Control</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Pawar Sneha Suresh (33), Dafedar Ibrahim Masood (8),<br />
+                        Nyalapelli Kartik Yadagiri (29), Nellithanath Daniel Joseph (28)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 6</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 4 -->
+                  <tr data-lab="Lab 6" data-domain="LoRa Disaster">
+                    <td><span class="badge bg-secondary">Grp 4</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">LoRa based rescue system with live mapping</div>
+                      <span class="domain-tag">LoRa &bull; GIS &amp; Emergency Telemetry</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Gokhale Harshali Narendra (16), Jaiswal Yukita Jagdish (19),<br />
+                        Mediboina Pritika Krishnarao (26), Gaonkar Samiksha Narayan (14), Dalvi Amey Sandip (9)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 6</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 5 -->
+                  <tr data-lab="Lab 6" data-domain="Mesh IoT">
+                    <td><span class="badge bg-secondary">Grp 5</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">IRIS Mesh Network Rescue System</div>
+                      <span class="domain-tag">Mesh Networking &bull; Disaster Response</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Hande Netra Nitin (17), Shinde Jashith (43),<br />
+                        Labde Kapil Shivnath (24), Jangam Aayush Shailesh (49)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 6</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 6 -->
+                  <tr data-lab="Lab 6" data-domain="Energy Automation">
+                    <td><span class="badge bg-secondary">Grp 6</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Energy Monitoring System and Automation</div>
+                      <span class="domain-tag">Energy Telemetry &bull; Smart Grid</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Badhe Atharva Sanjay (2), Bait Nirmiti Babu (3), Harad Harshad Ramesh (71)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 6</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 7 -->
+                  <tr data-lab="Lab 4" data-domain="AI Environment">
+                    <td><span class="badge bg-secondary">Grp 7</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">AI Enhanced Smart Air Quality &amp; Pollution Monitoring &amp; Prediction System</div>
+                      <span class="domain-tag">AI/ML &bull; Pollution Analytics</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Khan Mohd. Moin Afroz (54), Salunke Sakshi Santosh (50),<br />
+                        Mishra Soham, Khan Mohammed Shayan (23)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 4</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 8 -->
+                  <tr data-lab="Lab 4" data-domain="Agritech IoT">
+                    <td><span class="badge bg-secondary">Grp 8</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">e-Mandi Live Price Display</div>
+                      <span class="domain-tag">Agritech &bull; Dynamic Telemetry</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Munj Kanishq Ramdatt (74), Kharat Prabhat Prakash (59),<br />
+                        Hiremath Abhiroop Vijay (55), Kanse Mangesh (76)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 4</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 9 -->
+                  <tr data-lab="Lab 4" data-domain="ESP32 Sensors">
+                    <td><span class="badge bg-secondary">Grp 9</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Smart Aquarium pH &amp; Water Quality Monitor using ESP32</div>
+                      <span class="domain-tag">ESP32 &bull; Bio-Sensing IoT</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Adharsh Dudhkar, Myron Dias, Bhalerao Akanksha (67), Abhishekh Dube (56)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 4</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 10 -->
+                  <tr data-lab="Lab 4" data-domain="STM32 Industrial">
+                    <td><span class="badge bg-secondary">Grp 10</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">IoT Based Circuit Breaker using STM32</div>
+                      <span class="domain-tag">STM32 Microcontroller &bull; Industrial Protection</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Ansari Araf Asif (64), Chourasiya Ayush (7), Mebin Kurishinkal, Shaikh Mohammad Maroof (63)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 4</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 11 -->
+                  <tr data-lab="Lab 4" data-domain="Cleantech Automation">
+                    <td><span class="badge bg-secondary">Grp 11</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Smart Plastic Bottle Collection &amp; Reward System</div>
+                      <span class="domain-tag">Smart Waste &bull; RFID / Gamification</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Khan Ayan Rizwan (73), Mulla Fahaam Aziz (77),<br />
+                        Dikonda Vinay Prabhakar (72), Shaikh Mohdtaheef (62)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 4</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 12 -->
+                  <tr data-lab="Lab 4" data-domain="Sensors Water">
+                    <td><span class="badge bg-secondary">Grp 12</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Water Quality Monitoring &amp; Purifier</div>
+                      <span class="domain-tag">Water Purification &bull; Sensor Automation</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Deepak Ramesh Sakha (10), Deshmukh Anant Hemant (11),<br />
+                        Salunkhe Jai Mangesh (39), Sharma Raman Lalchand (40)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 4</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 13 -->
+                  <tr data-lab="Lab 7" data-domain="Healthcare IoT" class="table-warning">
+                    <td><span class="badge bg-secondary">Grp 13</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">IoT Based Smart Inhaler</div>
+                      <span class="domain-tag">Smart Healthcare &bull; Biomedical Telemetry</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Paktekar Mrunmai Ramesh (30), Dewoolkar Kripa Seema (12),<br />
+                        Puranik Aryan Milind (35), Gidh Saeesh Rahul (15)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 7</span></td>
+                    <td class="text-center">
+                      <span class="badge bg-warning text-dark"><i class="bi bi-trophy-fill"></i> 1st Place (&#8377;3k)</span>
+                    </td>
+                  </tr>
+
+                  <!-- Group 14 -->
+                  <tr data-lab="Lab 7" data-domain="Robotics Environment">
+                    <td><span class="badge bg-secondary">Grp 14</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Robotic Air Quality Monitoring System</div>
+                      <span class="domain-tag">Mobile Robotics &bull; Gas Sensing</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Siddique Mohd Atif (44), Philse Shravan (34),<br />
+                        Rai Harsh Santosh (36), Yadav Vinayak Satish (47)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 7</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 15 -->
+                  <tr data-lab="Lab 7" data-domain="Agritech Automation">
+                    <td><span class="badge bg-secondary">Grp 15</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Automated Pest Control for Agriculture</div>
+                      <span class="domain-tag">Agricultural Electronics &bull; Automated Sprayers</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">Patilkadan Jancy (68)</small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 7</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 16 -->
+                  <tr data-lab="Lab 7" data-domain="Hospital IoT Healthcare">
+                    <td><span class="badge bg-secondary">Grp 16</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Smart IV Monitoring for Hospitals</div>
+                      <span class="domain-tag">Hospital IoT &bull; Fluid Level Alerting</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Gajula Priya Venkatesh (13), Kamble Apurva Pradip (22), Bevanur Prajwala (4),<br />
+                        Kurlekar Om (66), Patil Ishant Ishwar (69), Nadar Aakash (27), Pardeshi Parth (78)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 7</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 17 -->
+                  <tr data-lab="Lab 7" data-domain="Wearables Healthcare">
+                    <td><span class="badge bg-secondary">Grp 17</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Fall Detection for Elderly People</div>
+                      <span class="domain-tag">Wearable Sensors &bull; Accelerometer Alerts</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Parimi Gunavardhan (31), Rajguru Pooja (70), Garige Sandesh, Darnajaf Sayed
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 7</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 18 -->
+                  <tr data-lab="Lab 7" data-domain="STM32 Automation">
+                    <td><span class="badge bg-secondary">Grp 18</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">Automatic Waste Segregation System using STM32</div>
+                      <span class="domain-tag">STM32 Microcontroller &bull; Waste Sorting</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Raskar Akshay Sanjay (53), Auti Pratham Ganesh (51),<br />
+                        Qureshi Mohd Anas (57), Jadhav Eshan (56)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 7</span></td>
+                    <td class="text-center">&mdash;</td>
+                  </tr>
+
+                  <!-- Group 19 -->
+                  <tr data-lab="Lab 7" data-domain="ESP32 Telemetry Weather" class="table-warning">
+                    <td><span class="badge bg-secondary">Grp 19</span></td>
+                    <td>
+                      <div class="fw-bold text-dark">IoT-Enabled Weather Station using ESP32</div>
+                      <span class="domain-tag">ESP32 &bull; Atmospheric Telemetry</span>
+                    </td>
+                    <td>
+                      <small class="text-secondary">
+                        Nabeela Ansari, Prathamesh Yerekar, Jamnekar Vishakha (20), Sushant Patil (32)
+                      </small>
+                    </td>
+                    <td><span class="small fw-semibold">Prof. Aparna M. Telgote</span></td>
+                    <td><span class="badge bg-light text-dark border">EXTC Lab 7</span></td>
+                    <td class="text-center">
+                      <span class="badge bg-danger text-white"><i class="bi bi-award-fill"></i> 3rd Place (&#8377;1k)</span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- TAB 4: RUBRICS & FEEDBACK ANALYSIS                       -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade" id="rubrics-feedback" role="tabpanel">
+
+        <div class="row g-4">
+          <!-- Evaluation Rubric Card -->
+          <div class="col-lg-7">
+            <div class="inno-card h-100">
+              <div class="inno-card-header">
+                <h4 class="fw-bold mb-1"><i class="fa-solid fa-clipboard-check me-2"></i>Academic Evaluation Rubrics</h4>
+                <p class="mb-0 text-white-50">Standardized Department Assessment Framework Mapped to NBA Program Outcomes (POs)</p>
+              </div>
+              <div class="p-4">
+                <div class="table-responsive">
+                  <table class="table table-bordered align-middle small">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Criteria</th>
+                        <th>Mapped POs</th>
+                        <th>Assessment Indicators (Max 10M)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="fw-bold text-dark">Problem Identification &amp; Planning</td>
+                        <td><span class="badge bg-primary">PO1, PO2, PO3</span></td>
+                        <td>Real-world/social problem clearly identified with strong planning, feasible timeline, and clear objectives.</td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold text-dark">Methodology, Analysis &amp; System Design</td>
+                        <td><span class="badge bg-primary">PO3, PO4, PO5</span></td>
+                        <td>Comprehensive analysis and comparison with existing systems; effective STM32/ESP32 implementation, well-justified components.</td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold text-dark">Social / Environmental / Industrial Relevance</td>
+                        <td><span class="badge bg-primary">PO6, PO7</span></td>
+                        <td>Strong, sustainable, and measurable social/environmental/industrial impact clearly demonstrated.</td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold text-dark">Working Model / Functionality</td>
+                        <td><span class="badge bg-primary">PO3, PO5, PO11</span></td>
+                        <td>Fully functional prototype demonstrating accuracy, reliability, hardware-software integration, and seamless operation.</td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold text-dark">Presentation &amp; Teamwork</td>
+                        <td><span class="badge bg-primary">PO9, PO10, PO12</span></td>
+                        <td>Excellent professional presentation; strong collaboration; demonstrates self-learning and initiative in continuous technologies.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="card border-0 bg-light p-3 rounded-3 mt-3">
+                  <h6 class="fw-bold text-dark mb-1"><i class="bi bi-people-fill text-primary me-2"></i>Evaluation Panels</h6>
+                  <p class="text-muted small mb-0">
+                    Evaluation panels comprised department faculty (Dr. Ashwini Kotrashetti, Ms. Hemalata, Ms. Namita, Mr. Kishore, Ms. Madhavi, Ms. Lakshmi Iyer, Mr. Ankur, Dr. Aparna Telgote, Ms. Poonam) and Final-Year (BE) mentors across Labs 4, 6, and 7.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feedback Analysis Card -->
+          <div class="col-lg-5">
+            <div class="inno-card h-100">
+              <div class="inno-card-header">
+                <h4 class="fw-bold mb-1"><i class="fa-solid fa-chart-pie me-2"></i>Attendee Feedback Analysis</h4>
+                <p class="mb-0 text-white-50">Consolidated analytics from 254 student, faculty &amp; visitor responses</p>
+              </div>
+              <div class="p-4">
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between small fw-bold">
+                    <span>Projects Were Innovative</span>
+                    <span class="text-primary">93.7% Yes</span>
+                  </div>
+                  <div class="metric-meter">
+                    <div class="metric-meter-bar" style="width: 93.7%;"></div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between small fw-bold">
+                    <span>Satisfied Social / Industrial Needs</span>
+                    <span class="text-primary">87.4% Yes</span>
+                  </div>
+                  <div class="metric-meter">
+                    <div class="metric-meter-bar" style="width: 87.4%;"></div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between small fw-bold">
+                    <span>Well Organized &amp; Conducted</span>
+                    <span class="text-primary">92.9% Yes</span>
+                  </div>
+                  <div class="metric-meter">
+                    <div class="metric-meter-bar" style="width: 92.9%;"></div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between small fw-bold">
+                    <span>Effective Student Presentation</span>
+                    <span class="text-primary">93.7% Yes</span>
+                  </div>
+                  <div class="metric-meter">
+                    <div class="metric-meter-bar" style="width: 93.7%;"></div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <div class="d-flex justify-content-between small fw-bold">
+                    <span>Overall Rating (Excellent / Very Good)</span>
+                    <span class="text-primary">72.5%</span>
+                  </div>
+                  <div class="metric-meter">
+                    <div class="metric-meter-bar" style="width: 72.5%;"></div>
+                  </div>
+                </div>
+
+                <hr />
+                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-chat-quote-fill text-warning me-2"></i>Selected Attendee Comments</h6>
+                <div class="p-2 bg-light rounded small text-secondary mb-2 fst-italic">
+                  &ldquo;Overall great experience and good team dedication. It was helpful to learn new ways to apply embedded systems in innovative ways.&rdquo;
+                </div>
+                <div class="p-2 bg-light rounded small text-secondary fst-italic">
+                  &ldquo;Really innovative projects! The prototypes displayed have real commercial potential to solve social and agricultural problems.&rdquo;
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- TAB 5: PHOTO GALLERY & POSTERS                           -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade" id="photo-gallery" role="tabpanel">
+
+        <div class="inno-card">
+          <div class="inno-card-header">
+            <h3 class="fw-bold mb-1"><i class="fa-solid fa-images text-warning me-2"></i>Event Gallery &amp; Official Posters</h3>
+            <p class="mb-0 text-white-50">Photographic memories, inauguration moments, project demonstration booths, and event publicity</p>
+          </div>
+
+          <div class="p-4">
+            <!-- Official Posters Section -->
+            <h5 class="fw-bold text-primary mb-3"><i class="bi bi-megaphone-fill me-2"></i>Official Event Posters &amp; Invites</h5>
+            <div class="row g-4 mb-5">
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm border p-2 text-center">
+                  <img src="/assets/events/innoquest/innoquest25_img_5_p4.jpeg" alt="InnoQuest 2025-26 Poster" class="img-fluid rounded" style="max-height: 380px; object-fit: contain; cursor: pointer;" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_5_p4.jpeg', 'InnoQuest 2025-26 Official Event Poster')" />
+                  <div class="card-body p-2">
+                    <h6 class="fw-bold mb-1">InnoQuest 2025–26 Poster</h6>
+                    <small class="text-muted">31st October 2025</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm border p-2 text-center">
+                  <img src="/assets/events/innoquest/innoquest25_img_3_p3.jpeg" alt="InnoQuest 2025-26 Invite" class="img-fluid rounded" style="max-height: 380px; object-fit: contain; cursor: pointer;" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_3_p3.jpeg', 'InnoQuest 2025-26 Official Invite')" />
+                  <div class="card-body p-2">
+                    <h6 class="fw-bold mb-1">InnoQuest 2025–26 Invite</h6>
+                    <small class="text-muted">Exhibition &amp; Valedictory Invitation</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm border p-2 text-center">
+                  <img src="/assets/events/innoquest/innoquest24_img_8_p1.jpeg" alt="InnoQuest 2024-25 Poster" class="img-fluid rounded" style="max-height: 380px; object-fit: contain; cursor: pointer;" onclick="openImageModal('/assets/events/innoquest/innoquest24_img_8_p1.jpeg', 'InnoQuest 2024-25 Official Event Poster')" />
+                  <div class="card-body p-2">
+                    <h6 class="fw-bold mb-1">InnoQuest 2024–25 Poster</h6>
+                    <small class="text-muted">4th October 2024</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Exhibition Photos -->
+            <h5 class="fw-bold text-primary mb-3"><i class="bi bi-camera me-2"></i>Exhibition In Action: Prototypes, Demos &amp; Teams</h5>
+            <div class="gallery-grid">
+              <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_12_p8.jpeg', 'Students demonstrating Smart City & Automation prototype to visitors')">
+                <img src="/assets/events/innoquest/innoquest25_img_12_p8.jpeg" alt="Prototype Model Demo" />
+                <div class="gallery-caption">Smart City Model Demonstration (2025)</div>
+              </div>
+
+              <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_13_p8.jpeg', 'Robotics hardware assembly and Bluetooth/wireless mobile control demo')">
+                <img src="/assets/events/innoquest/innoquest25_img_13_p8.jpeg" alt="Robotic Arm Demo" />
+                <div class="gallery-caption">Mobile Controlled Robotic Arm Demo (2025)</div>
+              </div>
+
+              <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_14_p8.jpeg', 'Interactive testing and sensor calibration demo on smart hardware unit')">
+                <img src="/assets/events/innoquest/innoquest25_img_14_p8.jpeg" alt="Smart Hardware Unit" />
+                <div class="gallery-caption">Smart Sensor Unit Testing (2025)</div>
+              </div>
+
+              <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_15_p9.jpeg', 'TE EXTC Innovators Cohort in Department Corridor')">
+                <img src="/assets/events/innoquest/innoquest25_img_15_p9.jpeg" alt="Cohort Group Photo" />
+                <div class="gallery-caption">TE EXTC Student Cohort (2025)</div>
+              </div>
+
+              <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest25_img_16_p10.jpeg', 'Student Team posing with Faculty Coordinator Dr. Aparna M. Telgote')">
+                <img src="/assets/events/innoquest/innoquest25_img_16_p10.jpeg" alt="Faculty Coordinator & Team" />
+                <div class="gallery-caption">Team with Coordinator Dr. Aparna Telgote (2025)</div>
+              </div>
+
+              <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest24_img_1_p1.jpeg', 'Inauguration Ribbon Cutting with College Management')">
+                <img src="/assets/events/innoquest/innoquest24_img_1_p1.jpeg" alt="Inauguration Ribbon Cutting" />
+                <div class="gallery-caption">Inauguration Ribbon Cutting (2024)</div>
+              </div>
+
+              <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest24_img_3_p1.jpeg', 'Demonstrating working circuit and sensor telemetry on laptop')">
+                <img src="/assets/events/innoquest/innoquest24_img_3_p1.jpeg" alt="Working Circuit Demo" />
+                <div class="gallery-caption">Circuit &amp; Sensor Telemetry Demonstration (2024)</div>
+              </div>
+
+              <div class="gallery-item" onclick="openImageModal('/assets/events/innoquest/innoquest24_img_2_p1.jpeg', 'Project presentation session in C-Wing seminar lab')">
+                <img src="/assets/events/innoquest/innoquest24_img_2_p1.jpeg" alt="Seminar Presentation" />
+                <div class="gallery-caption">Classroom Project Presentation (2024)</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- TAB 6: EMBEDDED DOCUMENT VIEWER & ARCHIVE                -->
+      <!-- ======================================================== -->
+      <div class="tab-pane fade" id="pdf-archive" role="tabpanel">
+
+        <div class="inno-card">
+          <div class="inno-card-header">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+              <div>
+                <h3 class="fw-bold mb-1"><i class="fa-solid fa-file-pdf text-warning me-2"></i>Official InnoQuest Report Archives</h3>
+                <p class="mb-0 text-white-50">Interactive embedded viewers and direct download links for all proceedings</p>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-warning text-dark fw-bold" onclick="switchViewer('/assets/pdf/InnoQuest25-26_Report.pdf', '2025-26')">
+                  View 2025–26 Report
+                </button>
+                <button type="button" class="btn btn-outline-light fw-bold" onclick="switchViewer('/assets/pdf/InnoQuest24-25_Report.pdf', '2024-25')">
+                  View 2024–25 Report
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <!-- Active Document Header -->
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+              <div>
+                <h5 class="fw-bold text-dark mb-0" id="currentDocTitle">
+                  <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>InnoQuest 2025–26 Official Report (PDF)
+                </h5>
+                <small class="text-muted">Department of Electronics &amp; Telecommunication Engineering, DBIT</small>
+              </div>
+              <div class="d-flex gap-2">
+                <a id="currentDocOpenBtn" href="/assets/pdf/InnoQuest25-26_Report.pdf" target="_blank" class="btn btn-sm btn-outline-primary fw-bold">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> Open in New Tab
+                </a>
+                <a id="currentDocDownloadBtn" href="/assets/pdf/InnoQuest25-26_Report.pdf" download="InnoQuest_Report.pdf" class="btn btn-sm btn-primary fw-bold">
+                  <i class="bi bi-download me-1"></i> Download PDF
+                </a>
+              </div>
+            </div>
+
+            <!-- Embedded PDF Frame -->
+            <div class="ratio ratio-16x9 rounded-3 border overflow-hidden shadow-sm mb-4" style="min-height: 650px;">
+              <iframe id="pdfFrame" src="/assets/pdf/InnoQuest25-26_Report.pdf" title="InnoQuest PDF Report"></iframe>
+            </div>
+
+            <!-- Archival Links Cards -->
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-archive-fill text-primary me-2"></i>All Available InnoQuest Documents</h5>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="card h-100 border p-3 rounded-3 bg-light">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-file-earmark-pdf-fill text-danger fs-2"></i>
+                    <div>
+                      <h6 class="fw-bold mb-0">InnoQuest 2025–26</h6>
+                      <small class="text-muted">10 Pages &bull; 1.5 MB &bull; AY 2025-26</small>
+                    </div>
+                  </div>
+                  <div class="mt-3 pt-2 border-top d-flex justify-content-between">
+                    <button class="btn btn-sm btn-outline-primary" onclick="switchViewer('/assets/pdf/InnoQuest25-26_Report.pdf', '2025-26')">Load in Viewer</button>
+                    <a href="/assets/pdf/InnoQuest25-26_Report.pdf" target="_blank" class="btn btn-sm btn-primary">Open</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card h-100 border p-3 rounded-3 bg-light">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-file-earmark-pdf-fill text-danger fs-2"></i>
+                    <div>
+                      <h6 class="fw-bold mb-0">InnoQuest 2024–25</h6>
+                      <small class="text-muted">8 Pages &bull; 977 KB &bull; AY 2024-25</small>
+                    </div>
+                  </div>
+                  <div class="mt-3 pt-2 border-top d-flex justify-content-between">
+                    <button class="btn btn-sm btn-outline-primary" onclick="switchViewer('/assets/pdf/InnoQuest24-25_Report.pdf', '2024-25')">Load in Viewer</button>
+                    <a href="/assets/pdf/InnoQuest24-25_Report.pdf" target="_blank" class="btn btn-sm btn-primary">Open</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card h-100 border p-3 rounded-3 bg-light">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-file-earmark-pdf-fill text-secondary fs-2"></i>
+                    <div>
+                      <h6 class="fw-bold mb-0">InnoQuest 2023–24</h6>
+                      <small class="text-muted">Archived Report &bull; 11.7 MB</small>
+                    </div>
+                  </div>
+                  <div class="mt-3 pt-2 border-top d-flex justify-content-between">
+                    <button class="btn btn-sm btn-outline-secondary" onclick="switchViewer('/assets/pdf/innoQuest 2023-24_TE Report.pdf', '2023-24')">Load in Viewer</button>
+                    <a href="/assets/pdf/innoQuest 2023-24_TE Report.pdf" target="_blank" class="btn btn-sm btn-secondary">Open</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Image Lightbox Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header bg-dark text-white py-2">
+          <h6 class="modal-title" id="imageModalLabel">Exhibition Photo</h6>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0 text-center bg-black">
+          <img id="modalImg" src="" alt="Enlarged View" class="img-fluid" style="max-height: 80vh;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="/nav.js"></script>
+  <script src="/temp.js"></script>
+  <script src="/header.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/response.js"></script>
+  <script src="/chat.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Search projects in table
+    function filterProjects() {
+      const input = document.getElementById("projectSearchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#innoquestProjectTable tbody tr");
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(input) ? "" : "none";
+      });
+    }
+
+    // Filter by Lab
+    function filterByLab(lab, btn) {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const rows = document.querySelectorAll("#innoquestProjectTable tbody tr");
+      rows.forEach(row => {
+        if (lab === 'all' || row.getAttribute("data-lab") === lab) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    }
+
+    // Image Lightbox Modal
+    function openImageModal(src, title) {
+      document.getElementById("modalImg").src = src;
+      document.getElementById("imageModalLabel").innerText = title || "Exhibition Photo";
+      const modal = new bootstrap.Modal(document.getElementById("imageModal"));
+      modal.show();
+    }
+
+    // Switch Embedded PDF
+    function switchViewer(url, year) {
+      const frame = document.getElementById("pdfFrame");
+      frame.src = url;
+      const title = document.getElementById("currentDocTitle");
+      title.innerHTML = `<i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>InnoQuest ${year} Official Report (PDF)`;
+      document.getElementById("currentDocOpenBtn").href = url;
+      const downloadBtn = document.getElementById("currentDocDownloadBtn");
+      downloadBtn.href = url;
+      downloadBtn.download = `InnoQuest_${year}_Report.pdf`;
+
+      // Activate archive tab if not already active
+      const archiveTab = new bootstrap.Tab(document.getElementById("archive-tab"));
+      archiveTab.show();
+    }
+
+    // Check URL Hash for deep links
+    window.addEventListener("DOMContentLoaded", function() {
+      const hash = window.location.hash;
+      if (hash === "#innoquest-2025-26" || hash === "#2025-26") {
+        const tab = new bootstrap.Tab(document.getElementById("edition-2025-tab"));
+        tab.show();
+      } else if (hash === "#innoquest-2024-25" || hash === "#2024-25") {
+        const tab = new bootstrap.Tab(document.getElementById("edition-2024-tab"));
+        tab.show();
+      } else if (hash === "#projects") {
+        const tab = new bootstrap.Tab(document.getElementById("projects-tab"));
+        tab.show();
+      } else if (hash === "#gallery") {
+        const tab = new bootstrap.Tab(document.getElementById("gallery-tab"));
+        tab.show();
+      } else if (hash === "#pdf-archive" || hash === "#viewer") {
+        const tab = new bootstrap.Tab(document.getElementById("archive-tab"));
+        tab.show();
+      }
+    });
+  </script>
+</body>
+
+</html>
