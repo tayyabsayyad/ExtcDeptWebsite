@@ -294,8 +294,10 @@ nav.innerHTML = `
                     <li><a class="dropdown-item" href="/cocurricular/innoquest.html">InnoQuest Overview</a></li>
                     <li><a class="dropdown-item" href="/cocurricular/innoquest.html#innoquest-2025-26">InnoQuest 2025–26 <span class="badge bg-info">Latest</span></a></li>
                     <li><a class="dropdown-item" href="/cocurricular/innoquest.html#innoquest-2024-25">InnoQuest 2024–25</a></li>
+                    <li><a class="dropdown-item" href="/cocurricular/innoquest.html#innoquest-2023-24">InnoQuest 2023–24</a></li>
                     <li><a class="dropdown-item" href="/assets/pdf/InnoQuest25-26_Report.pdf" target="_blank"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>Report 2025–26 (PDF)</a></li>
                     <li><a class="dropdown-item" href="/assets/pdf/InnoQuest24-25_Report.pdf" target="_blank"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>Report 2024–25 (PDF)</a></li>
+                    <li><a class="dropdown-item" href="/assets/pdf/InnoQuest23-24_Report.pdf" target="_blank"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>Report 2023–24 (PDF)</a></li>
                   </ul>
                 </li>
                 <li><a class="dropdown-item" href="/cocurricular/events.html">Events & Competitions</a></li>
