@@ -8,13 +8,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="/style/main.css" />
-  <link rel="stylesheet" href="/style/footer.css" />
   <link rel="stylesheet" href="/style/nav.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
   <link rel="stylesheet" href="/chat.css" />
   <link rel="stylesheet" href="/home.css" />
   <link rel="icon" href="/assets/logo.ico" type="image/x-icon" />
-  <title>Sankalpana 2025 - EXTC Project Competition | DBIT</title>
+  <title>Sankalpana 2026 - Mini Project Exhibition & Competition | DBIT EXTC</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JDMRE8FDJ"></script>
@@ -29,29 +30,58 @@
     body {
       background-color: #f8fafc;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #1e293b;
     }
 
-    .event-hero-banner {
-      background: linear-gradient(135deg, #0b2545 0%, #133c55 50%, #1d4e89 100%);
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #001f3f 0%, #003366 45%, #0b4f8c 100%);
       color: #ffffff;
-      padding: 50px 24px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(11, 37, 69, 0.15);
+      border-radius: 18px;
+      padding: 48px 36px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 35px rgba(0, 31, 63, 0.22);
       position: relative;
       overflow: hidden;
-      margin-bottom: 35px;
-      text-align: center;
     }
 
-    .event-hero-banner::before {
-      content: '';
+    .hero-banner::after {
+      content: "";
       position: absolute;
-      top: -60px;
-      right: -60px;
-      width: 250px;
-      height: 250px;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+      top: -80px;
+      right: -80px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(255, 193, 7, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
       border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      left: 15%;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(13, 110, 253, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .dept-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffd700;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .event-tag-badge {
@@ -61,205 +91,279 @@
       background: rgba(245, 158, 11, 0.2);
       border: 1px solid rgba(245, 158, 11, 0.6);
       color: #fbbf24;
-      padding: 6px 16px;
+      padding: 5px 14px;
       border-radius: 30px;
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      margin-bottom: 15px;
     }
 
-    .about-box-card {
+    /* Stat Cards */
+    .stat-badge-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .stat-badge-box:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .stat-number {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #ffc107;
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: #e2e8f0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Edition Toggle Pills */
+    .edition-selector-card {
       background: #ffffff;
       border-radius: 16px;
-      padding: 35px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+      padding: 12px 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
       border: 1px solid #e2e8f0;
-      border-left: 6px solid #1d4e89;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
     }
 
-    .about-box-card h3 {
-      color: #0b2545;
+    .edition-pills .nav-link {
       font-weight: 700;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .about-box-card p {
-      font-size: 1.12rem;
-      line-height: 1.8;
-      color: #334155;
-      margin-bottom: 0;
-      text-align: justify;
-    }
-
-    .domain-badge {
-      background: #f1f5f9;
-      color: #0b2545;
+      font-size: 0.95rem;
+      padding: 10px 22px;
+      border-radius: 30px;
+      color: #003366;
       border: 1px solid #cbd5e1;
-      padding: 8px 16px;
-      border-radius: 20px;
+      background: #f8fafc;
+      transition: all 0.25s ease;
+    }
+
+    .edition-pills .nav-link:hover {
+      background: #e0f2fe;
+      border-color: #0284c7;
+      color: #0284c7;
+    }
+
+    .edition-pills .nav-link.active {
+      background: #003366;
+      color: #ffffff;
+      border-color: #003366;
+      box-shadow: 0 4px 14px rgba(0, 51, 102, 0.25);
+    }
+
+    /* Section Sub-Nav Pills */
+    .section-nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 26px;
+      border: none;
+    }
+
+    .section-nav-pills .nav-link {
+      background-color: #ffffff;
+      color: #334155;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+      transition: all 0.2s ease;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
     }
 
-    .domain-badge:hover {
-      background: #0b2545;
+    .section-nav-pills .nav-link:hover {
+      background-color: #f1f5f9;
+      color: #003366;
+      border-color: #cbd5e1;
+    }
+
+    .section-nav-pills .nav-link.active {
+      background-color: #0b4f8c;
       color: #ffffff;
-      border-color: #0b2545;
+      border-color: #0b4f8c;
     }
 
-    .gallery-card {
-      background: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-      border: 1px solid #e2e8f0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
+    /* PDF Action Download Box */
+    .pdf-download-box {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 22px 26px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
     }
 
-    .gallery-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(11, 37, 69, 0.15);
-    }
-
-    .gallery-img-wrapper {
-      position: relative;
-      overflow: hidden;
-      height: 280px;
-      background: #0f172a;
-      cursor: pointer;
-    }
-
-    .gallery-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-card:hover .gallery-img-wrapper img {
-      transform: scale(1.05);
-    }
-
-    .gallery-overlay-btn {
-      position: absolute;
-      inset: 0;
-      background: rgba(11, 37, 69, 0.5);
+    .pdf-download-box .pdf-icon-bubble {
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      background: #fee2e2;
+      color: #dc2626;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      font-size: 26px;
+    }
+
+    /* Section Cards */
+    .content-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .content-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .content-card-header {
+      background: linear-gradient(135deg, #003366 0%, #0c4a80 100%);
       color: #ffffff;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      padding: 20px 26px;
+      border-bottom: 3px solid #ffc107;
     }
 
-    .gallery-card:hover .gallery-overlay-btn {
-      opacity: 1;
+    .content-card-body {
+      padding: 28px;
     }
 
-    .gallery-card-body {
-      padding: 18px 20px;
-      flex-grow: 1;
+    /* Winner Podium Cards */
+    .winner-card {
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      padding: 24px;
+      height: 100%;
+      background: #ffffff;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .gallery-card-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 6px;
+    .winner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
     }
 
-    .gallery-card-desc {
-      font-size: 0.9rem;
-      color: #64748b;
-      margin-bottom: 0;
+    .winner-gold {
+      border-top: 5px solid #ffc107;
+      background: linear-gradient(to bottom, #fffdf2, #ffffff);
     }
 
-    .feature-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
+    .winner-silver {
+      border-top: 5px solid #94a3b8;
+      background: linear-gradient(to bottom, #f8fafc, #ffffff);
+    }
+
+    .winner-bronze {
+      border-top: 5px solid #cd7f32;
+      background: linear-gradient(to bottom, #fdf7f2, #ffffff);
+    }
+
+    .winner-img-thumb {
+      height: 200px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      position: relative;
+      cursor: pointer;
+      background: #0f172a;
+    }
+
+    .winner-img-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .winner-img-thumb:hover img {
+      transform: scale(1.05);
+    }
+
+    .winner-overlay-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #ffffff;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    .student-pill {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #1e293b;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin: 2px 4px 2px 0;
+      font-weight: 500;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    /* Pillars */
+    .pillar-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 22px 18px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
       text-align: center;
       height: 100%;
+      transition: transform 0.25s ease, border-color 0.25s ease;
     }
 
-    .feature-icon-circle {
-      width: 50px;
-      height: 50px;
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      border-color: #003366;
+    }
+
+    .pillar-icon-circle {
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: #e0f2fe;
-      color: #0284c7;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
+      font-size: 1.5rem;
+      margin-bottom: 14px;
     }
 
-    .winner-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e2e8f0;
-      margin-bottom: 25px;
-    }
-
-    .winner-badge-gold {
-      background: linear-gradient(135deg, #ffd700, #f59e0b);
-      color: #78350f;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
-    }
-
-    .winner-badge-silver {
-      background: linear-gradient(135deg, #e2e8f0, #94a3b8);
-      color: #1e293b;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 2px 6px rgba(148, 163, 184, 0.25);
-    }
-
-    .winner-badge-bronze {
-      background: linear-gradient(135deg, #fed7aa, #ea580c);
-      color: #ffffff;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
-    }
-
-    .winner-table {
+    /* Tables */
+    .custom-table {
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
@@ -269,78 +373,241 @@
       background: #ffffff;
     }
 
-    .winner-table thead {
-      background-color: #0b2545;
+    .custom-table thead {
+      background-color: #003366;
       color: #ffffff;
     }
 
-    .winner-table th {
-      padding: 14px 16px;
+    .custom-table th {
+      padding: 13px 16px;
       font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
+      font-size: 0.88rem;
       border: none;
     }
 
-    .winner-table td {
-      padding: 16px;
+    .custom-table td {
+      padding: 14px 16px;
       border-top: 1px solid #f1f5f9;
       vertical-align: middle;
+      font-size: 0.92rem;
     }
 
-    .winner-table tbody tr:hover {
+    .custom-table tbody tr:hover {
       background-color: #f8fafc;
     }
 
-    .student-tag {
-      display: inline-block;
-      background: #f1f5f9;
-      color: #334155;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.875rem;
-      margin: 2px 4px 2px 0;
-      font-weight: 500;
-      border: 1px solid #e2e8f0;
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
     }
 
-    .winner-poster-preview {
+    .gallery-item {
       position: relative;
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      cursor: pointer;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      aspect-ratio: 4/3;
+      background: #0f172a;
+      cursor: pointer;
     }
 
-    .winner-poster-preview:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(11, 37, 69, 0.15);
-    }
-
-    .winner-poster-preview img {
+    .gallery-item img {
       width: 100%;
-      height: 220px;
+      height: 100%;
       object-fit: cover;
+      transition: transform 0.4s ease;
     }
 
-    .nav-pills .nav-link {
-      color: #0b2545;
-      font-weight: 600;
-      padding: 8px 20px;
-      border-radius: 30px;
-      border: 1px solid #cbd5e1;
-      margin-right: 8px;
-      transition: all 0.2s ease;
-      background: #ffffff;
+    .gallery-item:hover img {
+      transform: scale(1.06);
     }
 
-    .nav-pills .nav-link.active {
-      background-color: #0b2545;
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 14px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
       color: #ffffff;
-      border-color: #0b2545;
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    .gallery-zoom-indicator {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.55);
+      color: #ffffff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .gallery-item:hover .gallery-zoom-indicator {
+      opacity: 1;
+    }
+
+    /* Remarks Quote Card */
+    .quote-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px 28px;
+      border: 1px solid #e2e8f0;
+      border-left: 6px solid #ffc107;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+
+    .quote-text {
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #334155;
+      margin-bottom: 12px;
+    }
+
+    .quote-author {
+      font-weight: 700;
+      color: #003366;
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .quote-role {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* Feedback Meters */
+    .meter-container {
+      margin-bottom: 16px;
+    }
+
+    .meter-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .meter-track {
+      height: 12px;
+      border-radius: 8px;
+      background-color: #e2e8f0;
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #003366, #0284c7);
+      transition: width 1s ease-in-out;
+    }
+
+    .meter-fill-gold {
+      background: linear-gradient(90deg, #f59e0b, #ffd700);
+    }
+
+    .meter-fill-green {
+      background: linear-gradient(90deg, #059669, #10b981);
+    }
+
+    /* Timeline */
+    .timeline-item {
+      position: relative;
+      padding-left: 36px;
+      padding-bottom: 24px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 8px;
+      bottom: 0;
+      width: 2px;
+      background: #cbd5e1;
+    }
+
+    .timeline-item:last-child::before {
+      display: none;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #003366;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      box-shadow: 0 0 0 4px #e0f2fe;
+    }
+
+    /* Badges */
+    .domain-tag {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #f1f5f9;
+      color: #003366;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #cbd5e1;
+      margin: 3px;
+    }
+
+    .badge-gold {
+      background: linear-gradient(135deg, #ffd700, #f59e0b);
+      color: #78350f;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-silver {
+      background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+      color: #1e293b;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-bronze {
+      background: linear-gradient(135deg, #fed7aa, #ea580c);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
   </style>
 </head>
@@ -355,90 +622,1142 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/index.html" class="text-decoration-none text-muted"><i class="bi bi-house-door"></i> Home</a></li>
         <li class="breadcrumb-item"><a href="/cocurricular/events.html" class="text-decoration-none text-muted">Co-Curricular Activities</a></li>
-        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Sankalpana 2025</li>
+        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Sankalpana 2026</li>
       </ol>
     </nav>
 
-    <!-- Hero Header -->
-    <div class="event-hero-banner">
-      <div class="event-tag-badge">
-        <i class="bi bi-cpu-fill"></i> Flagship EXTC Project Competition
-      </div>
-      <h1 class="display-5 fw-bold mb-2">Sankalpana 2025</h1>
-      <h4 class="fw-normal mb-2 text-warning" style="letter-spacing: 0.5px;">
-        EXTC Project Competition &nbsp;|&nbsp; Department of Electronics & Telecommunication Engineering
-      </h4>
-      <p class="h6 fw-normal mb-0 text-white-50">
-        Don Bosco Institute of Technology, Mumbai
-      </p>
-    </div>
-
-    <!-- About Sankalpana Box -->
-    <div class="about-box-card">
-      <h3>
-        <i class="bi bi-info-circle-fill text-primary"></i> About Sankalpana
-      </h3>
-      <p>
-        Sankalpana is the flagship project competition of the EXTC Department at DBIT, where students showcase their innovative projects and technical achievements. The event provides a platform for students across all years to demonstrate their skills, present working models, and compete for recognition in a wide range of domains including embedded systems, IoT, communication, signal processing, and more.
-      </p>
-    </div>
-
-    <!-- Key Domains Covered -->
-    <div class="card border-0 bg-white shadow-sm p-4 rounded-4 mb-4">
-      <h4 class="fw-bold text-dark mb-3">
-        <i class="bi bi-grid-fill text-primary me-2"></i>Key Project Domains & Tracks
-      </h4>
-      <div class="d-flex flex-wrap gap-2">
-        <span class="domain-badge"><i class="bi bi-cpu text-primary"></i> Embedded Systems</span>
-        <span class="domain-badge"><i class="bi bi-router text-success"></i> Internet of Things (IoT)</span>
-        <span class="domain-badge"><i class="bi bi-broadcast-pin text-danger"></i> Wireless & RF Communication</span>
-        <span class="domain-badge"><i class="bi bi-soundwave text-warning"></i> Signal & Image Processing</span>
-        <span class="domain-badge"><i class="bi bi-robot text-info"></i> Robotics & Automation</span>
-        <span class="domain-badge"><i class="bi bi-motherboard text-secondary"></i> VLSI & Hardware Design</span>
-      </div>
-    </div>
-
-    <!-- Competition Winners Section -->
-    <div class="my-5" id="winners">
-      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
-        <div>
-          <h2 class="fw-bold text-dark mb-1">
-            <i class="bi bi-trophy-fill text-warning me-2"></i>Sankalpana 2025 Winners
-          </h2>
-          <p class="text-muted mb-0">Congratulations to the winning project teams of SE and TE (Held on 5<sup>th</sup> April 2025).</p>
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <div class="dept-tag">
+          <i class="fa-solid fa-microchip"></i> Department of Electronics &amp; Telecommunication Engineering
         </div>
-        <div>
-          <ul class="nav nav-pills" id="winnerTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="se-tab" data-bs-toggle="pill" data-bs-target="#se-winners" type="button" role="tab" aria-controls="se-winners" aria-selected="true">
-                <i class="bi bi-mortarboard-fill me-1"></i> SE Winners
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="te-tab" data-bs-toggle="pill" data-bs-target="#te-winners" type="button" role="tab" aria-controls="te-winners" aria-selected="false">
-                <i class="bi bi-mortarboard-fill me-1"></i> TE Winners
-              </button>
-            </li>
-          </ul>
+        <div class="event-tag-badge">
+          <i class="bi bi-broadcast"></i> In Association with IETE-DBIT-ISF
         </div>
       </div>
 
-      <div class="tab-content" id="winnerTabsContent">
-        <!-- SE Winners Pane -->
-        <div class="tab-pane fade show active" id="se-winners" role="tabpanel" aria-labelledby="se-tab">
-          <div class="winner-card">
-            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-              <h4 class="fw-bold text-dark mb-0">
-                <i class="bi bi-award-fill text-primary me-2"></i>Second Year (SE) Project Winners
-                <span class="badge bg-light text-muted border ms-2 fs-6 fw-normal">5<sup>th</sup> April 2025</span>
-              </h4>
-              <button class="btn btn-sm btn-outline-primary rounded-pill px-3" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_se_winner.jpg', 'Sankalpana 2025 SE Winners', 'Official Announcement - 5th April 2025')">
-                <i class="bi bi-image me-1"></i> View Official Poster
-              </button>
+      <h1 class="display-5 fw-bold mb-2">SANKALPANA 2026</h1>
+      <h4 class="fw-normal text-warning mb-3" style="letter-spacing: 0.4px;">
+        Mini Project Exhibition &amp; Competition (SE &amp; TE) &bull; Ideas Today. Impact Tomorrow.
+      </h4>
+      <p class="mb-4 text-white-50" style="max-width: 900px; font-size: 1.05rem; line-height: 1.7;">
+        Organized by the Department of EXTC at Don Bosco Institute of Technology (DBIT), Kurla under the aegis of 
+        <b>IETE-DBIT-ISF</b>. Sankalpana 2026 brought together <b>119 Second and Third Year innovators</b> to design, prototype, 
+        and present functional engineering hardware and FPGA systems across Embedded Systems, IoT, Automation, Digital Electronics, and Communication Engineering.
+      </p>
+
+      <!-- Key Statistics -->
+      <div class="row g-3 pt-2">
+        <div class="col-6 col-md-3">
+          <div class="stat-badge-box">
+            <div class="stat-number">119</div>
+            <div class="stat-label">Total Student Innovators</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-badge-box">
+            <div class="stat-number">37 <span style="font-size: 1rem; color: #cbd5e1;">(31.1%)</span></div>
+            <div class="stat-label">Girl Innovators</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-badge-box">
+            <div class="stat-number">37+</div>
+            <div class="stat-label">Exhibited Prototypes</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-badge-box">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Expert Judging Panels</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official PDF Dossier Download Box -->
+    <div class="pdf-download-box">
+      <div class="d-flex align-items-center gap-3">
+        <div class="pdf-icon-bubble">
+          <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <div>
+          <h5 class="fw-bold text-dark mb-1">Official Event Report &amp; Evaluation Dossier (23 Pages)</h5>
+          <p class="text-muted small mb-0">
+            Comprehensive documentation covering student participation, rubrics, full winner list, remarks, survey analytics, and event photography.
+          </p>
+          <div class="mt-1 small text-secondary">
+            <i class="bi bi-check2-circle text-success me-1"></i>Approved by Mr. Ankur Ganorkar (Faculty Coordinator) &bull; Reported by Nandana Anilkumar (Documentation Head)
+          </div>
+        </div>
+      </div>
+      <div class="d-flex gap-2">
+        <a href="/assets/pdf/Sankalpana_Report_2026.pdf" target="_blank" class="btn btn-danger fw-bold px-4 py-2">
+          <i class="bi bi-box-arrow-up-right me-1"></i> View Full Report (PDF)
+        </a>
+        <a href="/assets/pdf/Sankalpana_Report_2026.pdf" download class="btn btn-outline-danger fw-bold px-3 py-2">
+          <i class="bi bi-download"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Edition Switcher Tabs (2026 vs 2025 Archive) -->
+    <div class="edition-selector-card d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-layers-fill text-primary fs-5"></i>
+        <span class="fw-bold text-dark">Exhibition Edition:</span>
+      </div>
+      <ul class="nav nav-pills edition-pills" id="editionTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="edition-2026-tab" data-bs-toggle="pill" data-bs-target="#edition-2026" type="button" role="tab" aria-controls="edition-2026" aria-selected="true">
+            <i class="bi bi-stars text-warning me-1"></i> Sankalpana 2026 (Latest)
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="edition-2025-tab" data-bs-toggle="pill" data-bs-target="#edition-2025" type="button" role="tab" aria-controls="edition-2025" aria-selected="false">
+            <i class="bi bi-clock-history me-1"></i> Sankalpana 2025 Archive
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Tab Content Container -->
+    <div class="tab-content" id="editionTabsContent">
+      
+      <!-- ========================================== -->
+      <!-- TAB PANE 1: SANKALPANA 2026 (FULL REPORT)  -->
+      <!-- ========================================== -->
+      <div class="tab-pane fade show active" id="edition-2026" role="tabpanel" aria-labelledby="edition-2026-tab">
+
+        <!-- In-Page Quick Navigation Pills -->
+        <div class="section-nav-pills">
+          <a href="#overview" class="nav-link"><i class="bi bi-info-circle"></i> Overview</a>
+          <a href="#four-pillars" class="nav-link"><i class="bi bi-compass"></i> Core Pillars</a>
+          <a href="#winners-2026" class="nav-link"><i class="bi bi-trophy"></i> Winners (SE &amp; TE)</a>
+          <a href="#judges-rubrics" class="nav-link"><i class="bi bi-person-check"></i> Judges &amp; Rubrics</a>
+          <a href="#schedule-timeline" class="nav-link"><i class="bi bi-calendar3"></i> Event Schedule</a>
+          <a href="#gallery-2026" class="nav-link"><i class="bi bi-images"></i> Photo Gallery</a>
+          <a href="#feedback-analytics" class="nav-link"><i class="bi bi-bar-chart-line"></i> Survey Analytics</a>
+          <a href="#remarks-impact" class="nav-link"><i class="bi bi-chat-quote"></i> Remarks &amp; Recommendations</a>
+        </div>
+
+        <!-- 1. Executive Summary & Overview -->
+        <div class="content-card" id="overview">
+          <div class="content-card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div>
+              <h4 class="fw-bold mb-0"><i class="bi bi-file-text-fill text-warning me-2"></i>Executive Summary &amp; Overview</h4>
+              <small class="text-white-50">Department of EXTC &bull; Mini Project Exhibition and Competition</small>
+            </div>
+            <span class="badge bg-light text-dark fw-bold px-3 py-2 rounded-pill">
+              <i class="bi bi-calendar-check text-primary me-1"></i>14 May 2026
+            </span>
+          </div>
+          <div class="content-card-body">
+            <div class="row g-4">
+              <div class="col-lg-8">
+                <h5 class="fw-bold text-primary mb-3">Bridging Theoretical Foundations with Hands-On Engineering</h5>
+                <p class="text-secondary" style="font-size: 1.05rem; line-height: 1.8; text-align: justify;">
+                  <b>SANKALPANA 2026</b> was a Mini Project Exhibition and Competition successfully organized by the 
+                  <b>Department of Electronics and Telecommunication Engineering (EXTC)</b> at Don Bosco Institute of Technology (DBIT), Kurla, Mumbai. 
+                  Held on <b>14 May 2026</b>, the event brought together <b>119 Second Year (SE) and Third Year (TE) students</b> who designed, built, 
+                  and demonstrated functional mini-projects across embedded systems, IoT, automation, digital electronics, and communication systems.
+                </p>
+                <p class="text-secondary" style="font-size: 1.05rem; line-height: 1.8; text-align: justify;">
+                  The initiative was organized under the banner of <b>IETE-DBIT-ISF</b> and coordinated by <b>Mr. Ankur Ganorkar</b>. 
+                  The event served as a vibrant experiential platform bridging the gap between rigorous theoretical classroom learning and practical 
+                  field engineering, while equipping future engineers with essential communication, problem-solving, and collaborative skills.
+                </p>
+
+                <!-- Major Themes Badges -->
+                <div class="mt-4 pt-2 border-top">
+                  <h6 class="fw-bold text-dark mb-2"><i class="bi bi-diagram-3-fill text-primary me-2"></i>Major Technological Tracks &amp; Themes:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="domain-tag"><i class="bi bi-cpu text-primary"></i> Embedded Systems</span>
+                    <span class="domain-tag"><i class="bi bi-wifi text-success"></i> Internet of Things (IoT)</span>
+                    <span class="domain-tag"><i class="bi bi-motherboard text-danger"></i> FPGA &amp; Digital Electronics</span>
+                    <span class="domain-tag"><i class="bi bi-gear-wide-connected text-warning"></i> Robotics &amp; Automation</span>
+                    <span class="domain-tag"><i class="bi bi-broadcast text-info"></i> Communication Protocols &amp; UART</span>
+                    <span class="domain-tag"><i class="bi bi-heart-pulse text-danger"></i> Social Impact &amp; Healthcare Tech</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="p-3 bg-light rounded-4 border">
+                  <h6 class="fw-bold text-dark border-bottom pb-2 mb-3">
+                    <i class="bi bi-card-checklist text-primary me-1"></i>Event Metadata
+                  </h6>
+                  <ul class="list-unstyled mb-0" style="font-size: 0.92rem;">
+                    <li class="mb-2"><strong>Event:</strong> Sankalpana 2026</li>
+                    <li class="mb-2"><strong>Date:</strong> 14<sup>th</sup> May 2026</li>
+                    <li class="mb-2"><strong>Venue:</strong> EXTC LAB 02, 03, 04, 07 &amp; Seminar Hall</li>
+                    <li class="mb-2"><strong>Patron:</strong> Fr. Nelson Carvalho</li>
+                    <li class="mb-2"><strong>Chief Guest:</strong> Dr. Amiya Tripathi</li>
+                    <li class="mb-2"><strong>HOD EXTC:</strong> Dr. Madhavi Pednekar</li>
+                    <li class="mb-2"><strong>Faculty Coordinator:</strong> Mr. Ankur Ganorkar</li>
+                    <li class="mb-2"><strong>Organizing Body:</strong> IETE-DBIT-ISF</li>
+                    <li class="mb-0"><strong>Target Audience:</strong> SE &amp; TE EXTC Students</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Four Core Pillars -->
+        <div class="my-4" id="four-pillars">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <div class="pillar-card">
+                <div class="pillar-icon-circle bg-primary bg-opacity-10 text-primary">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h5 class="fw-bold text-dark mb-1">INNOVATE</h5>
+                <p class="text-muted small mb-0">Showcase creative ideas, critical thinking, and smart engineering solutions.</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="pillar-card">
+                <div class="pillar-icon-circle bg-success bg-opacity-10 text-success">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <h5 class="fw-bold text-dark mb-1">BUILD</h5>
+                <p class="text-muted small mb-0">Turn concepts and circuit schematics into physical, functional working prototypes.</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="pillar-card">
+                <div class="pillar-icon-circle bg-warning bg-opacity-10 text-warning">
+                  <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <h5 class="fw-bold text-dark mb-1">CONNECT</h5>
+                <p class="text-muted small mb-0">Collaborate, exchange technical insights, and grow alongside faculty and peers.</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="pillar-card">
+                <div class="pillar-icon-circle bg-info bg-opacity-10 text-info">
+                  <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <h5 class="fw-bold text-dark mb-1">IMPACT</h5>
+                <p class="text-muted small mb-0">Deploy technology that creates tangible societal benefit and solves real-world challenges.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Objectives & Outcomes -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="content-card h-100">
+              <div class="content-card-header bg-dark">
+                <h5 class="fw-bold mb-0 text-white"><i class="bi bi-bullseye text-warning me-2"></i>Event Objectives</h5>
+              </div>
+              <div class="content-card-body">
+                <ul class="list-unstyled mb-0">
+                  <li class="d-flex align-items-start gap-2 mb-3">
+                    <i class="bi bi-check-circle-fill text-primary mt-1"></i>
+                    <span>Provide a dedicated platform for SE and TE students to showcase innovative mini projects and technical concepts.</span>
+                  </li>
+                  <li class="d-flex align-items-start gap-2 mb-3">
+                    <i class="bi bi-check-circle-fill text-primary mt-1"></i>
+                    <span>Encourage students to translate theoretical principles into practical engineering applications using microcontrollers, sensors, and communication modules.</span>
+                  </li>
+                  <li class="d-flex align-items-start gap-2 mb-3">
+                    <i class="bi bi-check-circle-fill text-primary mt-1"></i>
+                    <span>Promote creativity, collaborative teamwork, and analytical problem-solving through project-based learning.</span>
+                  </li>
+                  <li class="d-flex align-items-start gap-2 mb-3">
+                    <i class="bi bi-check-circle-fill text-primary mt-1"></i>
+                    <span>Give students rigorous exposure to technical viva, project defense, and formal evaluation by expert faculty judges.</span>
+                  </li>
+                  <li class="d-flex align-items-start gap-2 mb-0">
+                    <i class="bi bi-check-circle-fill text-primary mt-1"></i>
+                    <span>Motivate exploration of modern toolchains such as ESP32, Arduino, FPGA, digital ICs, and sensor telemetry.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="content-card h-100">
+              <div class="content-card-header bg-dark">
+                <h5 class="fw-bold mb-0 text-white"><i class="bi bi-trophy text-warning me-2"></i>Key Outcomes</h5>
+              </div>
+              <div class="content-card-body">
+                <ul class="list-unstyled mb-0">
+                  <li class="d-flex align-items-start gap-2 mb-3">
+                    <i class="bi bi-stars text-warning mt-1"></i>
+                    <span>Participants successfully demonstrated working hardware prototypes across embedded systems, IoT, automation, and digital logic.</span>
+                  </li>
+                  <li class="d-flex align-items-start gap-2 mb-3">
+                    <i class="bi bi-stars text-warning mt-1"></i>
+                    <span>Students solidified their practical understanding of PCB/circuit design, sensor interfacing, and real-time firmware development.</span>
+                  </li>
+                  <li class="d-flex align-items-start gap-2 mb-3">
+                    <i class="bi bi-stars text-warning mt-1"></i>
+                    <span>Participants developed sharp technical presentation skills and confidence when articulating engineering decisions to evaluators.</span>
+                  </li>
+                  <li class="d-flex align-items-start gap-2 mb-0">
+                    <i class="bi bi-stars text-warning mt-1"></i>
+                    <span>Enhanced inter-team collaboration, innovation spirit, and readiness for advanced final-year capstone projects.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Competition Winners Section (Sankalpana 2026) -->
+        <div class="my-5" id="winners-2026">
+          <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div>
+              <h2 class="fw-bold text-dark mb-1">
+                <i class="bi bi-trophy-fill text-warning me-2"></i>Sankalpana 2026 Winners
+              </h2>
+              <p class="text-muted mb-0">Congratulations to the outstanding winning teams evaluated across SE and TE project tracks (14<sup>th</sup> May 2026).</p>
+            </div>
+            <div>
+              <ul class="nav nav-pills" id="winner2026Tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="se-2026-tab" data-bs-toggle="pill" data-bs-target="#se-2026-pane" type="button" role="tab" aria-controls="se-2026-pane" aria-selected="true">
+                    <i class="bi bi-mortarboard-fill me-1"></i> SE Winners (Second Year)
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="te-2026-tab" data-bs-toggle="pill" data-bs-target="#te-2026-pane" type="button" role="tab" aria-controls="te-2026-pane" aria-selected="false">
+                    <i class="bi bi-cpu-fill me-1"></i> TE Winners (FPGA SEM-VI)
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tab-content" id="winner2026TabsContent">
+            
+            <!-- SE WINNERS PANE -->
+            <div class="tab-pane fade show active" id="se-2026-pane" role="tabpanel" aria-labelledby="se-2026-tab">
+              <div class="row g-4 mb-4">
+                
+                <!-- 1st Position SE -->
+                <div class="col-lg-4">
+                  <div class="winner-card winner-gold">
+                    <div>
+                      <div class="winner-img-thumb" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p9_img1.jpeg', 'SE 1st Position: Traffic Signal Management System', 'Awarded by Dr. Madhavi Pednekar, HOD EXTC')">
+                        <img src="/assets/events/sankalpana2026/sankalpana26_p9_img1.jpeg" alt="SE 1st Position Winner" />
+                        <span class="winner-overlay-badge"><i class="bi bi-zoom-in"></i> View Award</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge-gold"><i class="bi bi-trophy-fill"></i> 1<sup>st</sup> Position</span>
+                        <span class="badge bg-dark rounded-pill px-3 py-1">SE EXTC</span>
+                      </div>
+                      <h5 class="fw-bold text-dark mt-2 mb-2">Traffic Signal Management System</h5>
+                      <p class="text-muted small mb-3">
+                        Intelligent traffic signal automation system utilizing sensor arrays and microcontrollers to dynamically optimize vehicle flow and reduce urban congestion.
+                      </p>
+                    </div>
+                    <div>
+                      <div class="small fw-bold text-secondary mb-2"><i class="bi bi-people-fill text-primary me-1"></i>Team Members:</div>
+                      <div>
+                        <span class="student-pill"><i class="bi bi-person-fill text-warning"></i> Sapnakumari Giri</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-warning"></i> Neha Haldankar</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-warning"></i> Musham Hasan</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-warning"></i> Amey Kanade</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2nd Position SE -->
+                <div class="col-lg-4">
+                  <div class="winner-card winner-silver">
+                    <div>
+                      <div class="winner-img-thumb" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p10_img1.jpeg', 'SE 2nd Position: Smart Irrigation', 'Felicitation with Fr. Nelson Carvalho, Patron DBIT')">
+                        <img src="/assets/events/sankalpana2026/sankalpana26_p10_img1.jpeg" alt="SE 2nd Position Winner" />
+                        <span class="winner-overlay-badge"><i class="bi bi-zoom-in"></i> View Award</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge-silver"><i class="bi bi-award-fill"></i> 2<sup>nd</sup> Position</span>
+                        <span class="badge bg-secondary rounded-pill px-3 py-1">SE EXTC</span>
+                      </div>
+                      <h5 class="fw-bold text-dark mt-2 mb-2">Smart Irrigation</h5>
+                      <p class="text-muted small mb-3">
+                        Automated soil moisture sensing and microcontroller-actuated irrigation pipeline designed to preserve water and enhance agricultural productivity.
+                      </p>
+                    </div>
+                    <div>
+                      <div class="small fw-bold text-secondary mb-2"><i class="bi bi-people-fill text-primary me-1"></i>Team Members:</div>
+                      <div>
+                        <span class="student-pill"><i class="bi bi-person-fill text-primary"></i> Yash Khanvilkar</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-primary"></i> Rohit Kumar</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-primary"></i> Harshit Patil</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-primary"></i> Tirth Shetty</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3rd Position SE -->
+                <div class="col-lg-4">
+                  <div class="winner-card winner-bronze">
+                    <div>
+                      <div class="winner-img-thumb" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p10_img2.jpeg', 'SE 3rd Position: Medicine Reminder & Monitoring Device for Elderly', 'Awarded by Dr. Madhavi Pednekar and Fr. Nelson Carvalho')">
+                        <img src="/assets/events/sankalpana2026/sankalpana26_p10_img2.jpeg" alt="SE 3rd Position Winner" />
+                        <span class="winner-overlay-badge"><i class="bi bi-zoom-in"></i> View Award</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge-bronze"><i class="bi bi-award-fill"></i> 3<sup>rd</sup> Position</span>
+                        <span class="badge bg-dark bg-opacity-75 text-white rounded-pill px-3 py-1">SE EXTC</span>
+                      </div>
+                      <h5 class="fw-bold text-dark mt-2 mb-2">Medicine Reminder &amp; Monitoring Device for Elderly</h5>
+                      <p class="text-muted small mb-3">
+                        Assistive healthcare reminder device integrating real-time clock telemetry, LCD scheduling prompts, and alert buzzers to ensure medication adherence.
+                      </p>
+                    </div>
+                    <div>
+                      <div class="small fw-bold text-secondary mb-2"><i class="bi bi-people-fill text-primary me-1"></i>Team Members:</div>
+                      <div>
+                        <span class="student-pill"><i class="bi bi-person-fill text-danger"></i> Kenneth Dsouza</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-danger"></i> Disha Mishra</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-danger"></i> Raj Vats</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-danger"></i> Sneha Savekar</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
+            <!-- TE WINNERS PANE -->
+            <div class="tab-pane fade" id="te-2026-pane" role="tabpanel" aria-labelledby="te-2026-tab">
+              <div class="row g-4 mb-4">
+                
+                <!-- 1st Position TE -->
+                <div class="col-lg-4">
+                  <div class="winner-card winner-gold">
+                    <div>
+                      <div class="winner-img-thumb" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p11_img1.jpeg', 'TE 1st Position: PWM Generator for Motor Speed Control', 'Awarded during the Valedictory Ceremony in Seminar Hall')">
+                        <img src="/assets/events/sankalpana2026/sankalpana26_p11_img1.jpeg" alt="TE 1st Position Winner" />
+                        <span class="winner-overlay-badge"><i class="bi bi-zoom-in"></i> View Award</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge-gold"><i class="bi bi-trophy-fill"></i> 1<sup>st</sup> Position</span>
+                        <span class="badge bg-dark rounded-pill px-3 py-1">TE FPGA SEM-VI</span>
+                      </div>
+                      <h5 class="fw-bold text-dark mt-2 mb-2">PWM Generator for Motor Speed Control</h5>
+                      <p class="text-muted small mb-3">
+                        High-precision FPGA digital logic synthesized implementation of a Pulse Width Modulation controller delivering regulated DC motor speed actuation.
+                      </p>
+                    </div>
+                    <div>
+                      <div class="small fw-bold text-secondary mb-2"><i class="bi bi-people-fill text-primary me-1"></i>Team Members:</div>
+                      <div>
+                        <span class="student-pill"><i class="bi bi-person-fill text-warning"></i> Atharva Badhe</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-warning"></i> Nirmiti Bait</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-warning"></i> Sumit Botle</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-warning"></i> Aayush Jangam</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2nd Position TE -->
+                <div class="col-lg-4">
+                  <div class="winner-card winner-silver">
+                    <div>
+                      <div class="winner-img-thumb" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p12_img1.jpeg', 'TE 2nd Position: 8 Bit Barrel Shifter', 'Awarded during Valedictory Function')">
+                        <img src="/assets/events/sankalpana2026/sankalpana26_p12_img1.jpeg" alt="TE 2nd Position Winner" />
+                        <span class="winner-overlay-badge"><i class="bi bi-zoom-in"></i> View Award</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge-silver"><i class="bi bi-award-fill"></i> 2<sup>nd</sup> Position</span>
+                        <span class="badge bg-secondary rounded-pill px-3 py-1">TE FPGA SEM-VI</span>
+                      </div>
+                      <h5 class="fw-bold text-dark mt-2 mb-2">8 Bit Barrel Shifter</h5>
+                      <p class="text-muted small mb-3">
+                        Optimized digital combinational logic circuit for multi-bit data shifting within a single clock cycle, vital for high-speed ALU arithmetic processors.
+                      </p>
+                    </div>
+                    <div>
+                      <div class="small fw-bold text-secondary mb-2"><i class="bi bi-people-fill text-primary me-1"></i>Team Members:</div>
+                      <div>
+                        <span class="student-pill"><i class="bi bi-person-fill text-primary"></i> Samiksha Gaonkar</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-primary"></i> Priya Gajula</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-primary"></i> Harshali Gokhale</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-primary"></i> Yukita Jaiswal</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3rd Position TE -->
+                <div class="col-lg-4">
+                  <div class="winner-card winner-bronze">
+                    <div>
+                      <div class="winner-img-thumb" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p12_img2.jpeg', 'TE 3rd Position: UART Communication', 'Awarded during Valedictory Function')">
+                        <img src="/assets/events/sankalpana2026/sankalpana26_p12_img2.jpeg" alt="TE 3rd Position Winner" />
+                        <span class="winner-overlay-badge"><i class="bi bi-zoom-in"></i> View Award</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge-bronze"><i class="bi bi-award-fill"></i> 3<sup>rd</sup> Position</span>
+                        <span class="badge bg-dark bg-opacity-75 text-white rounded-pill px-3 py-1">TE FPGA SEM-VI</span>
+                      </div>
+                      <h5 class="fw-bold text-dark mt-2 mb-2">UART Communication</h5>
+                      <p class="text-muted small mb-3">
+                        Robust asynchronous serial communication protocol implementation on FPGA hardware architecture supporting baud rate generation and parity checks.
+                      </p>
+                    </div>
+                    <div>
+                      <div class="small fw-bold text-secondary mb-2"><i class="bi bi-people-fill text-primary me-1"></i>Team Members:</div>
+                      <div>
+                        <span class="student-pill"><i class="bi bi-person-fill text-danger"></i> Pritika Mediboina</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-danger"></i> Om Kurlekar</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-danger"></i> Ishant Patil</span>
+                        <span class="student-pill"><i class="bi bi-person-fill text-danger"></i> Parth Pardhesi</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Feature Banner: Group Photo with All Winners -->
+          <div class="content-card border-0 shadow-sm overflow-hidden mt-2" style="background: linear-gradient(135deg, #021b36 0%, #0d3b66 100%);">
+            <div class="row g-0 align-items-center">
+              <div class="col-lg-7">
+                <div class="p-2 cursor-pointer" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p13_img1.jpeg', 'Honoring Innovation: Group Photograph with Winners and Faculty', 'Valedictory Function at Seminar Hall, DBIT Kurla')">
+                  <img src="/assets/events/sankalpana2026/sankalpana26_p13_img1.jpeg" alt="Sankalpana 2026 Winners Group Photo" class="img-fluid rounded-3 w-100" style="max-height: 380px; object-fit: cover;" />
+                </div>
+              </div>
+              <div class="col-lg-5 p-4 text-white">
+                <span class="badge bg-warning text-dark px-3 py-1 rounded-pill mb-2 fw-bold text-uppercase">
+                  <i class="bi bi-trophy-fill me-1"></i> Celebration of Excellence
+                </span>
+                <h4 class="fw-bold text-white mb-2">Honoring Student Innovators &amp; Mentors</h4>
+                <p class="text-white-50 small mb-3">
+                  Winners alongside Father Nelson Carvalho (Patron), Dr. Madhavi Pednekar (HOD EXTC), 
+                  evaluating judges, and faculty coordinators during the certificates and awards distribution ceremony.
+                </p>
+                <button class="btn btn-warning text-dark fw-bold btn-sm rounded-pill px-3 py-2" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p13_img1.jpeg', 'Honoring Innovation: Group Photograph with Winners and Faculty', 'Valedictory Function at Seminar Hall, DBIT Kurla')">
+                  <i class="bi bi-arrows-fullscreen me-1"></i> View Full Resolution Photo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Judges Panels & Evaluation Rubrics -->
+        <div class="content-card" id="judges-rubrics">
+          <div class="content-card-header">
+            <h4 class="fw-bold mb-0 text-white"><i class="bi bi-award-fill text-warning me-2"></i>Judges Panels &amp; Evaluation Rubrics</h4>
+            <small class="text-white-50">Rigorous and standardized double-blind judging ecosystem</small>
+          </div>
+          <div class="content-card-body">
+            
+            <!-- Judges Panels -->
+            <div class="row g-4 mb-4">
+              <div class="col-lg-6">
+                <div class="p-3 bg-light rounded-4 border h-100">
+                  <h6 class="fw-bold text-dark border-bottom pb-2 mb-3">
+                    <i class="bi bi-people text-primary me-2"></i>SE Project Judges Panel (Second Year)
+                  </h6>
+                  <div class="table-responsive">
+                    <table class="table table-sm table-bordered bg-white mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th>Panel</th>
+                          <th>Venue</th>
+                          <th>Group Scope</th>
+                          <th>Judges Assigned</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="fw-bold">Panel 1</td>
+                          <td>EXTC LAB 2 &amp; 3</td>
+                          <td>Groups 1 to 9</td>
+                          <td>
+                            <div><strong>Ext:</strong> Dr. Royal D’Souza</div>
+                            <div class="text-muted small"><strong>Int:</strong> Ms. Freda Carvalho (Gr. 1–6)</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold">Panel 2</td>
+                          <td>EXTC LAB 2, 3 &amp; 7</td>
+                          <td>Groups 10 to 18</td>
+                          <td>
+                            <div><strong>Ext:</strong> Dr. Revathy Sundararajan</div>
+                            <div class="text-muted small"><strong>Int:</strong> Dr. Sonal Patil (Gr. 7–12)</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold">Panel 3</td>
+                          <td>EXTC LAB 2, 3 &amp; 7</td>
+                          <td>Groups 13 to 18</td>
+                          <td>
+                            <div class="text-muted small"><strong>Int:</strong> Dr. Shilpa Gaikwad (Gr. 13–18)</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="mt-2 text-end">
+                    <span class="badge bg-secondary">Evaluation via Google Forms</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="p-3 bg-light rounded-4 border h-100">
+                  <h6 class="fw-bold text-dark border-bottom pb-2 mb-3">
+                    <i class="bi bi-people text-success me-2"></i>TE Project Judges Panel (FPGA SEM-VI)
+                  </h6>
+                  <div class="table-responsive">
+                    <table class="table table-sm table-bordered bg-white mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th>Panel</th>
+                          <th>Venue</th>
+                          <th>Group Scope</th>
+                          <th>Judges Assigned</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="fw-bold">Panel 1</td>
+                          <td>EXTC LAB 4/6/7</td>
+                          <td>Groups 1 to 10</td>
+                          <td>
+                            <div><strong>Ext:</strong> Mr. Yogesh Gholap</div>
+                            <div><strong>Int:</strong> Dr. Aparna Telgote</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold">Panel 2</td>
+                          <td>EXTC LAB 4/6/7</td>
+                          <td>Groups 11 to 19</td>
+                          <td>
+                            <div><strong>Ext:</strong> Dr. Prasad Padalkar</div>
+                            <div><strong>Int:</strong> Prof. Ankur Ganorkar</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="mt-2 text-end">
+                    <span class="badge bg-secondary">Evaluation via Google Forms</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rubrics Table -->
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-list-check text-primary me-2"></i>Standardized Evaluation Criteria (Total: 50 Marks)</h5>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="card border rounded-3 p-3">
+                  <h6 class="fw-bold text-primary mb-2">SE Evaluation Rubric (10 Marks Each)</h6>
+                  <ul class="list-group list-group-flush small">
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>1. Social Impact &amp; Community Need</span>
+                      <span class="badge bg-primary rounded-pill">10 Marks</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>2. Actionable Metrics &amp; Direct Problem-Solving</span>
+                      <span class="badge bg-primary rounded-pill">10 Marks</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>3. Clarity of Communication &amp; Data Presentation</span>
+                      <span class="badge bg-primary rounded-pill">10 Marks</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>4. Poster Design &amp; Visual Architecture</span>
+                      <span class="badge bg-primary rounded-pill">10 Marks</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>5. Prototype Presentation Complete &amp; Working</span>
+                      <span class="badge bg-primary rounded-pill">10 Marks</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card border rounded-3 p-3">
+                  <h6 class="fw-bold text-success mb-2">TE FPGA Evaluation Rubric (10 Marks Each)</h6>
+                  <ul class="list-group list-group-flush small">
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>1. Problem Identification and Planning</span>
+                      <span class="badge bg-success rounded-pill">10 Marks</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>2. Methodology, Analysis and System Design</span>
+                      <span class="badge bg-success rounded-pill">10 Marks</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>3. Implementation, Prototype and Working Live Demo</span>
+                      <span class="badge bg-success rounded-pill">10 Marks</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>4. SDG Social and Industrial Relevance</span>
+                      <span class="badge bg-success rounded-pill">10 Marks</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      <span>5. Teamwork, Presentation and Poster Quality</span>
+                      <span class="badge bg-success rounded-pill">10 Marks</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 6. Event Schedule & Timeline -->
+        <div class="content-card" id="schedule-timeline">
+          <div class="content-card-header">
+            <h4 class="fw-bold mb-0 text-white"><i class="bi bi-clock-history text-warning me-2"></i>Event Proceedings &amp; Schedule</h4>
+            <small class="text-white-50">Executed seamlessly on Thursday, 14 May 2026</small>
+          </div>
+          <div class="content-card-body">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-6">
+                <div class="timeline-item">
+                  <div class="timeline-dot"><i class="bi bi-bell-fill"></i></div>
+                  <h6 class="fw-bold text-dark mb-1">9:30 AM &bull; Formal Inauguration Ceremony</h6>
+                  <p class="text-muted small mb-1"><strong>Venue:</strong> EXTC CR-2</p>
+                  <p class="text-secondary small mb-0">
+                    Welcome address by Dr. Madhavi Pednekar (HOD), formal ribbon-cutting, invocation prayer by Father Nelson Carvalho (Patron), 
+                    and motivational keynote by Chief Guest Dr. Amiya Tripathi.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot"><i class="bi bi-cpu-fill"></i></div>
+                  <h6 class="fw-bold text-dark mb-1">10:00 AM – 1:00 PM &bull; Mini Project Exhibition &amp; Viva</h6>
+                  <p class="text-muted small mb-1"><strong>Venue:</strong> EXTC LAB 02, 03, 04, 07</p>
+                  <p class="text-secondary small mb-0">
+                    Live prototype demonstrations, technical evaluations, viva questioning by internal and external panels, 
+                    and interactive peer reviews across 37+ project teams.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot"><i class="bi bi-cup-hot-fill"></i></div>
+                  <h6 class="fw-bold text-dark mb-1">1:00 PM – 2:00 PM &bull; Lunch Break &amp; Jury Deliberation</h6>
+                  <p class="text-muted small mb-1"><strong>Venue:</strong> EXTC Conference Room</p>
+                  <p class="text-secondary small mb-0">
+                    Consolidation of evaluation rubric scores, rubric normalisation across panels, and compilation of final rankings.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot"><i class="bi bi-award-fill"></i></div>
+                  <h6 class="fw-bold text-dark mb-1">2:00 PM – 4:00 PM &bull; Valedictory Function &amp; Awards Ceremony</h6>
+                  <p class="text-muted small mb-1"><strong>Venue:</strong> DBIT Seminar Hall</p>
+                  <p class="text-secondary small mb-0">
+                    Announcement of SE and TE winners, presentation of merit certificates by Fr. Nelson and Chief Guest, 
+                    evaluator remarks, and closing photo sessions.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="p-2 border rounded-4 bg-light text-center">
+                  <img src="/assets/events/sankalpana2026/sankalpana26_p14_img1.jpeg" alt="Inauguration Ceremony" class="img-fluid rounded-3 mb-2" style="max-height: 320px; object-fit: cover;" />
+                  <div class="small text-muted fw-semibold">
+                    <i class="bi bi-geo-alt-fill text-danger me-1"></i>Inauguration at EXTC CR-2 with GPS Map Camera timestamp (14 May 2026, 09:59 AM)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Interactive Photo Gallery -->
+        <div class="my-5" id="gallery-2026">
+          <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+              <h2 class="fw-bold text-dark mb-1">
+                <i class="bi bi-images text-primary me-2"></i>Sankalpana 2026 Event Photo Gallery
+              </h2>
+              <p class="text-muted mb-0">Live moments from inauguration, project demonstrations, faculty viva, and the awards ceremony.</p>
+            </div>
+            <span class="badge bg-primary px-3 py-2 rounded-pill">
+              <i class="bi bi-camera-fill me-1"></i> High-Resolution Archive
+            </span>
+          </div>
+
+          <div class="gallery-grid">
+            
+            <!-- Item 1: Poster -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana2026_poster.png', 'Official Event Poster: SANKALPANA 2026', 'Department of EXTC &bull; IETE-DBIT-ISF')">
+              <img src="/assets/events/sankalpana2026/sankalpana2026_poster.png" alt="Sankalpana 2026 Official Poster" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">Official Sankalpana 2026 Poster</div>
+            </div>
+
+            <!-- Item 2: Inauguration Ribbon Cutting -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p14_img1.jpeg', 'Formal Inauguration & Ribbon Cutting Ceremony', 'Chief Guest Dr. Amiya Tripathi, Fr. Nelson Carvalho & Dr. Madhavi Pednekar')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p14_img1.jpeg" alt="Inauguration Ceremony" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">Inauguration &amp; Welcome Address</div>
+            </div>
+
+            <!-- Item 3: Dignitaries on Dais -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p15_img1.jpeg', 'Inaugural Session & Dignitaries on Dais', 'Chief Guest address to students and faculty, DBIT Kurla')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p15_img1.jpeg" alt="Dignitaries on Dais" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">Inaugural Session on Dais</div>
+            </div>
+
+            <!-- Item 4: Project Exhibition Demonstration -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p15_img2.jpeg', 'Live Project Hardware Demonstration', 'Students actively demonstrating working circuit prototype to examining judges')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p15_img2.jpeg" alt="Exhibition Demo" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">Live Hardware Prototype Testing</div>
+            </div>
+
+            <!-- Item 5: Project Presentation before Judges -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p16_img1.jpeg', 'Students Presenting Projects Before Faculty Judges', 'Interactive technical viva in EXTC Labs, DBIT Kurla')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p16_img1.jpeg" alt="Students Presenting" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">Project Defense in EXTC Labs</div>
+            </div>
+
+            <!-- Item 6: Faculty Judge Interaction -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p16_img2.jpeg', 'Faculty Judge Interacting with Student Participants', 'Detailed circuit schematic and code walkthrough')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p16_img2.jpeg" alt="Judge Interaction" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">Faculty Viva &amp; Code Review</div>
+            </div>
+
+            <!-- Item 7: SE 1st Rank Felicitation -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p9_img1.jpeg', 'SE 1st Position: Traffic Signal Management System', 'Sapnakumari Giri, Neha Haldankar, Musham Hasan, Amey Kanade with Dr. Madhavi Pednekar')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p9_img1.jpeg" alt="SE 1st Position" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">SE 1st Rank Felicitation</div>
+            </div>
+
+            <!-- Item 8: SE 2nd Rank Felicitation -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p10_img1.jpeg', 'SE 2nd Position: Smart Irrigation', 'Yash Khanvilkar, Rohit Kumar, Harshit Patil, Tirth Shetty with Fr. Nelson Carvalho')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p10_img1.jpeg" alt="SE 2nd Position" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">SE 2nd Rank Felicitation</div>
+            </div>
+
+            <!-- Item 9: SE 3rd Rank Felicitation -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p10_img2.jpeg', 'SE 3rd Position: Medicine Reminder & Monitoring Device for Elderly', 'Kenneth Dsouza, Disha Mishra, Raj Vats, Sneha Savekar')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p10_img2.jpeg" alt="SE 3rd Position" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">SE 3rd Rank Felicitation</div>
+            </div>
+
+            <!-- Item 10: TE 1st Rank Felicitation -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p11_img1.jpeg', 'TE 1st Position: PWM Generator for Motor Speed Control', 'Atharva Badhe, Nirmiti Bait, Sumit Botle, Aayush Jangam')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p11_img1.jpeg" alt="TE 1st Position" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">TE 1st Rank Felicitation</div>
+            </div>
+
+            <!-- Item 11: TE 2nd Rank Felicitation -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p12_img1.jpeg', 'TE 2nd Position: 8 Bit Barrel Shifter', 'Samiksha Gaonkar, Priya Gajula, Harshali Gokhale, Yukita Jaiswal')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p12_img1.jpeg" alt="TE 2nd Position" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">TE 2nd Rank Felicitation</div>
+            </div>
+
+            <!-- Item 12: TE 3rd Rank Felicitation -->
+            <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2026/sankalpana26_p12_img2.jpeg', 'TE 3rd Position: UART Communication', 'Pritika Mediboina, Om Kurlekar, Ishant Patil, Parth Pardhesi')">
+              <img src="/assets/events/sankalpana2026/sankalpana26_p12_img2.jpeg" alt="TE 3rd Position" />
+              <div class="gallery-zoom-indicator"><i class="bi bi-arrows-fullscreen"></i></div>
+              <div class="gallery-caption">TE 3rd Rank Felicitation</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 8. Feedback & Survey Analytics -->
+        <div class="content-card" id="feedback-analytics">
+          <div class="content-card-header">
+            <h4 class="fw-bold mb-0 text-white"><i class="bi bi-bar-chart-fill text-warning me-2"></i>Event Feedback &amp; Survey Analytics</h4>
+            <small class="text-white-50">Quantitative evaluation by 54 survey respondents (96.3% Students, 3.7% Faculty)</small>
+          </div>
+          <div class="content-card-body">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-6">
+                
+                <!-- Metric 1 -->
+                <div class="meter-container">
+                  <div class="meter-header">
+                    <span>Were the Displayed Projects Innovative?</span>
+                    <span class="text-primary fw-bold">85.2% Yes</span>
+                  </div>
+                  <div class="meter-track">
+                    <div class="meter-fill" style="width: 85.2%;"></div>
+                  </div>
+                  <div class="d-flex justify-content-between small text-muted mt-1">
+                    <span>Yes: 85.2%</span>
+                    <span>Maybe: 14.8%</span>
+                    <span>No: 0%</span>
+                  </div>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="meter-container">
+                  <div class="meter-header">
+                    <span>Satisfied Social / Environmental / Industrial Needs?</span>
+                    <span class="text-success fw-bold">83.3% Yes</span>
+                  </div>
+                  <div class="meter-track">
+                    <div class="meter-fill meter-fill-green" style="width: 83.3%;"></div>
+                  </div>
+                  <div class="d-flex justify-content-between small text-muted mt-1">
+                    <span>Yes: 83.3%</span>
+                    <span>Maybe: 13.0%</span>
+                    <span>No: 3.7%</span>
+                  </div>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="meter-container">
+                  <div class="meter-header">
+                    <span>Overall Project Quality Appreciation</span>
+                    <span class="text-warning fw-bold">100% Positive</span>
+                  </div>
+                  <div class="meter-track">
+                    <div class="meter-fill meter-fill-gold" style="width: 100%;"></div>
+                  </div>
+                  <div class="d-flex justify-content-between small text-muted mt-1">
+                    <span>Excellent: 38.9%</span>
+                    <span>Very Good: 25.9%</span>
+                    <span>Good: 35.2%</span>
+                  </div>
+                </div>
+
+                <!-- Metric 4 -->
+                <div class="meter-container">
+                  <div class="meter-header">
+                    <span>Was the Event Well-Organized &amp; Conducted?</span>
+                    <span class="text-primary fw-bold">85.2% Yes</span>
+                  </div>
+                  <div class="meter-track">
+                    <div class="meter-fill" style="width: 85.2%;"></div>
+                  </div>
+                  <div class="d-flex justify-content-between small text-muted mt-1">
+                    <span>Yes: 85.2%</span>
+                    <span>Maybe: 14.8%</span>
+                    <span>No: 0%</span>
+                  </div>
+                </div>
+
+                <!-- Metric 5 -->
+                <div class="meter-container">
+                  <div class="meter-header">
+                    <span>Students Effectively Able to Showcase &amp; Present Skills?</span>
+                    <span class="text-success fw-bold">79.6% Yes</span>
+                  </div>
+                  <div class="meter-track">
+                    <div class="meter-fill meter-fill-green" style="width: 79.6%;"></div>
+                  </div>
+                  <div class="d-flex justify-content-between small text-muted mt-1">
+                    <span>Yes: 79.6%</span>
+                    <span>Maybe: 18.5%</span>
+                    <span>No: 1.9%</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Feedback Survey Charts Image Embed -->
+              <div class="col-lg-6">
+                <div class="row g-2">
+                  <div class="col-6">
+                    <div class="border rounded-3 p-1 bg-white cursor-pointer" onclick="openGalleryModal('/assets/events/sankalpana2026/feedback_charts_p21.png', 'Survey Analytics: Part 1', 'Demographics, Project Innovation, and Social Relevance')">
+                      <img src="/assets/events/sankalpana2026/feedback_charts_p21.png" alt="Feedback Chart 1" class="img-fluid rounded" />
+                      <div class="text-center small text-muted py-1 fw-semibold"><i class="bi bi-pie-chart-fill me-1"></i>Feedback Chart 1</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="border rounded-3 p-1 bg-white cursor-pointer" onclick="openGalleryModal('/assets/events/sankalpana2026/feedback_charts_p22.png', 'Survey Analytics: Part 2', 'Project Ratings, Organization, and Participant Comments')">
+                      <img src="/assets/events/sankalpana2026/feedback_charts_p22.png" alt="Feedback Chart 2" class="img-fluid rounded" />
+                      <div class="text-center small text-muted py-1 fw-semibold"><i class="bi bi-pie-chart-fill me-1"></i>Feedback Chart 2</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Participant Comments Box -->
+                <div class="mt-3 p-3 bg-light rounded-3 border">
+                  <h6 class="fw-bold text-dark mb-2"><i class="bi bi-chat-heart-fill text-danger me-2"></i>Participant &amp; Attendee Feedback:</h6>
+                  <p class="fst-italic text-secondary small mb-1">
+                    &ldquo;Good way to integrate tech &amp; practical implementation in students.&rdquo;
+                  </p>
+                  <p class="fst-italic text-secondary small mb-1">
+                    &ldquo;Overall good platform to showcase technical knowledge.&rdquo;
+                  </p>
+                  <p class="fst-italic text-secondary small mb-0">
+                    &ldquo;Great experience. Projects were great and it was so fun to see all those working models.&rdquo;
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Leadership Remarks & Recommendations -->
+        <div class="content-card" id="remarks-impact">
+          <div class="content-card-header">
+            <h4 class="fw-bold mb-0 text-white"><i class="bi bi-chat-quote-fill text-warning me-2"></i>Leadership Remarks &amp; Institutional Impact</h4>
+            <small class="text-white-50">Insights from institutional dignitaries and department leadership</small>
+          </div>
+          <div class="content-card-body">
+            
+            <!-- Remarks -->
+            <div class="row g-3 mb-4">
+              <div class="col-md-4">
+                <div class="quote-card h-100">
+                  <div class="quote-text">
+                    &ldquo;Events like Sankalpana are vital in shaping students who are not just technically proficient but also innovative thinkers who can make a difference in society.&rdquo;
+                  </div>
+                  <div class="quote-author">Fr. Nelson Carvalho</div>
+                  <div class="quote-role">Patron, DBIT Kurla</div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="quote-card h-100" style="border-left-color: #0b4f8c;">
+                  <div class="quote-text">
+                    &ldquo;It is inspiring to see students channelling their curiosity into working projects. This is the spirit of engineering — turning ideas into solutions.&rdquo;
+                  </div>
+                  <div class="quote-author">Dr. Amiya Tripathi</div>
+                  <div class="quote-role">Chief Guest, Sankalpana 2026</div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="quote-card h-100" style="border-left-color: #059669;">
+                  <div class="quote-text">
+                    &ldquo;Sankalpana 2026 demonstrated that our students possess the drive, creativity, and technical aptitude to tackle real-world challenges. I am proud of every participant who stepped forward to showcase their work.&rdquo;
+                  </div>
+                  <div class="quote-author">Dr. Madhavi Pednekar</div>
+                  <div class="quote-role">Head of Department, EXTC</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Strengths & Recommendations -->
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-4 border h-100">
+                  <h6 class="fw-bold text-success mb-3"><i class="bi bi-shield-check me-2"></i>Key Strengths Observed</h6>
+                  <ul class="list-unstyled small mb-0">
+                    <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i><strong>Academic:</strong> High-quality student innovation at SE and TE levels demonstrating strong technical foundations.</li>
+                    <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i><strong>Integration:</strong> Effective hands-on synthesis of embedded microcontrollers, sensors, and FPGA description logic.</li>
+                    <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i><strong>Diversity:</strong> Interdisciplinary project spectrum encompassing IoT, automation, medical assistive devices, and signal telemetry.</li>
+                    <li class="mb-0"><i class="bi bi-check2 text-success me-1"></i><strong>Operational:</strong> Seamless coordination across registration, labs, jury evaluation, and the valedictory ceremony.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-4 border h-100">
+                  <h6 class="fw-bold text-primary mb-3"><i class="bi bi-graph-up-arrow me-2"></i>Roadmap &amp; Recommendations</h6>
+                  <ul class="list-unstyled small mb-0">
+                    <li class="mb-2"><i class="bi bi-arrow-right text-primary me-1"></i><strong>Short-Term:</strong> Conduct structured pre-event mentoring bootcamps and standardize judging rubrics across cohorts.</li>
+                    <li class="mb-2"><i class="bi bi-arrow-right text-primary me-1"></i><strong>Medium-Term:</strong> Invite industry evaluators and expand an inter-collegiate dimension with incubator support for high-potential prototypes.</li>
+                    <li class="mb-0"><i class="bi bi-arrow-right text-primary me-1"></i><strong>Long-Term:</strong> Institutionalize Sankalpana into the department's Outcome-Based Education (OBE) strategy with seed funding grants.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Impact Matrix -->
+            <h6 class="fw-bold text-dark mb-3"><i class="bi bi-table text-primary me-2"></i>Institutional Impact Summary</h6>
             <div class="table-responsive">
-              <table class="winner-table">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th style="width: 30%;">Impact Area</th>
+                    <th style="width: 70%;">Academic &amp; Student Outcome</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold text-primary">Innovation Platform</td>
+                    <td>Successfully established a competitive departmental mini-project platform for SE &amp; TE cohorts.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-success">Learning Approach</td>
+                    <td>Encouraged practical, experiential, and hands-on engineering education bridging theory to practice.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-warning">Student Confidence</td>
+                    <td>Strengthened technical viva, public speaking, and prototype demonstration capabilities before expert panels.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-info">Peer Collaboration</td>
+                    <td>Fostered inter-team synergy, collective problem solving, and peer learning across cohorts.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-secondary">Institutional Quality</td>
+                    <td>Reinforced DBIT EXTC's commitment to cutting-edge technical education, NAAC accreditation, and AICTE standards.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Report Sign-off & Verification -->
+            <div class="mt-4 pt-3 border-top d-flex justify-content-between align-items-center flex-wrap gap-2 text-muted small">
+              <div>
+                <strong>Report Prepared By:</strong> Nandana Anilkumar (Documentation Head)
+              </div>
+              <div>
+                <strong>Report Approved By:</strong> Mr. Ankur Ganorkar (IETE-DBIT-ISF Faculty Coordinator)
+              </div>
+              <div>
+                Don Bosco Institute of Technology (DBIT), Kurla &bull; NAAC A Grade &bull; Approved by AICTE
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ========================================== -->
+      <!-- TAB PANE 2: SANKALPANA 2025 (ARCHIVE)      -->
+      <!-- ========================================== -->
+      <div class="tab-pane fade" id="edition-2025" role="tabpanel" aria-labelledby="edition-2025-tab">
+        
+        <div class="alert alert-secondary d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4" role="alert">
+          <div>
+            <i class="bi bi-archive-fill text-secondary fs-5 me-2"></i>
+            <strong>Sankalpana 2025 Archive:</strong> You are viewing records and winner listings from the previous academic year's project competition (Held on 5<sup>th</sup> April 2025).
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="document.getElementById('edition-2026-tab').click()">
+            <i class="bi bi-arrow-left me-1"></i> Switch to Latest (Sankalpana 2026)
+          </button>
+        </div>
+
+        <!-- 2025 Winners Section -->
+        <div class="content-card">
+          <div class="content-card-header bg-secondary">
+            <h4 class="fw-bold mb-0 text-white"><i class="bi bi-trophy-fill text-warning me-2"></i>Sankalpana 2025 Winners</h4>
+            <small class="text-white-50">Held on 5th April 2025 at DBIT EXTC</small>
+          </div>
+          <div class="content-card-body">
+            
+            <!-- SE 2025 Winners -->
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-mortarboard-fill text-primary me-2"></i>Second Year (SE) Project Winners (2025)</h5>
+            <div class="table-responsive mb-4">
+              <table class="custom-table">
                 <thead>
                   <tr>
                     <th style="width: 14%;">Rank</th>
@@ -449,80 +1768,59 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="winner-badge-gold"><i class="bi bi-trophy-fill"></i> 1<sup>st</sup></span></td>
+                    <td><span class="badge-gold"><i class="bi bi-trophy-fill"></i> 1<sup>st</sup></span></td>
                     <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 1</span></td>
+                    <td><h6 class="fw-bold text-dark mb-0">Pollution Monitoring System</h6></td>
                     <td>
-                      <h6 class="fw-bold text-dark mb-0">Pollution Monitoring System</h6>
-                    </td>
-                    <td>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Yashvi Jain</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Saha Anu</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Dhruv Tarev</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Vipaak Gaikwad</span>
+                      <span class="student-pill">Yashvi Jain</span>
+                      <span class="student-pill">Saha Anu</span>
+                      <span class="student-pill">Dhruv Tarev</span>
+                      <span class="student-pill">Vipaak Gaikwad</span>
                     </td>
                   </tr>
                   <tr>
-                    <td rowspan="2" class="align-middle bg-light bg-opacity-50">
-                      <span class="winner-badge-silver"><i class="bi bi-award-fill"></i> 2<sup>nd</sup></span>
+                    <td rowspan="2" class="align-middle bg-light">
+                      <span class="badge-silver"><i class="bi bi-award-fill"></i> 2<sup>nd</sup></span>
                       <div class="small text-muted mt-1 fw-bold">Joint 2<sup>nd</sup></div>
                     </td>
                     <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 6</span></td>
+                    <td><h6 class="fw-bold text-dark mb-0">Bad Posture Detection and Alerting System</h6></td>
                     <td>
-                      <h6 class="fw-bold text-dark mb-0">Bad Posture Detection and Alerting System</h6>
-                    </td>
-                    <td>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aayush Jangam</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Sumit Botle</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Atharva Badhe</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Gavin Lobo</span>
+                      <span class="student-pill">Aayush Jangam</span>
+                      <span class="student-pill">Sumit Botle</span>
+                      <span class="student-pill">Atharva Badhe</span>
+                      <span class="student-pill">Gavin Lobo</span>
                     </td>
                   </tr>
                   <tr>
                     <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 11</span></td>
+                    <td><h6 class="fw-bold text-dark mb-0">Robotic Vacuum Cleaner</h6></td>
                     <td>
-                      <h6 class="fw-bold text-dark mb-0">Robotic Vacuum Cleaner</h6>
-                    </td>
-                    <td>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Atif Siddiuqe</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Shravan Philse</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Vinayak Yadav</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Harsh Rai</span>
+                      <span class="student-pill">Atif Siddiuqe</span>
+                      <span class="student-pill">Shravan Philse</span>
+                      <span class="student-pill">Vinayak Yadav</span>
+                      <span class="student-pill">Harsh Rai</span>
                     </td>
                   </tr>
                   <tr>
-                    <td><span class="winner-badge-bronze"><i class="bi bi-award-fill"></i> 3<sup>rd</sup></span></td>
+                    <td><span class="badge-bronze"><i class="bi bi-award-fill"></i> 3<sup>rd</sup></span></td>
                     <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 12</span></td>
+                    <td><h6 class="fw-bold text-dark mb-0">WiFi Controlled Cart</h6></td>
                     <td>
-                      <h6 class="fw-bold text-dark mb-0">WiFi Controlled Cart</h6>
-                    </td>
-                    <td>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Mrunmai Patekar</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aryan Puranik</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Kripa Dewoolkar</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Saeesh Gidh</span>
+                      <span class="student-pill">Mrunmai Patekar</span>
+                      <span class="student-pill">Aryan Puranik</span>
+                      <span class="student-pill">Kripa Dewoolkar</span>
+                      <span class="student-pill">Saeesh Gidh</span>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
 
-        <!-- TE Winners Pane -->
-        <div class="tab-pane fade" id="te-winners" role="tabpanel" aria-labelledby="te-tab">
-          <div class="winner-card">
-            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-              <h4 class="fw-bold text-dark mb-0">
-                <i class="bi bi-award-fill text-primary me-2"></i>Third Year (TE) Project Winners
-                <span class="badge bg-light text-muted border ms-2 fs-6 fw-normal">5<sup>th</sup> April 2025</span>
-              </h4>
-              <button class="btn btn-sm btn-outline-primary rounded-pill px-3" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_te_winner.jpg', 'Sankalpana 2025 TE Winners', 'Official Announcement - 5th April 2025')">
-                <i class="bi bi-image me-1"></i> View Official Poster
-              </button>
-            </div>
-
-            <div class="table-responsive">
-              <table class="winner-table">
+            <!-- TE 2025 Winners -->
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-mortarboard-fill text-success me-2"></i>Third Year (TE) Project Winners (2025)</h5>
+            <div class="table-responsive mb-4">
+              <table class="custom-table">
                 <thead>
                   <tr>
                     <th style="width: 14%;">Rank</th>
@@ -533,144 +1831,72 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="winner-badge-gold"><i class="bi bi-trophy-fill"></i> 1<sup>st</sup></span></td>
+                    <td><span class="badge-gold"><i class="bi bi-trophy-fill"></i> 1<sup>st</sup></span></td>
                     <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 11</span></td>
+                    <td><h6 class="fw-bold text-dark mb-0">Digital Clock</h6></td>
                     <td>
-                      <h6 class="fw-bold text-dark mb-0">Digital Clock</h6>
-                    </td>
-                    <td>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Samruddhi Kapdnis</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Harsh Dusane</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aditya Shetty</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Ruchi Tiwari</span>
+                      <span class="student-pill">Samruddhi Kapdnis</span>
+                      <span class="student-pill">Harsh Dusane</span>
+                      <span class="student-pill">Aditya Shetty</span>
+                      <span class="student-pill">Ruchi Tiwari</span>
                     </td>
                   </tr>
                   <tr>
-                    <td><span class="winner-badge-silver"><i class="bi bi-award-fill"></i> 2<sup>nd</sup></span></td>
+                    <td><span class="badge-silver"><i class="bi bi-award-fill"></i> 2<sup>nd</sup></span></td>
                     <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 5</span></td>
+                    <td><h6 class="fw-bold text-dark mb-0">SPI Protocol</h6></td>
                     <td>
-                      <h6 class="fw-bold text-dark mb-0">SPI Protocol</h6>
-                    </td>
-                    <td>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Zubia Sarang</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Kartik Dandelia</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aditya Punekar</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Tanmayee Ahire</span>
+                      <span class="student-pill">Zubia Sarang</span>
+                      <span class="student-pill">Kartik Dandelia</span>
+                      <span class="student-pill">Aditya Punekar</span>
+                      <span class="student-pill">Tanmayee Ahire</span>
                     </td>
                   </tr>
                   <tr>
-                    <td><span class="winner-badge-bronze"><i class="bi bi-award-fill"></i> 3<sup>rd</sup></span></td>
+                    <td><span class="badge-bronze"><i class="bi bi-award-fill"></i> 3<sup>rd</sup></span></td>
                     <td><span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Group 4</span></td>
+                    <td><h6 class="fw-bold text-dark mb-0">Voting Machine</h6></td>
                     <td>
-                      <h6 class="fw-bold text-dark mb-0">Voting Machine</h6>
-                    </td>
-                    <td>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Aftab Shaikh</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Arpita Pawar</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Samruddhi Patil</span>
-                      <span class="student-tag"><i class="bi bi-person-fill text-primary"></i> Roystan Poobalarayan</span>
+                      <span class="student-pill">Aftab Shaikh</span>
+                      <span class="student-pill">Arpita Pawar</span>
+                      <span class="student-pill">Samruddhi Patil</span>
+                      <span class="student-pill">Roystan Poobalarayan</span>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Event Gallery Section -->
-    <div class="my-5">
-      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-        <div>
-          <h2 class="fw-bold text-dark mb-1">
-            <i class="bi bi-images text-primary me-2"></i>Event Gallery
-          </h2>
-          <p class="text-muted mb-0">Moments of technical demonstrations, project presentations, and evaluation during Sankalpana 2025.</p>
-        </div>
-        <span class="badge bg-light text-dark border px-3 py-2">
-          <i class="bi bi-camera me-1"></i> Live Project Demonstrations
-        </span>
-      </div>
-
-      <div class="row g-4">
-        <!-- Gallery Photo 1 -->
-        <div class="col-md-4">
-          <div class="gallery-card">
-            <div class="gallery-img-wrapper" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_img1.jpg', 'Software & Hardware System Demonstration', 'Students demonstrating their real-time computing setup and project interface to faculty members.')">
-              <img src="/assets/events/sankalpana2025/sankalpana_img1.jpg" alt="Sankalpana 2025 Presentation 1" />
-              <div class="gallery-overlay-btn">
-                <i class="bi bi-arrows-fullscreen fs-3 mb-1"></i>
-                <span class="fw-bold small">Click to View Full Size</span>
+            <!-- 2025 Gallery -->
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-images text-primary me-2"></i>Sankalpana 2025 Photo Archive</h5>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_img1.jpg', 'Sankalpana 2025: System & Interface Demo', 'Software & Hardware System Demonstration')">
+                  <img src="/assets/events/sankalpana2025/sankalpana_img1.jpg" alt="Sankalpana 2025 Demo" />
+                  <div class="gallery-caption">System &amp; Interface Demo (2025)</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_img2.jpg', 'Sankalpana 2025: Technical Viva & Review', 'Faculty examining project documentation')">
+                  <img src="/assets/events/sankalpana2025/sankalpana_img2.jpg" alt="Sankalpana 2025 Viva" />
+                  <div class="gallery-caption">Technical Viva &amp; Review (2025)</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="gallery-item" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_img3.jpg', 'Sankalpana 2025: Hardware Prototype Demo', 'Live prototype hardware testing')">
+                  <img src="/assets/events/sankalpana2025/sankalpana_img3.jpg" alt="Sankalpana 2025 Prototype" />
+                  <div class="gallery-caption">Hardware Prototype Demo (2025)</div>
+                </div>
               </div>
             </div>
-            <div class="gallery-card-body">
-              <h5 class="gallery-card-title">System & Interface Demo</h5>
-              <p class="gallery-card-desc">Students demonstrating project software architecture and data telemetry on laptop to examining faculty.</p>
-            </div>
+
           </div>
         </div>
 
-        <!-- Gallery Photo 2 -->
-        <div class="col-md-4">
-          <div class="gallery-card">
-            <div class="gallery-img-wrapper" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_img2.jpg', 'Lab Evaluation & Project Viva', 'Faculty examining project documentation and reviewing technical methodologies.')">
-              <img src="/assets/events/sankalpana2025/sankalpana_img2.jpg" alt="Sankalpana 2025 Presentation 2" />
-              <div class="gallery-overlay-btn">
-                <i class="bi bi-arrows-fullscreen fs-3 mb-1"></i>
-                <span class="fw-bold small">Click to View Full Size</span>
-              </div>
-            </div>
-            <div class="gallery-card-body">
-              <h5 class="gallery-card-title">Technical Viva & Review</h5>
-              <p class="gallery-card-desc">Project team explaining project reports, circuit schematics, and design methodology to evaluating professors.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Gallery Photo 3 -->
-        <div class="col-md-4">
-          <div class="gallery-card">
-            <div class="gallery-img-wrapper" onclick="openGalleryModal('/assets/events/sankalpana2025/sankalpana_img3.jpg', 'Working Hardware Model Testing', 'Live prototype hardware testing and demonstration of working model.')">
-              <img src="/assets/events/sankalpana2025/sankalpana_img3.jpg" alt="Sankalpana 2025 Presentation 3" />
-              <div class="gallery-overlay-btn">
-                <i class="bi bi-arrows-fullscreen fs-3 mb-1"></i>
-                <span class="fw-bold small">Click to View Full Size</span>
-              </div>
-            </div>
-            <div class="gallery-card-body">
-              <h5 class="gallery-card-title">Hardware Prototype Demo</h5>
-              <p class="gallery-card-desc">Live demonstration of physical sensor-integrated prototype enclosure and hardware circuit operation.</p>
-            </div>
-          </div>
-        </div>
       </div>
+
     </div>
 
-    <!-- Event Highlights Grid -->
-    <div class="row g-3 mt-3">
-      <div class="col-md-4">
-        <div class="feature-card">
-          <div class="feature-icon-circle"><i class="bi bi-lightbulb-fill"></i></div>
-          <h5 class="fw-bold text-dark">Innovation & Design</h5>
-          <p class="text-muted small mb-0">Platform encouraging students to ideate, prototype, and build practical engineering solutions for modern challenges.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-card">
-          <div class="feature-icon-circle"><i class="bi bi-gear-wide-connected"></i></div>
-          <h5 class="fw-bold text-dark">Working Models</h5>
-          <p class="text-muted small mb-0">Hands-on experience demonstrating end-to-end working hardware models and software integrations.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-card">
-          <div class="feature-icon-circle"><i class="bi bi-award-fill"></i></div>
-          <h5 class="fw-bold text-dark">Recognition & Growth</h5>
-          <p class="text-muted small mb-0">Expert evaluation and constructive feedback from experienced faculty and industry experts.</p>
-        </div>
-      </div>
-    </div>
   </main>
 
   <!-- Lightbox Modal for Gallery Images -->
@@ -679,17 +1905,17 @@
       <div class="modal-content border-0 shadow-lg">
         <div class="modal-header bg-dark text-white">
           <div>
-            <h5 class="modal-title mb-0" id="galleryModalLabel">Sankalpana 2025 Gallery</h5>
+            <h5 class="modal-title mb-0" id="galleryModalLabel">Sankalpana Gallery</h5>
             <small class="text-white-50" id="galleryModalSub"></small>
           </div>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center p-2 bg-black">
-          <img id="galleryModalImg" src="" alt="Sankalpana 2025 Photo" class="img-fluid rounded" style="max-height: 80vh; object-fit: contain;" />
+          <img id="galleryModalImg" src="" alt="Sankalpana Photo" class="img-fluid rounded" style="max-height: 80vh; object-fit: contain;" />
         </div>
         <div class="modal-footer justify-content-between bg-light">
-          <span class="text-muted small">Sankalpana 2025 • Department of EXTC, DBIT</span>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <span class="text-muted small">Sankalpana &bull; Department of EXTC, Don Bosco Institute of Technology</span>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -720,6 +1946,17 @@
         modalInstance.show();
       }
     }
+
+    // Auto switch to archive tab if hash is #sankalpana-2025 or #edition-2025
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.location.hash === '#sankalpana-2025' || window.location.hash === '#edition-2025') {
+        const archiveTab = document.getElementById('edition-2025-tab');
+        if (archiveTab) {
+          const tab = new bootstrap.Tab(archiveTab);
+          tab.show();
+        }
+      }
+    });
   </script>
 </body>
 
